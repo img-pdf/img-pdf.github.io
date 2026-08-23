@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Compressor Online — Compress JPG, PNG &amp; WebP Free | ImgPDF</title>
+<meta name="description" content="Compress JPG, PNG and WebP images online for free. Reduce file size while controlling quality — no upload to a server, no signup, works on mobile.">
+<link rel="canonical" href="https://img-pdf.github.io/image-tools/image-compressor/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Image Compressor Online — Compress JPG, PNG & WebP Free">
+<meta property="og:description" content="Reduce image file size right in your browser. No upload, no signup, free.">
+<meta property="og:url" content="https://img-pdf.github.io/image-tools/image-compressor/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/tool.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image Compressor",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "url": "https://img-pdf.github.io/image-tools/image-compressor/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free browser-based tool to compress JPG, PNG and WebP images without uploading them to a server."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my image uploaded to a server?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. This tool reads the image and compresses it using your browser's built-in canvas engine. The file never leaves your device." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which image formats are supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can upload JPG, PNG, WebP or GIF, and export as JPEG, PNG or WebP." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the image compressor free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, it's free with no signup and no limit on how many images you compress." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does compression reduce image quality?",
+      "acceptedAnswer": { "@type": "Answer", "text": "JPEG and WebP compression is lossy, so higher compression trades some quality for a smaller file. The quality slider lets you choose that balance. PNG export stays lossless, so file size reduction is smaller." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I compress multiple images at once?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Right now this tool compresses one image at a time. Batch compression is planned." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/" class="is-active">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/about/">About</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container tool-header">
+    <p class="breadcrumb">
+      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+      <a href="/image-tools/">Image Tools</a><span class="breadcrumb__sep">/</span>
+      Image Compressor
+    </p>
+    <h1>Image Compressor</h1>
+    <p>Compress JPG, PNG and WebP images without losing the quality that matters. Everything runs locally in your browser.</p>
+  </div>
+
+  <div class="container">
+    <div class="tool-panel">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Choose an image to compress">
+        <div class="dropzone__icon">&#128193;</div>
+        <div class="dropzone__title">Drag &amp; drop an image</div>
+        <p class="dropzone__hint">or</p>
+        <span class="btn btn--ghost">Choose Image</span>
+        <p class="dropzone__hint" style="margin-top:16px;">JPG · PNG · WebP · GIF</p>
+        <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/gif">
+      </div>
+
+      <div class="file-chip" id="file-chip" style="display:none;">
+        <img class="file-chip__thumb" id="file-chip-thumb" alt="">
+        <div>
+          <div class="file-chip__name" id="file-chip-name"></div>
+          <div class="file-chip__meta" id="file-chip-meta"></div>
+        </div>
+        <button class="file-chip__remove" id="file-chip-remove" aria-label="Remove image" type="button">&times;</button>
+      </div>
+
+      <div class="controls">
+        <div class="control-row">
+          <div class="control-row__label"><span>Compression quality</span><span class="control-row__value" id="quality-value">80%</span></div>
+          <input type="range" id="quality" min="10" max="100" value="80" aria-label="Compression quality">
+        </div>
+
+        <div class="control-row">
+          <span class="control-row__label"><span>Output format</span></span>
+          <div class="select-group">
+            <button type="button" class="chip-option is-selected" data-format="auto">Auto</button>
+            <button type="button" class="chip-option" data-format="jpeg">JPEG</button>
+            <button type="button" class="chip-option" data-format="png">PNG</button>
+            <button type="button" class="chip-option" data-format="webp">WebP</button>
+          </div>
+        </div>
+
+        <div class="control-row">
+          <span class="control-row__label"><span>Max width in pixels (optional)</span></span>
+          <input type="number" id="max-width" placeholder="e.g. 1600 — leave blank to keep original size" min="1" style="padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-family:var(--font-body);">
+        </div>
+      </div>
+
+      <div class="tool-actions">
+        <button class="btn btn--primary" id="compress-btn" disabled>Compress Image</button>
+      </div>
+      <p class="status-line" id="status-line"></p>
+
+      <div class="result-panel" id="result-panel">
+        <div class="result-stats">
+          <div class="result-stat"><div class="result-stat__label">Original</div><div class="result-stat__value" id="result-original">—</div></div>
+          <div class="result-stat"><div class="result-stat__label">Compressed</div><div class="result-stat__value" id="result-compressed">—</div></div>
+          <div class="result-stat result-stat--good"><div class="result-stat__label">Saved</div><div class="result-stat__value" id="result-saved">—</div></div>
+        </div>
+        <div class="result-preview">
+          <img id="result-preview-img" alt="Compressed image preview">
+        </div>
+        <a class="btn btn--primary" id="download-link" download>Download Compressed Image</a>
+      </div>
+    </div>
+
+    <div class="privacy-note">
+      <span>&#128274;</span>
+      <div><strong>Private by design</strong>Your image is compressed using your browser's canvas engine. It is never uploaded to a server.</div>
+    </div>
+  </div>
+
+  <div class="container prose" style="max-width:760px; margin-top:36px;">
+    <h2>About the Image Compressor</h2>
+    <p>Large photos slow down websites, fill up phone storage and make emails bounce. This tool re-encodes your JPG, PNG or WebP image at a smaller file size, using the same compression your browser already knows how to do — you just get control over the quality/size trade-off with a slider instead of guessing.</p>
+
+    <h2>How to compress an image</h2>
+    <ol>
+      <li>Drag your image into the box above, or choose it from your files.</li>
+      <li>Move the quality slider — lower means a smaller file, higher means closer to the original.</li>
+      <li>Optionally set a max width if you also want to scale the image down.</li>
+      <li>Click <strong>Compress Image</strong> and download the result.</li>
+    </ol>
+
+    <h2>Supported formats</h2>
+    <p>Upload JPG, PNG, WebP or GIF. Export as JPEG, PNG or WebP. JPEG and WebP support adjustable lossy compression; PNG stays lossless, so its file size reduction will be smaller.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>Is my image uploaded to a server?</summary>
+        <p>No. Compression happens using your browser's built-in canvas engine. The file never leaves your device.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Which image formats are supported?</summary>
+        <p>You can upload JPG, PNG, WebP or GIF, and export as JPEG, PNG or WebP.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the image compressor free?</summary>
+        <p>Yes — free, with no signup and no limit on how many images you compress.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does compression reduce image quality?</summary>
+        <p>JPEG and WebP compression is lossy, so a smaller file trades off some quality — the slider lets you choose that balance. PNG export stays lossless.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I compress multiple images at once?</summary>
+        <p>Right now this tool handles one image at a time. Batch compression is planned.</p>
+      </details>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:32px;">
+    <h2 style="font-size:1.05rem;">Related tools</h2>
+    <div class="related-tools">
+      <a href="/image-tools/image-resizer/">Image Resizer</a>
+      <span class="tag">image cropper — soon</span>
+      <span class="tag">image converter — soon</span>
+      <a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. No signup, ever.</p>
+      </div>
+      <div><h4>Image</h4><ul>
+        <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/image-tools/">All image tools</a></li>
+      </ul></div>
+      <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/">All PDF tools</a></li>
+      </ul></div>
+      <div><h4>Utilities</h4><ul>
+        <li><a href="/utilities/">All utilities</a></li>
+        <li><a href="/developer-tools/">Developer tools</a></li>
+      </ul></div>
+      <div><h4>Site</h4><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF</span>
+      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking beyond basic analytics.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/tools/image-compressor.js"></script>
+</body>
+</html>
