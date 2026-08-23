@@ -40,8 +40,8 @@ window.IMGPDF_TOOLS = [
   { name: "PDF Page Screenshot", category: "PDF", url: null, keywords: "screenshot pdf page image" },
 
   // ---- Utilities ----
-  { name: "Password Generator", category: "Utilities", url: null, keywords: "password generator secure random", popular: true },
-  { name: "QR Code Generator", category: "Utilities", url: null, keywords: "qr code generator", popular: true },
+  { name: "Password Generator", category: "Utilities", url: "/utilities/password-generator/", keywords: "password generator secure random", popular: true },
+  { name: "QR Code Generator", category: "Utilities", url: "/utilities/qr-code-generator/", keywords: "qr code generator", popular: true },
   { name: "Barcode Generator", category: "Utilities", url: null, keywords: "barcode generator" },
   { name: "UUID Generator", category: "Utilities", url: null, keywords: "uuid guid generator" },
   { name: "Hash Generator", category: "Utilities", url: null, keywords: "hash md5 sha1 sha256" },
