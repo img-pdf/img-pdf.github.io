@@ -254,3 +254,40 @@ input[type="range"]::-moz-range-thumb {
   border-radius: var(--radius-md);
 }
 .qr-preview canvas, .qr-preview img { image-rendering: pixelated; }
+
+/* ==========================================================================
+   Text-in / text-out tools (formatters, converters)
+   ========================================================================== */
+.text-io {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 760px) { .text-io { grid-template-columns: 1fr; } }
+.text-io__col { display: flex; flex-direction: column; gap: 8px; }
+.text-io__label { font-size: 0.85rem; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+.text-io textarea {
+  width: 100%;
+  min-height: 280px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  color: var(--ink);
+  resize: vertical;
+}
+.text-io textarea[readonly] { background: var(--surface); }
+.mini-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 4px 8px;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+.mini-btn:hover { border-color: var(--accent); color: var(--accent); }

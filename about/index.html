@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About ImgPDF — Free Browser-Based Tools</title>
+<meta name="description" content="ImgPDF is a free collection of browser-based tools for images, PDFs and everyday utilities. No signup, no server uploads for supported tools, built to be fast on any device.">
+<link rel="canonical" href="https://img-pdf.github.io/about/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About ImgPDF">
+<meta property="og:description" content="A free collection of browser-based tools for images, PDFs and everyday utilities.">
+<meta property="og:url" content="https://img-pdf.github.io/about/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/about/" data-nav-section="/about/" class="is-active">About</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a><a href="/pdf-tools/">PDF Tools</a><a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a><a href="/text-tools/">Text Tools</a><a href="/about/">About</a>
+  </nav>
+</header>
+<main>
+  <div class="container prose" style="max-width:720px; padding-top:36px; padding-bottom:60px;">
+    <p class="breadcrumb"><a href="/">Home</a><span class="breadcrumb__sep">/</span>About</p>
+    <h1>About ImgPDF</h1>
+    <p>ImgPDF is a free collection of tools for images, PDFs and everyday utilities that run directly in your browser. There's no account to create and, for tools marked private-by-design, nothing gets uploaded to a server — the processing happens on your own device using standard browser APIs like Canvas and Web Crypto.</p>
+
+    <h2>Why it's free</h2>
+    <p>The tools use client-side JavaScript rather than a backend, so there's no server cost per file processed. That keeps the site free to run and free to use, with no per-use limits.</p>
+
+    <h2>What's built so far</h2>
+    <p>ImgPDF is being built out one tool at a time rather than launched all at once. Anything linked from the navigation and homepage is live and working; anything marked "soon" is planned but not built yet.</p>
+
+    <h2>Who's behind it</h2>
+    <p>ImgPDF is an independent, hobby-built project. It isn't affiliated with iLovePDF, iLoveIMG, or any other file-tool company.</p>
+
+    <h2>Questions or feedback</h2>
+    <p>This is a young project, so if something's broken or a tool you need isn't listed yet, that's expected — more are on the way.</p>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. No signup, ever.</p>
+      </div>
+      <div><h4>Image</h4><ul><li><a href="/image-tools/image-compressor/">Image Compressor</a></li><li><a href="/image-tools/image-resizer/">Image Resizer</a></li></ul></div>
+      <div><h4>PDF</h4><ul><li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li></ul></div>
+      <div><h4>Utilities</h4><ul><li><a href="/utilities/password-generator/">Password Generator</a></li><li><a href="/utilities/qr-code-generator/">QR Code Generator</a></li></ul></div>
+      <div><h4>Site</h4><ul><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF</span>
+      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking beyond basic analytics.</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/common.js"></script>
+</body>
+</html>

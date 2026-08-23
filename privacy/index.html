@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | ImgPDF</title>
+<meta name="description" content="ImgPDF's privacy policy: which tools process files entirely in your browser, what limited analytics are collected, and how third-party libraries are used.">
+<link rel="canonical" href="https://img-pdf.github.io/privacy/">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a><a href="/pdf-tools/">PDF Tools</a><a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a><a href="/text-tools/">Text Tools</a><a href="/about/">About</a>
+  </nav>
+</header>
+<main>
+  <div class="container prose" style="max-width:720px; padding-top:36px; padding-bottom:60px;">
+    <p class="breadcrumb"><a href="/">Home</a><span class="breadcrumb__sep">/</span>Privacy</p>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: 2026.</p>
+
+    <h2>Your files</h2>
+    <p>Tools marked "private by design" process your file entirely in your browser, using built-in APIs like Canvas, Web Crypto, and JavaScript PDF libraries loaded from a CDN. Your file is never uploaded to a server or seen by ImgPDF. This applies to every tool currently live on the site — the compressor, resizer, JPG-to-PDF converter, password generator and QR code generator all work this way.</p>
+    <p>If a future tool ever requires server-side processing, that page will say so explicitly before you use it.</p>
+
+    <h2>Analytics</h2>
+    <p>Basic, privacy-respecting analytics may be used to see aggregate traffic (which pages get visited, roughly how many people), without tracking you individually across sites or building an ad profile.</p>
+
+    <h2>Third-party libraries</h2>
+    <p>Some tools load a small JavaScript library from a public CDN (for example, a PDF-generation library) to do the actual processing in your browser. Loading that script means your browser makes a request to the CDN, the same as loading a font or an image would — the CDN does not receive your files.</p>
+
+    <h2>Cookies</h2>
+    <p>ImgPDF does not use cookies for tracking or advertising.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes materially, the "last updated" date above will change too.</p>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. No signup, ever.</p>
+      </div>
+      <div><h4>Image</h4><ul><li><a href="/image-tools/image-compressor/">Image Compressor</a></li><li><a href="/image-tools/image-resizer/">Image Resizer</a></li></ul></div>
+      <div><h4>PDF</h4><ul><li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li></ul></div>
+      <div><h4>Utilities</h4><ul><li><a href="/utilities/password-generator/">Password Generator</a></li><li><a href="/utilities/qr-code-generator/">QR Code Generator</a></li></ul></div>
+      <div><h4>Site</h4><ul><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF</span>
+      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking beyond basic analytics.</span>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/common.js"></script>
+</body>
+</html>

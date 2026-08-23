@@ -51,7 +51,7 @@ window.IMGPDF_TOOLS = [
   { name: "Color Converter", category: "Utilities", url: null, keywords: "color hex rgb hsl convert" },
 
   // ---- Developer tools ----
-  { name: "JSON Formatter", category: "Developer", url: null, keywords: "json format beautify" },
+  { name: "JSON Formatter", category: "Developer", url: "/developer-tools/json-formatter/", keywords: "json format beautify" },
   { name: "JSON Minifier", category: "Developer", url: null, keywords: "json minify compress" },
   { name: "HTML Formatter", category: "Developer", url: null, keywords: "html format beautify" },
   { name: "CSS Minifier", category: "Developer", url: null, keywords: "css minify compress" },
