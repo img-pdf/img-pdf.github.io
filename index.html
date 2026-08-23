@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ImgPDF — Free Online Image, PDF &amp; Web Tools (No Signup)</title>
+<meta name="description" content="Compress, resize, convert and edit images and PDFs free, right in your browser. No signup, no uploads to a server for supported tools. Fast, private, mobile-friendly.">
+<link rel="canonical" href="https://img-pdf.github.io/">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="ImgPDF — Free Online Image, PDF & Web Tools">
+<meta property="og:description" content="Compress, resize, convert and edit images and PDFs free, right in your browser. No signup required.">
+<meta property="og:url" content="https://img-pdf.github.io/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ImgPDF",
+  "url": "https://img-pdf.github.io/",
+  "description": "Free browser-based tools for images, PDFs, and everyday web utilities. No signup required.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://img-pdf.github.io/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/about/">About</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero__status"><span>compress(photo.jpg) &rarr; done in 0.4s, saved 71%</span><span class="hero__cursor">&nbsp;</span></div>
+      <h1>Free tools for images, PDFs<br>and everyday files</h1>
+      <p class="hero__lede">Compress, resize, convert and edit files directly in your browser. Nothing to install, nothing to sign up for.</p>
+
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
+        <input type="text" id="tool-search" placeholder="Search tools — try &quot;compress&quot; or &quot;json&quot;" autocomplete="off" aria-label="Search tools">
+        <div class="search-results" id="tool-search-results" role="listbox"></div>
+      </div>
+
+      <div class="hero__badges">
+        <span class="tag tag--good">no signup</span>
+        <span class="tag tag--good">runs in your browser</span>
+        <span class="tag tag--good">free</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <span class="section__eyebrow">start here</span>
+          <h2>Popular tools</h2>
+        </div>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card" href="/image-tools/image-compressor/">
+          <div class="tool-card__icon">&#128230;</div>
+          <div><div class="tool-card__name">Image Compressor</div><div class="tool-card__desc">Shrink JPG, PNG &amp; WebP file size</div></div>
+        </a>
+        <a class="tool-card" href="/image-tools/image-resizer/">
+          <div class="tool-card__icon">&#8596;</div>
+          <div><div class="tool-card__name">Image Resizer</div><div class="tool-card__desc">Change pixel dimensions</div></div>
+        </a>
+        <div class="tool-card" aria-disabled="true">
+          <div class="tool-card__icon">&#9986;&#65039;</div>
+          <div><div class="tool-card__name">Image Cropper</div><div class="tool-card__desc">Cut to the part you need <span class="tag">soon</span></div></div>
+        </div>
+        <a class="tool-card" href="/pdf-tools/jpg-to-pdf/">
+          <div class="tool-card__icon">&#128196;</div>
+          <div><div class="tool-card__name">JPG to PDF</div><div class="tool-card__desc">Turn photos into a PDF</div></div>
+        </a>
+        <div class="tool-card" aria-disabled="true">
+          <div class="tool-card__icon">&#128203;</div>
+          <div><div class="tool-card__name">Merge PDF</div><div class="tool-card__desc">Combine files into one <span class="tag">soon</span></div></div>
+        </div>
+        <div class="tool-card" aria-disabled="true">
+          <div class="tool-card__icon">&#128273;</div>
+          <div><div class="tool-card__name">Password Generator</div><div class="tool-card__desc">Strong, random passwords <span class="tag">soon</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <span class="section__eyebrow">20 tools</span>
+          <h2>Image tools</h2>
+        </div>
+        <a class="section__link" href="/image-tools/">View all image tools &rarr;</a>
+      </div>
+      <p>Everything for editing a photo before you post it, print it, or send it — compression, resizing, cropping, format conversion, watermarking and more.</p>
+      <div class="tool-grid">
+        <a class="tool-card" href="/image-tools/image-compressor/"><div class="tool-card__icon">&#128230;</div><div><div class="tool-card__name">Image Compressor</div><div class="tool-card__desc">Reduce file size, keep quality</div></div></a>
+        <a class="tool-card" href="/image-tools/image-resizer/"><div class="tool-card__icon">&#8596;</div><div><div class="tool-card__name">Image Resizer</div><div class="tool-card__desc">Exact width &amp; height</div></div></a>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#9986;&#65039;</div><div><div class="tool-card__name">Image Cropper</div><div class="tool-card__desc">Freeform or fixed ratio</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128260;</div><div><div class="tool-card__name">Image Converter</div><div class="tool-card__desc">JPG, PNG, WebP</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128260;</div><div><div class="tool-card__name">Image Rotator</div><div class="tool-card__desc">Any angle</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#8646;</div><div><div class="tool-card__name">Image Flipper</div><div class="tool-card__desc">Mirror horizontal or vertical</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#127912;</div><div><div class="tool-card__name">Image Grayscale</div><div class="tool-card__desc">Strip to black &amp; white</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128167;</div><div><div class="tool-card__name">Image Blur</div><div class="tool-card__desc">Soften part or all of it</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <span class="section__eyebrow">11 tools</span>
+          <h2>PDF tools</h2>
+        </div>
+        <a class="section__link" href="/pdf-tools/">View all PDF tools &rarr;</a>
+      </div>
+      <p>Build, rearrange and mark up PDFs without installing Acrobat — merge files, split pages apart, reorder, rotate, or add a watermark.</p>
+      <div class="tool-grid">
+        <a class="tool-card" href="/pdf-tools/jpg-to-pdf/"><div class="tool-card__icon">&#128196;</div><div><div class="tool-card__name">JPG to PDF</div><div class="tool-card__desc">Photos into one PDF</div></div></a>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128203;</div><div><div class="tool-card__name">Merge PDF</div><div class="tool-card__desc">Combine multiple files</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#9986;&#65039;</div><div><div class="tool-card__name">Split PDF</div><div class="tool-card__desc">Pull pages apart</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128260;</div><div><div class="tool-card__name">Rotate PDF</div><div class="tool-card__desc">Fix sideways pages</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128465;&#65039;</div><div><div class="tool-card__name">Delete PDF Pages</div><div class="tool-card__desc">Remove pages you don't need</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128204;</div><div><div class="tool-card__name">PDF Watermark</div><div class="tool-card__desc">Stamp text or a logo</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <span class="section__eyebrow">9 tools</span>
+          <h2>Utilities</h2>
+        </div>
+        <a class="section__link" href="/utilities/">View all utilities &rarr;</a>
+      </div>
+      <div class="tool-grid">
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128273;</div><div><div class="tool-card__name">Password Generator</div><div class="tool-card__desc">Strong &amp; random</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#9723;</div><div><div class="tool-card__name">QR Code Generator</div><div class="tool-card__desc">Text, links, wifi</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128220;</div><div><div class="tool-card__name">Barcode Generator</div><div class="tool-card__desc">Common formats</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128273;</div><div><div class="tool-card__name">UUID Generator</div><div class="tool-card__desc">v4 identifiers</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#35;</div><div><div class="tool-card__name">Hash Generator</div><div class="tool-card__desc">MD5, SHA-1, SHA-256</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#8987;</div><div><div class="tool-card__name">Timestamp Converter</div><div class="tool-card__desc">Unix &harr; date</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <div>
+          <span class="section__eyebrow">9 tools</span>
+          <h2>Developer &amp; text tools</h2>
+        </div>
+        <a class="section__link" href="/developer-tools/">View all &rarr;</a>
+      </div>
+      <div class="tool-grid">
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#123;&#125;</div><div><div class="tool-card__name">JSON Formatter</div><div class="tool-card__desc">Pretty-print &amp; validate</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#123;&#125;</div><div><div class="tool-card__name">JSON Minifier</div><div class="tool-card__desc">Strip whitespace</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#60;/&#62;</div><div><div class="tool-card__name">CSS Minifier</div><div class="tool-card__desc">Smaller stylesheets</div></div></div>
+        <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#120;</div><div><div class="tool-card__name">Word Counter</div><div class="tool-card__desc">Words &amp; reading time</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-grid__item">
+          <div class="why-grid__icon">&#128274;</div>
+          <h3>Processed in your browser</h3>
+          <p>Supported tools run entirely on your device — your file isn't sent to a server.</p>
+        </div>
+        <div class="why-grid__item">
+          <div class="why-grid__icon">&#9889;</div>
+          <h3>Fast</h3>
+          <p>No upload queue, no waiting on a server round-trip.</p>
+        </div>
+        <div class="why-grid__item">
+          <div class="why-grid__icon">&#127991;&#65039;</div>
+          <h3>Free</h3>
+          <p>No account, no paywall, no watermark on your files.</p>
+        </div>
+        <div class="why-grid__item">
+          <div class="why-grid__icon">&#128241;</div>
+          <h3>Works on mobile</h3>
+          <p>Built for a phone screen first, not squeezed in afterward.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. No signup, ever.</p>
+      </div>
+      <div><h4>Image</h4><ul>
+        <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/image-tools/">All image tools</a></li>
+      </ul></div>
+      <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/">All PDF tools</a></li>
+      </ul></div>
+      <div><h4>Utilities</h4><ul>
+        <li><a href="/utilities/">All utilities</a></li>
+        <li><a href="/developer-tools/">Developer tools</a></li>
+      </ul></div>
+      <div><h4>Site</h4><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF</span>
+      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking beyond basic analytics.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/tools-data.js"></script>
+<script src="/assets/js/search.js"></script>
+<script src="/assets/js/common.js"></script>
+</body>
+</html>
