@@ -7,7 +7,7 @@ window.IMGPDF_TOOLS = [
   // ---- Image tools ----
   { name: "Image Compressor", category: "Image", url: "/image-tools/image-compressor/", keywords: "compress reduce size jpg png webp", popular: true },
   { name: "Image Resizer", category: "Image", url: "/image-tools/image-resizer/", keywords: "resize dimensions width height", popular: true },
-  { name: "Image Cropper", category: "Image", url: null, keywords: "crop cut trim", popular: true },
+  { name: "Image Cropper", category: "Image", url: "/image-tools/image-cropper/", keywords: "crop cut trim", popular: true },
   { name: "Image Converter", category: "Image", url: null, keywords: "convert jpg png webp format" },
   { name: "Image Rotator", category: "Image", url: null, keywords: "rotate turn flip degrees" },
   { name: "Image Flipper", category: "Image", url: null, keywords: "flip mirror horizontal vertical" },
@@ -29,7 +29,7 @@ window.IMGPDF_TOOLS = [
   // ---- PDF tools ----
   { name: "JPG to PDF", category: "PDF", url: "/pdf-tools/jpg-to-pdf/", keywords: "jpg pdf convert", popular: true },
   { name: "PNG to PDF", category: "PDF", url: null, keywords: "png pdf convert" },
-  { name: "Merge PDF", category: "PDF", url: null, keywords: "merge combine join pdf", popular: true },
+  { name: "Merge PDF", category: "PDF", url: "/pdf-tools/merge-pdf/", keywords: "merge combine join pdf", popular: true },
   { name: "Split PDF", category: "PDF", url: null, keywords: "split pdf separate" },
   { name: "Extract PDF Pages", category: "PDF", url: null, keywords: "extract pages pdf" },
   { name: "Rotate PDF", category: "PDF", url: null, keywords: "rotate pdf pages" },

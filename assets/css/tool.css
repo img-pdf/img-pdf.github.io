@@ -291,3 +291,38 @@ input[type="range"]::-moz-range-thumb {
   color: var(--ink-soft);
 }
 .mini-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ==========================================================================
+   Image Cropper — draggable/resizable selection overlay
+   ========================================================================== */
+.crop-stage {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  margin: 0 auto;
+  background: repeating-conic-gradient(#e9ebf1 0% 25%, #f5f6f8 0% 50%) 0 0 / 20px 20px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  line-height: 0;
+  touch-action: none;
+}
+.crop-stage img { display: block; max-width: 100%; max-height: 60vh; user-select: none; -webkit-user-drag: none; }
+.crop-box {
+  position: absolute;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 9999px rgba(16,19,28,0.45);
+  cursor: move;
+}
+.crop-box__handle {
+  position: absolute;
+  width: 14px; height: 14px;
+  background: var(--accent);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.crop-box__handle[data-h="nw"] { top: 0; left: 0; cursor: nwse-resize; }
+.crop-box__handle[data-h="ne"] { top: 0; left: 100%; cursor: nesw-resize; }
+.crop-box__handle[data-h="sw"] { top: 100%; left: 0; cursor: nesw-resize; }
+.crop-box__handle[data-h="se"] { top: 100%; left: 100%; cursor: nwse-resize; }
+.crop-stage-wrap { display: flex; justify-content: center; padding: 12px; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-md); }
