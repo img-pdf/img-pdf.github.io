@@ -45,8 +45,8 @@ window.IMGPDF_TOOLS = [
   { name: "Barcode Generator", category: "Utilities", url: null, keywords: "barcode generator" },
   { name: "UUID Generator", category: "Utilities", url: "/utilities/uuid-generator/", keywords: "uuid guid generator" },
   { name: "Hash Generator", category: "Utilities", url: "/utilities/hash-generator/", keywords: "hash md5 sha1 sha256" },
-  { name: "Base64 Encoder/Decoder", category: "Utilities", url: null, keywords: "base64 encode decode" },
-  { name: "URL Encoder/Decoder", category: "Utilities", url: null, keywords: "url encode decode" },
+  { name: "Base64 Encoder/Decoder", category: "Utilities", url: "/utilities/base64-encoder-decoder/", keywords: "base64 encode decode" },
+  { name: "URL Encoder/Decoder", category: "Utilities", url: "/utilities/url-encoder-decoder/", keywords: "url encode decode" },
   { name: "Timestamp Converter", category: "Utilities", url: null, keywords: "timestamp unix date convert" },
   { name: "Color Converter", category: "Utilities", url: null, keywords: "color hex rgb hsl convert" },
 
