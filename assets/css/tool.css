@@ -351,3 +351,21 @@ input[type="range"]::-moz-range-thumb {
 .limit-bar { height: 6px; border-radius: 3px; background: var(--surface-alt); overflow: hidden; }
 .limit-bar__fill { height: 100%; width: 0%; background: var(--good); transition: width 0.15s ease, background 0.15s ease; }
 .limit-bar__label { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); }
+
+/* ==========================================================================
+   UUID list / multi-output generators
+   ========================================================================== */
+.uuid-list { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.uuid-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+}
+.uuid-row__text { flex: 1; font-family: var(--font-mono); font-size: 0.92rem; color: var(--ink); user-select: all; word-break: break-all; }
+
+.hash-row { margin-top: 14px; }
+.hash-row__label { font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UUID Generator Online — Free v4 UUIDs | ImgPDF</title>
+<meta name="description" content="Generate random v4 UUIDs online for free, one at a time or in a batch. Uses your browser's built-in crypto API — nothing sent to a server.">
+<link rel="canonical" href="https://img-pdf.github.io/utilities/uuid-generator/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="UUID Generator Online — Free v4 UUIDs">
+<meta property="og:description" content="Generate random v4 UUIDs right in your browser. No signup, free.">
+<meta property="og:url" content="https://img-pdf.github.io/utilities/uuid-generator/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/tool.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "UUID Generator",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "url": "https://img-pdf.github.io/utilities/uuid-generator/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free browser-based tool to generate random version 4 UUIDs, individually or in a batch."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What version of UUID does this generate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Version 4 — randomly generated, the most common type for things like database IDs and session tokens." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the UUIDs sent to a server?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, they're generated locally using your browser's crypto API and never transmitted." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I generate more than one at a time?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, set the count up to 50 and generate them all at once, with a copy-all option." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/" class="is-active">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a><a href="/pdf-tools/">PDF Tools</a><a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a><a href="/text-tools/">Text Tools</a><a href="/about/">About</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container tool-header">
+    <p class="breadcrumb">
+      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+      <a href="/utilities/">Utilities</a><span class="breadcrumb__sep">/</span>
+      UUID Generator
+    </p>
+    <h1>UUID Generator</h1>
+    <p>Generate random version 4 UUIDs, one at a time or a batch of up to 50, using your browser's crypto API.</p>
+  </div>
+
+  <div class="container">
+    <div class="tool-panel">
+      <div class="controls" style="margin-top:0;">
+        <div class="control-row">
+          <span class="control-row__label"><span>How many</span></span>
+          <input type="number" id="count" value="1" min="1" max="50" style="padding:10px 12px;border:1px solid var(--border);border-radius:8px;font-family:var(--font-mono);width:100px;">
+        </div>
+      </div>
+      <div class="tool-actions">
+        <button class="btn btn--primary" id="generate-btn" type="button">Generate</button>
+        <button class="btn btn--ghost" id="copy-all-btn" type="button">Copy All</button>
+      </div>
+      <div class="uuid-list" id="uuid-list"></div>
+    </div>
+
+    <div class="privacy-note">
+      <span>&#128274;</span>
+      <div><strong>Private by design</strong>UUIDs are generated locally using your browser's crypto API. Nothing is sent to a server.</div>
+    </div>
+  </div>
+
+  <div class="container prose" style="max-width:760px; margin-top:36px;">
+    <h2>About the UUID Generator</h2>
+    <p>A UUID (universally unique identifier) is a 128-bit value used to identify things — database rows, sessions, request IDs — without needing a central counter. Version 4 UUIDs are generated from random bits, and the odds of a collision are astronomically small.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>What version of UUID does this generate?</summary>
+        <p>Version 4 — randomly generated, the most common type for database IDs and session tokens.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are the UUIDs sent to a server?</summary>
+        <p>No — they're generated locally using your browser's crypto API and never transmitted.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I generate more than one at a time?</summary>
+        <p>Yes, set the count up to 50 and generate them all at once, with a copy-all option.</p>
+      </details>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:32px;">
+    <h2 style="font-size:1.05rem;">Related tools</h2>
+    <div class="related-tools">
+      <a href="/utilities/password-generator/">Password Generator</a>
+      <a href="/utilities/hash-generator/">Hash Generator</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. No signup, ever.</p>
+      </div>
+      <div><h4>Image</h4><ul><li><a href="/image-tools/image-compressor/">Image Compressor</a></li><li><a href="/image-tools/image-cropper/">Image Cropper</a></li></ul></div>
+      <div><h4>PDF</h4><ul><li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li><li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li></ul></div>
+      <div><h4>Utilities</h4><ul><li><a href="/utilities/password-generator/">Password Generator</a></li><li><a href="/utilities/uuid-generator/">UUID Generator</a></li></ul></div>
+      <div><h4>Site</h4><ul><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF</span>
+      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking beyond basic analytics.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/tools/uuid-generator.js"></script>
+</body>
+</html>
