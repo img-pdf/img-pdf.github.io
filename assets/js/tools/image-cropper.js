@@ -85,8 +85,9 @@
 
   ratioChips.forEach(function (chip) {
     chip.addEventListener("click", function () {
-      ratioChips.forEach(function (c) { c.classList.remove("is-selected"); });
+      ratioChips.forEach(function (c) { c.classList.remove("is-selected"); c.setAttribute("aria-pressed", "false"); });
       chip.classList.add("is-selected");
+      chip.setAttribute("aria-pressed", "true");
       const val = chip.getAttribute("data-ratio");
       ratio = val === "free" ? null : val.split(":").map(Number).reduce((a, b) => a / b);
       applyRatio();

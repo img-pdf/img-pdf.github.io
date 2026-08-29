@@ -101,8 +101,9 @@
 
   pageSizeChips.forEach(function (chip) {
     chip.addEventListener("click", function () {
-      pageSizeChips.forEach(function (c) { c.classList.remove("is-selected"); });
+      pageSizeChips.forEach(function (c) { c.classList.remove("is-selected"); c.setAttribute("aria-pressed", "false"); });
       chip.classList.add("is-selected");
+      chip.setAttribute("aria-pressed", "true");
       pageSize = chip.getAttribute("data-pagesize");
     });
   });

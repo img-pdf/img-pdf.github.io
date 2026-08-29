@@ -89,8 +89,9 @@
 
   formatChips.forEach(function (chip) {
     chip.addEventListener("click", function () {
-      formatChips.forEach(function (c) { c.classList.remove("is-selected"); });
+      formatChips.forEach(function (c) { c.classList.remove("is-selected"); c.setAttribute("aria-pressed", "false"); });
       chip.classList.add("is-selected");
+      chip.setAttribute("aria-pressed", "true");
       selectedFormat = chip.getAttribute("data-format");
     });
   });

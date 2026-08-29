@@ -59,7 +59,7 @@ window.IMGPDF_TOOLS = [
 
   // ---- Text tools ----
   { name: "Text Case Converter", category: "Text", url: null, keywords: "case upper lower title convert" },
-  { name: "Word Counter", category: "Text", url: null, keywords: "word count counter" },
-  { name: "Character Counter", category: "Text", url: null, keywords: "character count counter" },
+  { name: "Word Counter", category: "Text", url: "/text-tools/word-counter/", keywords: "word count counter" },
+  { name: "Character Counter", category: "Text", url: "/text-tools/character-counter/", keywords: "character count counter" },
   { name: "Lorem Ipsum Generator", category: "Text", url: null, keywords: "lorem ipsum placeholder text" },
 ];

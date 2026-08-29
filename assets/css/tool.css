@@ -326,3 +326,28 @@ input[type="range"]::-moz-range-thumb {
 .crop-box__handle[data-h="sw"] { top: 100%; left: 0; cursor: nesw-resize; }
 .crop-box__handle[data-h="se"] { top: 100%; left: 100%; cursor: nwse-resize; }
 .crop-stage-wrap { display: flex; justify-content: center; padding: 12px; background: var(--paper); border: 1px solid var(--border); border-radius: var(--radius-md); }
+
+/* ==========================================================================
+   Live-count text tools (word counter, character counter)
+   ========================================================================== */
+.count-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+.count-stat {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 10px;
+  text-align: center;
+}
+.count-stat__value { font-family: var(--font-mono); font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+.count-stat__label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin-top: 2px; }
+
+.limit-row { margin-top: 14px; }
+.limit-row__head { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+.limit-bar { height: 6px; border-radius: 3px; background: var(--surface-alt); overflow: hidden; }
+.limit-bar__fill { height: 100%; width: 0%; background: var(--good); transition: width 0.15s ease, background 0.15s ease; }
+.limit-bar__label { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); }

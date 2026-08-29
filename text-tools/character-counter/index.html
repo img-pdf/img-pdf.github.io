@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Character Counter Online — Free, Instant &amp; Private | ImgPDF</title>
+<meta name="description" content="Count characters with and without spaces online for free, with live limit trackers for Twitter/X, SMS and meta descriptions. Updates instantly, nothing sent to a server.">
+<link rel="canonical" href="https://img-pdf.github.io/text-tools/character-counter/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Character Counter Online — Free & Instant">
+<meta property="og:description" content="Count characters as you type, with live platform limit trackers. No signup, free.">
+<meta property="og:url" content="https://img-pdf.github.io/text-tools/character-counter/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/tool.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Character Counter",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any (runs in browser)",
+  "url": "https://img-pdf.github.io/text-tools/character-counter/",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Free browser-based tool to count characters with live limit trackers for common platforms."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does the byte count differ from the character count?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Characters outside basic ASCII, like emoji or accented letters, can take more than one byte to store in UTF-8, so byte count is sometimes higher than character count." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my text sent anywhere?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No, counting happens locally in your browser as you type." }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a><a href="/pdf-tools/">PDF Tools</a><a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a><a href="/text-tools/" class="is-active">Text Tools</a><a href="/about/">About</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container tool-header">
+    <p class="breadcrumb">
+      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+      <a href="/text-tools/">Text Tools</a><span class="breadcrumb__sep">/</span>
+      Character Counter
+    </p>
+    <h1>Character Counter</h1>
+    <p>Live character count as you type, with limit trackers for common platforms.</p>
+  </div>
+
+  <div class="container">
+    <div class="tool-panel">
+      <textarea id="text-input" placeholder="Start typing or paste your text here…" spellcheck="false" style="width:100%; min-height:200px; font-family:var(--font-body); font-size:1rem; line-height:1.6; padding:16px; border:1px solid var(--border); border-radius:10px; background:var(--paper); color:var(--ink); resize:vertical;"></textarea>
+
+      <div class="count-stats">
+        <div class="count-stat"><div class="count-stat__value" id="char-with-spaces">0</div><div class="count-stat__label">With spaces</div></div>
+        <div class="count-stat"><div class="count-stat__value" id="char-without-spaces">0</div><div class="count-stat__label">Without spaces</div></div>
+        <div class="count-stat"><div class="count-stat__value" id="byte-count">0</div><div class="count-stat__label">UTF-8 bytes</div></div>
+      </div>
+
+      <div style="margin-top:24px;">
+        <div class="limit-row" data-limit="280">
+          <div class="limit-row__head"><span>Twitter / X post (280)</span><span class="limit-bar__label"></span></div>
+          <div class="limit-bar"><div class="limit-bar__fill"></div></div>
+        </div>
+        <div class="limit-row" data-limit="160">
+          <div class="limit-row__head"><span>SMS message (160)</span><span class="limit-bar__label"></span></div>
+          <div class="limit-bar"><div class="limit-bar__fill"></div></div>
+        </div>
+        <div class="limit-row" data-limit="160">
+          <div class="limit-row__head"><span>Meta description (160)</span><span class="limit-bar__label"></span></div>
+          <div class="limit-bar"><div class="limit-bar__fill"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="privacy-note">
+      <span>&#128274;</span>
+      <div><strong>Private by design</strong>Counting happens locally as you type. Your text is never sent to a server.</div>
+    </div>
+  </div>
+
+  <div class="container prose" style="max-width:760px; margin-top:36px;">
+    <h2>About the Character Counter</h2>
+    <p>Different limits apply in different places — a tweet, a text message, a search-engine meta description. This tool counts as you type and shows how close you are to a few common caps, so you're not guessing or copy-pasting into another app to check.</p>
+
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>Why does the byte count differ from the character count?</summary>
+        <p>Characters outside basic ASCII, like emoji or accented letters, can take more than one byte in UTF-8, so byte count is sometimes higher than character count.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my text sent anywhere?</summary>
+        <p>No — counting happens locally in your browser as you type.</p>
+      </details>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:32px;">
+    <h2 style="font-size:1.05rem;">Related tools</h2>
+    <div class="related-tools">
+      <a href="/text-tools/word-counter/">Word Counter</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. No signup, ever.</p>
+      </div>
+      <div><h4>Image</h4><ul><li><a href="/image-tools/image-compressor/">Image Compressor</a></li><li><a href="/image-tools/image-cropper/">Image Cropper</a></li></ul></div>
+      <div><h4>PDF</h4><ul><li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li><li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li></ul></div>
+      <div><h4>Text</h4><ul><li><a href="/text-tools/word-counter/">Word Counter</a></li><li><a href="/text-tools/character-counter/">Character Counter</a></li></ul></div>
+      <div><h4>Site</h4><ul><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF</span>
+      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking beyond basic analytics.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/tools/character-counter.js"></script>
+</body>
+</html>
