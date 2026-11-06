@@ -9,6 +9,21 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const HOST = '0.0.0.0';
 
+// Explicit handlers for sitemaps and robots with proper MIME types
+app.get(['/sitemap.xml', '/Sitemap.xml'], (req, res) => {
+  res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
+app.get('/sitemap', (req, res) => {
+  res.redirect(301, '/sitemap.xml');
+});
+
+app.get(['/robots.txt', '/Robots.txt'], (req, res) => {
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'robots.txt'));
+});
+
 // Serve static assets and HTML files
 app.use(express.static(__dirname, {
   extensions: ['html'],
