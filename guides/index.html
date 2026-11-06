@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technical Guides &amp; Tutorials — Images, PDFs &amp; Web Media | ImgPDF</title>
+<meta name="description" content="In-depth, technical guides on digital image compression, format selection (JPG, PNG, WebP), DPI and resolution, PDF optimization, and web performance.">
+<link rel="canonical" href="https://img-pdf.github.io/guides/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Technical Guides &amp; Tutorials — Images, PDFs &amp; Web Media | ImgPDF">
+<meta property="og:description" content="Master digital media optimization: image compression, resolution &amp; DPI, PDF management, and modern formats.">
+<meta property="og:url" content="https://img-pdf.github.io/guides/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "ImgPDF Educational Guides",
+  "url": "https://img-pdf.github.io/guides/",
+  "description": "Comprehensive engineering guides covering image compression algorithms, raster vs vector formats, PDF structure, and web asset optimization."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://img-pdf.github.io/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://img-pdf.github.io/guides/" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/" class="is-active">Guides</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container tool-header">
+    <p class="breadcrumb"><a href="/">Home</a><span class="breadcrumb__sep">/</span>Guides</p>
+    <h1>Technical Guides &amp; Tutorials</h1>
+    <p>Detailed, mathematically sound, practical documentation on image compression, raster formats, resolution metrics, and document assembly.</p>
+  </div>
+
+  <div class="container" style="margin-top:24px;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:20px;">
+      
+      <a class="guide-card" href="/guides/image-compression-without-quality-loss/">
+        <span class="tag tag--good guide-card__tag">Optimization</span>
+        <div class="guide-card__title">How Image Compression Works Without Visible Loss</div>
+        <div class="guide-card__desc">A technical deep-dive into psycho-visual compression, chrominance sub-sampling (4:2:0 vs 4:4:4), quantization tables, and finding the visual sweet spot.</div>
+        <div class="guide-card__meta">6 min read · Technical Guide</div>
+      </a>
+
+      <a class="guide-card" href="/guides/jpg-vs-png-vs-webp/">
+        <span class="tag tag--good guide-card__tag">Formats</span>
+        <div class="guide-card__title">JPG vs PNG vs WebP: Complete Architecture Comparison</div>
+        <div class="guide-card__desc">Understand the internal encoding engines behind DCT, Deflate, and VP8 predictive intra-frames. Learn when each format is strictly required.</div>
+        <div class="guide-card__meta">8 min read · Format Engineering</div>
+      </a>
+
+      <a class="guide-card" href="/guides/image-resolution-and-dpi-explained/">
+        <span class="tag tag--good guide-card__tag">Resolution</span>
+        <div class="guide-card__title">Image Resolution, Pixel Dimensions &amp; DPI Demystified</div>
+        <div class="guide-card__desc">Why 72 DPI vs 300 DPI doesn't alter web file sizes, how physical screen pixel densities (Retina @2x/@3x) work, and how to size images correctly.</div>
+        <div class="guide-card__meta">7 min read · Display Science</div>
+      </a>
+
+      <a class="guide-card" href="/guides/convert-images-to-pdf-guide/">
+        <span class="tag tag--good guide-card__tag">PDF Workflow</span>
+        <div class="guide-card__title">Converting Images to PDF: Page Scaling, Margins &amp; Print Setup</div>
+        <div class="guide-card__desc">How to combine multi-page image sets into standardized A4 and Letter PDFs, managing point metrics (72 points per inch) and avoiding aspect distortion.</div>
+        <div class="guide-card__meta">5 min read · Document Publishing</div>
+      </a>
+
+      <a class="guide-card" href="/guides/reduce-pdf-file-size/">
+        <span class="tag tag--good guide-card__tag">PDF Performance</span>
+        <div class="guide-card__title">Reducing PDF File Size: Embedded Streams &amp; Optimization</div>
+        <div class="guide-card__desc">Learn what causes multi-megabyte PDFs (uncompressed bitmaps, font subsets, structural bloat) and actionable techniques to reduce file size.</div>
+        <div class="guide-card__meta">6 min read · PDF Engineering</div>
+      </a>
+
+      <a class="guide-card" href="/guides/choose-website-image-formats/">
+        <span class="tag tag--good guide-card__tag">Web Performance</span>
+        <div class="guide-card__title">Choosing the Right Image Format for Websites in 2026</div>
+        <div class="guide-card__desc">Modern best practices for responsive `<picture>` tags, WebP delivery, SVG icons, and optimizing Largest Contentful Paint (LCP) scores.</div>
+        <div class="guide-card__meta">7 min read · Web Performance</div>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
+      </div>
+      <div>
+        <h4>Image Tools</h4>
+        <ul>
+          <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+          <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
+          <li><a href="/image-tools/image-cropper/">Image Cropper</a></li>
+          <li><a href="/image-tools/image-converter/">Image Converter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>PDF Tools</h4>
+        <ul>
+          <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
+          <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
+          <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides &amp; Help</h4>
+        <ul>
+          <li><a href="/guides/image-compression-without-quality-loss/">Compression Guide</a></li>
+          <li><a href="/guides/jpg-vs-png-vs-webp/">JPG vs PNG vs WebP</a></li>
+          <li><a href="/guides/reduce-pdf-file-size/">Reduce PDF Size</a></li>
+          <li><a href="/guides/">All Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Trust &amp; Legal</h4>
+        <ul>
+          <li><a href="/about/">About ImgPDF</a></li>
+          <li><a href="/contact/">Contact Us</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF — Free, Fast &amp; Private Browser-Based Tools.</span>
+      <span>Engineered with HTML5, Canvas &amp; Web Crypto APIs.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+</body>
+</html>

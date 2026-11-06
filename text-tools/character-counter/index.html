@@ -59,15 +59,28 @@
       <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
       <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
       <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/">Guides</a>
       <a href="/about/" data-nav-section="/about/">About</a>
     </nav>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
-    </button>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
   <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
-    <a href="/image-tools/">Image Tools</a><a href="/pdf-tools/">PDF Tools</a><a href="/utilities/">Utilities</a>
-    <a href="/developer-tools/">Developer Tools</a><a href="/text-tools/" class="is-active">Text Tools</a><a href="/about/">About</a>
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
   </nav>
 </header>
 
@@ -149,7 +162,8 @@
       <div><h4>Image</h4><ul><li><a href="/image-tools/image-compressor/">Image Compressor</a></li><li><a href="/image-tools/image-cropper/">Image Cropper</a></li></ul></div>
       <div><h4>PDF</h4><ul><li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li><li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li></ul></div>
       <div><h4>Text</h4><ul><li><a href="/text-tools/word-counter/">Word Counter</a></li><li><a href="/text-tools/character-counter/">Character Counter</a></li></ul></div>
-      <div><h4>Site</h4><ul><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+      <div><h4>Guides</h4><ul><li><a href="/guides/">All Guides</a></li><li><a href="/guides/choose-website-image-formats/">Web Format Guide</a></li></ul></div>
+      <div><h4>Site</h4><ul><li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 ImgPDF</span>

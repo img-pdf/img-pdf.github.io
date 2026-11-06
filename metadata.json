@@ -1,0 +1,8 @@
+{
+  "name": "ImgPDF — Free Online Image, PDF & Web Tools",
+  "description": "Compress, resize, convert and edit images and PDFs free, right in your browser. No signup, no server uploads.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -17,6 +17,7 @@
   const resultSaved = document.getElementById("result-saved");
   const resultPreviewImg = document.getElementById("result-preview-img");
   const downloadLink = document.getElementById("download-link");
+  const presetBtns = document.querySelectorAll(".preset-btn[data-w]");
 
   let currentFile = null;
   let naturalWidth = 0;
@@ -40,7 +41,7 @@
 
   function handleFile(file) {
     if (!file) return;
-    if (!/^image\/(jpeg|png|webp|gif)$/.test(file.type)) {
+    if (!/^image\/(jpeg|png|webp|gif)$/i.test(file.type)) {
       setStatus("Unsupported file type. Please choose a JPG, PNG, WebP or GIF image.", true);
       return;
     }
@@ -56,6 +57,7 @@
       aspectRatio = naturalWidth / naturalHeight;
       widthInput.value = naturalWidth;
       heightInput.value = naturalHeight;
+      setStatus("Original dimensions: " + naturalWidth + " × " + naturalHeight + " px.");
     };
     probe.src = url;
 
@@ -99,6 +101,7 @@
       if (w > 0) heightInput.value = Math.round(w / aspectRatio);
     }
   });
+
   heightInput.addEventListener("input", function () {
     if (lockRatio.checked && aspectRatio) {
       const h = parseInt(heightInput.value, 10);
@@ -106,16 +109,38 @@
     }
   });
 
+  // Preset dimension shortcuts
+  presetBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      const scale = btn.getAttribute("data-scale");
+      const targetW = btn.getAttribute("data-w");
+      const targetH = btn.getAttribute("data-h");
+
+      presetBtns.forEach(function (b) { b.classList.remove("is-active"); });
+      btn.classList.add("is-active");
+
+      if (scale && naturalWidth > 0) {
+        const factor = parseFloat(scale);
+        widthInput.value = Math.round(naturalWidth * factor);
+        heightInput.value = Math.round(naturalHeight * factor);
+      } else if (targetW && targetH) {
+        lockRatio.checked = false;
+        widthInput.value = targetW;
+        heightInput.value = targetH;
+      }
+    });
+  });
+
   resizeBtn.addEventListener("click", function () {
     if (!currentFile) return;
     const targetWidth = parseInt(widthInput.value, 10);
     const targetHeight = parseInt(heightInput.value, 10);
     if (!targetWidth || !targetHeight || targetWidth < 1 || targetHeight < 1) {
-      setStatus("Enter a valid width and height.", true);
+      setStatus("Please enter a valid width and height in pixels.", true);
       return;
     }
 
-    setStatus("Resizing…");
+    setStatus("Resizing image…");
     resizeBtn.disabled = true;
 
     const img = new Image();
@@ -132,6 +157,7 @@
         ctx.fillStyle = "#FFFFFF";
         ctx.fillRect(0, 0, targetWidth, targetHeight);
       }
+      ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
       ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
 
@@ -145,10 +171,9 @@
             return;
           }
 
-          const savedPct = Math.round((1 - blob.size / currentFile.size) * 100);
           resultOriginal.textContent = naturalWidth + " × " + naturalHeight;
           resultCompressed.textContent = targetWidth + " × " + targetHeight;
-          resultSaved.textContent = (savedPct > 0 ? savedPct + "%" : bytesToSize(blob.size));
+          resultSaved.textContent = bytesToSize(blob.size);
 
           const resultUrl = URL.createObjectURL(blob);
           resultPreviewImg.src = resultUrl;
@@ -156,10 +181,10 @@
           const ext = mimeType.split("/")[1].replace("jpeg", "jpg");
           const baseName = currentFile.name.replace(/\.[^.]+$/, "");
           downloadLink.href = resultUrl;
-          downloadLink.download = baseName + "-resized." + ext;
+          downloadLink.download = baseName + "-" + targetWidth + "x" + targetHeight + "." + ext;
 
           resultPanel.classList.add("is-visible");
-          setStatus("Done — resized to " + targetWidth + " × " + targetHeight + ".");
+          setStatus("Done — resized to " + targetWidth + " × " + targetHeight + " px.");
           resultPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
         },
         mimeType,
@@ -170,7 +195,7 @@
     img.onerror = function () {
       URL.revokeObjectURL(objectUrl);
       resizeBtn.disabled = false;
-      setStatus("Couldn't read that image. Try a different file.", true);
+      setStatus("Could not decode image.", true);
     };
 
     img.src = objectUrl;

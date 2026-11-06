@@ -3,17 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy | ImgPDF</title>
-<meta name="description" content="ImgPDF's privacy policy: which tools process files entirely in your browser, what limited analytics are collected, and how third-party libraries are used.">
+<title>Privacy Policy — Zero-Server Data Handling | ImgPDF</title>
+<meta name="description" content="ImgPDF's comprehensive privacy policy: discover how our zero-server processing architecture guarantees that your files, photos, and PDFs never leave your browser session.">
 <link rel="canonical" href="https://img-pdf.github.io/privacy/">
 <meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy Policy — Zero-Server Data Handling | ImgPDF">
+<meta property="og:description" content="Discover how ImgPDF protects user confidentiality with 100% in-browser processing.">
+<meta property="og:url" content="https://img-pdf.github.io/privacy/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "ImgPDF Privacy Policy",
+  "url": "https://img-pdf.github.io/privacy/",
+  "description": "Comprehensive privacy disclosure detailing local client-side processing, analytics, and third-party script policies."
+}
+</script>
 </head>
 <body>
+
 <header class="site-header">
   <div class="container site-header__bar">
     <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
@@ -22,58 +41,109 @@
       <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
       <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
       <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/">Guides</a>
       <a href="/about/" data-nav-section="/about/">About</a>
     </nav>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
-    </button>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
   <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
-    <a href="/image-tools/">Image Tools</a><a href="/pdf-tools/">PDF Tools</a><a href="/utilities/">Utilities</a>
-    <a href="/developer-tools/">Developer Tools</a><a href="/text-tools/">Text Tools</a><a href="/about/">About</a>
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
   </nav>
 </header>
+
 <main>
-  <div class="container prose" style="max-width:720px; padding-top:36px; padding-bottom:60px;">
+  <div class="container prose" style="max-width:740px; padding-top:36px; padding-bottom:60px;">
     <p class="breadcrumb"><a href="/">Home</a><span class="breadcrumb__sep">/</span>Privacy</p>
     <h1>Privacy Policy</h1>
-    <p>Last updated: 2026.</p>
+    <p>Last Revised: November 2026.</p>
 
-    <h2>Your files</h2>
-    <p>Tools marked "private by design" process your file entirely in your browser, using built-in APIs like Canvas, Web Crypto, and JavaScript PDF libraries loaded from a CDN. Your file is never uploaded to a server or seen by ImgPDF. This applies to every tool currently live on the site — the compressor, resizer, JPG-to-PDF converter, password generator and QR code generator all work this way.</p>
-    <p>If a future tool ever requires server-side processing, that page will say so explicitly before you use it.</p>
+    <p>At ImgPDF (accessible from <code>https://img-pdf.github.io/</code>), the privacy and confidentiality of our visitors are fundamental tenets of our engineering philosophy. This Privacy Policy details the types of information we process, how our client-side architecture safeguards your files, and how limited analytics and content distribution networks operate.</p>
 
-    <h2>Analytics</h2>
-    <p>Basic, privacy-respecting analytics may be used to see aggregate traffic (which pages get visited, roughly how many people), without tracking you individually across sites or building an ad profile.</p>
+    <h2>1. Your Files &amp; Documents: Zero-Server Processing</h2>
+    <p>Every tool marked <strong>"Private by Design"</strong> across ImgPDF executes 100% locally on your computer, tablet, or smartphone:</p>
+    <ul>
+      <li><strong>Image Compression, Resizing &amp; Cropping:</strong> Executes via the standard HTML5 Canvas 2D engine inside your browser's private memory heap.</li>
+      <li><strong>PDF Merging, Splitting &amp; Conversion:</strong> Executes via open-source JavaScript web libraries (<code>pdf-lib</code>) running locally in your browser.</li>
+      <li><strong>Password, Hash &amp; UUID Generation:</strong> Executes via the standardized W3C Web Cryptography API (<code>crypto.getRandomValues</code>, <code>crypto.subtle.digest</code>).</li>
+    </ul>
 
-    <h2>Third-party libraries</h2>
-    <p>Some tools load a small JavaScript library from a public CDN (for example, a PDF-generation library) to do the actual processing in your browser. Loading that script means your browser makes a request to the CDN, the same as loading a font or an image would — the CDN does not receive your files.</p>
+    <div class="callout callout--good">
+      <h4>Verification of Local Execution</h4>
+      <p>You can verify this yourself at any time: open your browser's Developer Tools (F12) to the Network tab, disconnect your Wi-Fi, and perform an image compression or PDF merge. The operation will execute and download normally because <strong>zero bytes are sent to any server.</strong></p>
+    </div>
 
-    <h2>Cookies</h2>
-    <p>ImgPDF does not use cookies for tracking or advertising.</p>
+    <h2>2. Log Data and Web Traffic Analytics</h2>
+    <p>Like virtually all standard static websites, our static web hosting provider (GitHub Pages) may automatically log basic HTTP technical information when your browser requests web page files (such as <code>index.html</code>, CSS stylesheets, or JavaScript bundles). This typical server log data may include your IP address, browser user-agent string, operating system, referring URL, and the timestamp of page requests.</p>
+    <p>We do not combine this server log information with personal identifiers or build cross-device tracking profiles.</p>
 
-    <h2>Changes to this policy</h2>
-    <p>If this policy changes materially, the "last updated" date above will change too.</p>
+    <h2>3. Cookies and Local Storage</h2>
+    <p>ImgPDF does not utilize tracking cookies, marketing cookies, or persistent profiling beacons.</p>
+    <p>We utilize the browser's native <strong>localStorage</strong> API solely to remember your preferred visual theme (Light Mode vs. Dark Mode). This preference stays on your personal device and is never transmitted over the internet.</p>
+
+    <h2>4. Third-Party CDNs (Content Delivery Networks)</h2>
+    <p>To ensure fast global page delivery, certain static utility scripts (such as Google Fonts or <code>pdf-lib</code> on jsDelivr) may be loaded from public content delivery networks. When your browser requests these static scripts, standard HTTP headers are transmitted to the CDN, identical to loading any standard website asset. The CDN receives only the script request and has zero access to the files or images you process within the tool.</p>
+
+    <h2>5. Advertising Policies &amp; Compliance</h2>
+    <p>In the event that contextual advertising partners (such as Google AdSense) are integrated in the future to help cover hosting and domain maintenance costs, such partners will be strictly bound by standard privacy requirements. We will never sell, lease, or distribute user-supplied file data.</p>
+
+    <h2>6. Contact Us Regarding Privacy</h2>
+    <p>If you have any questions, clarifications, or technical inquiries regarding our data handling or privacy architecture, please contact us at:</p>
+    <p>Email: <a href="mailto:poorneshadevadiga@gmail.com"><strong>poorneshadevadiga@gmail.com</strong></a><br>
+    Or via our <a href="/contact/">Online Contact Page</a>.</p>
   </div>
 </main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
-        <p>Free browser-based tools for images, PDFs and everyday files. No signup, ever.</p>
+        <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
       </div>
-      <div><h4>Image</h4><ul><li><a href="/image-tools/image-compressor/">Image Compressor</a></li><li><a href="/image-tools/image-resizer/">Image Resizer</a></li></ul></div>
-      <div><h4>PDF</h4><ul><li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li></ul></div>
-      <div><h4>Utilities</h4><ul><li><a href="/utilities/password-generator/">Password Generator</a></li><li><a href="/utilities/qr-code-generator/">QR Code Generator</a></li></ul></div>
-      <div><h4>Site</h4><ul><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+      <div><h4>Image</h4><ul>
+        <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
+        <li><a href="/image-tools/image-converter/">Image Converter</a></li>
+      </ul></div>
+      <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
+        <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
+        <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
+      </ul></div>
+      <div><h4>Guides</h4><ul>
+        <li><a href="/guides/image-compression-without-quality-loss/">Compression Guide</a></li>
+        <li><a href="/guides/jpg-vs-png-vs-webp/">JPG vs PNG vs WebP</a></li>
+        <li><a href="/guides/">All Guides</a></li>
+      </ul></div>
+      <div><h4>Site</h4><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 ImgPDF</span>
-      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking beyond basic analytics.</span>
+      <span>&copy; 2026 ImgPDF — Free, Fast &amp; Private Browser-Based Tools.</span>
+      <span>Engineered with HTML5, Canvas &amp; Web Crypto APIs.</span>
     </div>
   </div>
 </footer>
+
 <script src="/assets/js/common.js"></script>
 </body>
 </html>

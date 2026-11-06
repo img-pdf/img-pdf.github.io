@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Online PDF Tools — Merge, Split, Convert &amp; More | ImgPDF</title>
-<meta name="description" content="Free browser-based PDF tools: JPG to PDF, merge, split, rotate, watermark and more. No signup, nothing uploaded to a server.">
+<title>Free Online PDF Tools — Merge, Split, Convert &amp; Reorder | ImgPDF</title>
+<meta name="description" content="Free browser-based PDF tools: JPG to PDF, merge multiple PDFs, and split PDF pages. 100% private, runs entirely on your device with zero server uploads.">
 <link rel="canonical" href="https://img-pdf.github.io/pdf-tools/">
 <meta name="robots" content="index, follow">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Free Online PDF Tools | ImgPDF">
-<meta property="og:description" content="Convert, merge and edit PDFs free, right in your browser.">
+<meta property="og:description" content="Merge, split, and convert PDFs directly in your browser. Fast, free, and completely private.">
 <meta property="og:url" content="https://img-pdf.github.io/pdf-tools/">
 <meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,6 +21,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "ImgPDF PDF Tools",
+  "url": "https://img-pdf.github.io/pdf-tools/",
+  "description": "Suite of client-side PDF document manipulation tools including JPG to PDF conversion, PDF merging, and page splitting."
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -42,11 +51,18 @@
       <a href="/pdf-tools/" data-nav-section="/pdf-tools/" class="is-active">PDF Tools</a>
       <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
       <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/">Guides</a>
       <a href="/about/" data-nav-section="/about/">About</a>
     </nav>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
-    </button>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
   <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
     <a href="/image-tools/">Image Tools</a>
@@ -54,33 +70,51 @@
     <a href="/utilities/">Utilities</a>
     <a href="/developer-tools/">Developer Tools</a>
     <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
     <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
   </nav>
 </header>
 
 <main>
   <div class="container tool-header">
     <p class="breadcrumb"><a href="/">Home</a><span class="breadcrumb__sep">/</span>PDF Tools</p>
-    <h1>PDF Tools</h1>
-    <p>Build, rearrange and mark up PDFs — all processed in your browser, nothing uploaded to a server.</p>
+    <h1>Browser PDF Tools</h1>
+    <p>Build, merge, and split PDF documents locally inside your web browser. No software installation, no remote servers, 100% private.</p>
   </div>
 
-  <div class="container" style="margin-top:8px;">
+  <div class="container" style="margin-top:16px;">
     <div class="tool-grid">
       <a class="tool-card" href="/pdf-tools/jpg-to-pdf/">
         <div class="tool-card__icon">&#128196;</div>
-        <div><div class="tool-card__name">JPG to PDF</div><div class="tool-card__desc">Images into one PDF</div></div>
+        <div>
+          <div class="tool-card__name">JPG to PDF</div>
+          <div class="tool-card__desc">Convert multi-page JPG, PNG, and WebP images into one custom PDF</div>
+        </div>
       </a>
-      <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128196;</div><div><div class="tool-card__name">PNG to PDF</div><div class="tool-card__desc"><span class="tag">soon</span></div></div></div>
-      <a class="tool-card" href="/pdf-tools/merge-pdf/"><div class="tool-card__icon">&#128203;</div><div><div class="tool-card__name">Merge PDF</div><div class="tool-card__desc">Combine multiple files</div></div></a>
-      <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#9986;&#65039;</div><div><div class="tool-card__name">Split PDF</div><div class="tool-card__desc"><span class="tag">soon</span></div></div></div>
-      <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128209;</div><div><div class="tool-card__name">Extract PDF Pages</div><div class="tool-card__desc"><span class="tag">soon</span></div></div></div>
-      <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128260;</div><div><div class="tool-card__name">Rotate PDF</div><div class="tool-card__desc"><span class="tag">soon</span></div></div></div>
-      <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128465;&#65039;</div><div><div class="tool-card__name">Delete PDF Pages</div><div class="tool-card__desc"><span class="tag">soon</span></div></div></div>
-      <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128257;</div><div><div class="tool-card__name">Reorder PDF Pages</div><div class="tool-card__desc"><span class="tag">soon</span></div></div></div>
-      <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128204;</div><div><div class="tool-card__name">PDF Watermark</div><div class="tool-card__desc"><span class="tag">soon</span></div></div></div>
-      <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128172;</div><div><div class="tool-card__name">Add Text to PDF</div><div class="tool-card__desc"><span class="tag">soon</span></div></div></div>
-      <div class="tool-card" aria-disabled="true"><div class="tool-card__icon">&#128248;</div><div><div class="tool-card__name">PDF Page Screenshot</div><div class="tool-card__desc"><span class="tag">soon</span></div></div></div>
+      <a class="tool-card" href="/pdf-tools/merge-pdf/">
+        <div class="tool-card__icon">&#128203;</div>
+        <div>
+          <div class="tool-card__name">Merge PDF</div>
+          <div class="tool-card__desc">Combine two or more PDF files into a single unified document</div>
+        </div>
+      </a>
+      <a class="tool-card" href="/pdf-tools/split-pdf/">
+        <div class="tool-card__icon">&#9986;&#65039;</div>
+        <div>
+          <div class="tool-card__name">Split PDF</div>
+          <div class="tool-card__desc">Extract specific page ranges or split each page into standalone files</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="prose" style="max-width:760px; margin-top:48px;">
+      <h2>PDF Workflow Guides &amp; Documentation</h2>
+      <p>Discover best practices for assembling documents and optimizing PDF size:</p>
+      <ul>
+        <li><a href="/guides/convert-images-to-pdf-guide/">Converting Images to PDF: Margins, Page Scaling &amp; Print Setup</a> — PostScript points, A4 vs Letter geometry, and avoiding distortion.</li>
+        <li><a href="/guides/reduce-pdf-file-size/">How to Reduce PDF File Size</a> — Deconstruct embedded image streams and avoid scanner DPI bloat.</li>
+      </ul>
     </div>
   </div>
 </main>
@@ -90,32 +124,33 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
-        <p>Free browser-based tools for images, PDFs and everyday files. No signup, ever.</p>
+        <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
       </div>
       <div><h4>Image</h4><ul>
         <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
         <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
+        <li><a href="/image-tools/image-converter/">Image Converter</a></li>
       </ul></div>
       <div><h4>PDF</h4><ul>
         <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
+        <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
+        <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
       </ul></div>
-      <div><h4>Utilities</h4><ul>
-        <li><a href="/utilities/">All utilities</a></li>
-        <li><a href="/developer-tools/">Developer tools</a></li>
-      </ul></div>
-      <div><h4>Text</h4><ul>
-        <li><a href="/text-tools/word-counter/">Word Counter</a></li>
-        <li><a href="/text-tools/character-counter/">Character Counter</a></li>
+      <div><h4>Guides</h4><ul>
+        <li><a href="/guides/convert-images-to-pdf-guide/">Images to PDF Guide</a></li>
+        <li><a href="/guides/reduce-pdf-file-size/">Reduce PDF Size</a></li>
+        <li><a href="/guides/">All Guides</a></li>
       </ul></div>
       <div><h4>Site</h4><ul>
         <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
         <li><a href="/privacy/">Privacy</a></li>
         <li><a href="/terms/">Terms</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 ImgPDF</span>
-      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking beyond basic analytics.</span>
+      <span>&copy; 2026 ImgPDF — Free, Fast &amp; Private Browser-Based Tools.</span>
+      <span>Engineered with HTML5, Canvas &amp; Web Crypto APIs.</span>
     </div>
   </div>
 </footer>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choosing the Right Image Format for Websites in 2026 | ImgPDF</title>
+<meta name="description" content="A modern web performance guide to selecting raster and vector formats. Optimize Google Core Web Vitals, Largest Contentful Paint (LCP), and responsive picture elements.">
+<link rel="canonical" href="https://img-pdf.github.io/guides/choose-website-image-formats/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Choosing the Right Image Format for Websites in 2026">
+<meta property="og:description" content="Master modern web asset delivery: WebP, SVG, AVIF, responsive picture syntax, and LCP optimization for Google Core Web Vitals.">
+<meta property="og:url" content="https://img-pdf.github.io/guides/choose-website-image-formats/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Choosing the Right Image Format for Websites in 2026",
+  "description": "Comprehensive engineering guide on optimizing website image delivery, responsive syntax, and Core Web Vitals.",
+  "author": {
+    "@type": "Organization",
+    "name": "ImgPDF Engineering Team",
+    "url": "https://img-pdf.github.io/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ImgPDF",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://img-pdf.github.io/favicon.svg"
+    }
+  },
+  "datePublished": "2026-09-02",
+  "dateModified": "2026-11-06"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://img-pdf.github.io/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://img-pdf.github.io/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Website Image Formats", "item": "https://img-pdf.github.io/guides/choose-website-image-formats/" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/" class="is-active">Guides</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container prose" style="max-width:760px; padding-top:36px; padding-bottom:60px;">
+    <p class="breadcrumb">
+      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+      <a href="/guides/">Guides</a><span class="breadcrumb__sep">/</span>
+      Website Image Formats
+    </p>
+
+    <h1>Choosing the Right Image Format for Websites in 2026</h1>
+
+    <div class="author-badge">
+      <div class="author-badge__avatar">IP</div>
+      <div class="author-badge__info">
+        <div class="author-badge__name">ImgPDF Technical Team</div>
+        <div class="author-badge__meta">Published: 2026 · 7 min read · Web Performance</div>
+      </div>
+    </div>
+
+    <p>Google's search ranking algorithms heavily prioritize <strong>Core Web Vitals</strong>, with <strong>Largest Contentful Paint (LCP)</strong> serving as the primary metric for perceived loading speed. For over 70% of websites, the LCP element is a hero photograph or banner graphic. Serving an oversized or obsolete image format directly degrades user bounce rates and search visibility.</p>
+
+    <h2>1. The Modern Hierarchy of Web Formats</h2>
+    <p>In 2026, web asset architecture should follow a clear rule of thumb:</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Asset Type</th>
+            <th>Recommended Format</th>
+            <th>Why</th>
+            <th>Fallback</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Vector Icons &amp; Logos</strong></td>
+            <td><strong>SVG</strong> (Scalable Vector Graphics)</td>
+            <td>Infinite resolution at any display density, microscopic kilobyte size, CSS colorable</td>
+            <td>PNG (high-res)</td>
+          </tr>
+          <tr>
+            <td><strong>Photographs &amp; Banners</strong></td>
+            <td><strong>WebP</strong> (or AVIF)</td>
+            <td>30% smaller than JPG with full alpha transparency support</td>
+            <td>JPG (Quality 80)</td>
+          </tr>
+          <tr>
+            <td><strong>App Screenshots &amp; UI Mockups</strong></td>
+            <td><strong>PNG</strong> or Lossless WebP</td>
+            <td>Zero compression artifacts around text, buttons, and high-contrast lines</td>
+            <td>PNG-8 (Indexed)</td>
+          </tr>
+          <tr>
+            <td><strong>Short Looping Clips</strong></td>
+            <td><strong>MP4 / WebM</strong> (Muted Video)</td>
+            <td>Up to <strong>90% smaller</strong> than animated GIF files</td>
+            <td>Animated WebP</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. Why GIF is Obsolete for Web Animation</h2>
+    <p>The Graphics Interchange Format (GIF) was released in 1987. It is restricted to a 256-color palette and utilizes rudimentary LZW compression. A 5-second animated GIF frequently weighs <strong>12 to 25 Megabytes</strong>. Converting that identical animation to an HTML5 video loop or animated WebP drops the weight to under 1.5 Megabytes—a massive 90%+ bandwidth savings.</p>
+
+    <h2>3. Implementing the Responsive `<picture>` Syntax</h2>
+    <p>To serve modern next-gen formats while maintaining 100% backward compatibility for legacy crawlers and clients, leverage HTML's `<picture>` element:</p>
+
+    <div class="callout">
+      <pre style="font-family:var(--font-mono); font-size:0.85rem; margin:0; overflow-x:auto;">&lt;picture&gt;
+  &lt;source srcset="hero.webp" type="image/webp"&gt;
+  &lt;img src="hero.jpg" alt="Optimized Website Hero" width="1200" height="600" loading="eager" decoding="async"&gt;
+&lt;/picture&gt;</pre>
+    </div>
+
+    <h2>4. Always Specify Width and Height Attributes</h2>
+    <p>Another critical Core Web Vital is <strong>Cumulative Layout Shift (CLS)</strong>. If an `<img>` tag lacks explicit width and height dimensions, the browser cannot calculate the aspect ratio before downloading the file, causing the surrounding text and layout to jump when the image suddenly renders. Always declare natural width and height attributes in your HTML markup, and use CSS <code>height: auto; max-width: 100%;</code> for responsive scaling.</p>
+
+    <h2>Prepare Your Assets with ImgPDF</h2>
+    <ul>
+      <li>Convert images to modern formats with our <a href="/image-tools/image-converter/">Batch Image Converter</a>.</li>
+      <li>Compress file sizes by 75%+ with our <a href="/image-tools/image-compressor/">Batch Image Compressor</a>.</li>
+      <li>Resize pixel dimensions to exact container sizes with our <a href="/image-tools/image-resizer/">Image Resizer</a>.</li>
+    </ul>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. No signup, ever.</p>
+      </div>
+      <div><h4>Image</h4><ul>
+        <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
+        <li><a href="/image-tools/image-converter/">Image Converter</a></li>
+      </ul></div>
+      <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
+        <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
+        <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
+      </ul></div>
+      <div><h4>Guides</h4><ul>
+        <li><a href="/guides/choose-website-image-formats/">Website Formats</a></li>
+        <li><a href="/guides/jpg-vs-png-vs-webp/">JPG vs PNG vs WebP</a></li>
+        <li><a href="/guides/">All Guides</a></li>
+      </ul></div>
+      <div><h4>Site</h4><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF — Free, Fast &amp; Private Browser-Based Tools.</span>
+      <span>Engineered with HTML5, Canvas &amp; Web Crypto APIs.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+</body>
+</html>

@@ -3,23 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About ImgPDF — Free Browser-Based Tools</title>
-<meta name="description" content="ImgPDF is a free collection of browser-based tools for images, PDFs and everyday utilities. No signup, no server uploads for supported tools, built to be fast on any device.">
+<title>About ImgPDF — Free, Fast &amp; Private Browser-Based Tools</title>
+<meta name="description" content="ImgPDF is an independent suite of browser-based tools for images, PDFs, and developer utilities. Private by design with 100% local processing and zero server uploads.">
 <link rel="canonical" href="https://img-pdf.github.io/about/">
 <meta name="robots" content="index, follow">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="About ImgPDF">
-<meta property="og:description" content="A free collection of browser-based tools for images, PDFs and everyday utilities.">
+<meta property="og:title" content="About ImgPDF — Free, Fast &amp; Private Browser Tools">
+<meta property="og:description" content="Discover how ImgPDF processes images and documents entirely inside your browser without server uploads.">
 <meta property="og:url" content="https://img-pdf.github.io/about/">
 <meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
+
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About ImgPDF",
+  "url": "https://img-pdf.github.io/about/",
+  "description": "Background, technical architecture, and privacy philosophy of the ImgPDF browser-based productivity platform."
+}
+</script>
 </head>
 <body>
+
 <header class="site-header">
   <div class="container site-header__bar">
     <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
@@ -28,54 +41,103 @@
       <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
       <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
       <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/">Guides</a>
       <a href="/about/" data-nav-section="/about/" class="is-active">About</a>
     </nav>
-    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
-    </button>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
   <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
-    <a href="/image-tools/">Image Tools</a><a href="/pdf-tools/">PDF Tools</a><a href="/utilities/">Utilities</a>
-    <a href="/developer-tools/">Developer Tools</a><a href="/text-tools/">Text Tools</a><a href="/about/">About</a>
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
   </nav>
 </header>
+
 <main>
-  <div class="container prose" style="max-width:720px; padding-top:36px; padding-bottom:60px;">
+  <div class="container prose" style="max-width:740px; padding-top:36px; padding-bottom:60px;">
     <p class="breadcrumb"><a href="/">Home</a><span class="breadcrumb__sep">/</span>About</p>
     <h1>About ImgPDF</h1>
-    <p>ImgPDF is a free collection of tools for images, PDFs and everyday utilities that run directly in your browser. There's no account to create and, for tools marked private-by-design, nothing gets uploaded to a server — the processing happens on your own device using standard browser APIs like Canvas and Web Crypto.</p>
+    <p>ImgPDF is a free, privacy-first suite of digital tools for images, PDF documents, developer utilities, and everyday text operations. Built with modern web standards, every tool on ImgPDF executes directly inside your browser tab without requiring account registration, credit cards, or server uploads.</p>
 
-    <h2>Why it's free</h2>
-    <p>The tools use client-side JavaScript rather than a backend, so there's no server cost per file processed. That keeps the site free to run and free to use, with no per-use limits.</p>
+    <h2>The Problem with Traditional File Converters</h2>
+    <p>Most commercial file-conversion and compression websites operate on a centralized client-server model: when you compress a photo or merge two PDF contracts, your files are transmitted across the public internet to a remote server farm, processed in a remote queue, and returned via a download link.</p>
+    <p>This traditional model presents three fundamental problems:</p>
+    <ol>
+      <li><strong>Privacy Risk:</strong> Confidential tax returns, bank statements, medical records, and family photos leave your device and sit on third-party servers.</li>
+      <li><strong>Slow Latency:</strong> Uploading and downloading multi-megabyte files across cellular or home networks wastes bandwidth and introduces artificial queue delays.</li>
+      <li><strong>Paywalls &amp; Artificial Limits:</strong> Centralized servers consume expensive compute and storage resources, forcing websites to impose daily usage caps, file-size paywalls, and aggressive subscription traps.</li>
+    </ol>
 
-    <h2>What's built so far</h2>
-    <p>ImgPDF is being built out one tool at a time rather than launched all at once. Anything linked from the navigation and homepage is live and working; anything marked "soon" is planned but not built yet.</p>
+    <h2>The ImgPDF Architecture: Zero-Server Processing</h2>
+    <p>Modern web browsers—including Chrome, Safari, Firefox, and Edge—now feature high-performance graphics pipelines, WebAssembly execution, and native cryptography engines that rival native desktop utilities. ImgPDF harnesses these standard browser capabilities:</p>
+    <ul>
+      <li><strong>HTML5 Canvas 2D Engine:</strong> Performs GPU-accelerated bicubic resampling, cropping, and format encoding for JPEG, PNG, and WebP assets directly in memory.</li>
+      <li><strong>Web Crypto API:</strong> Generates cryptographically secure entropy for randomized password creation and calculates SHA-1, SHA-256, and SHA-512 cryptographic digests at hardware speeds.</li>
+      <li><strong>Client-Side PDF Assembly (pdf-lib):</strong> Parses, merges, scales, and splits PDF document object streams entirely in local RAM.</li>
+    </ul>
 
-    <h2>Who's behind it</h2>
-    <p>ImgPDF is an independent, hobby-built project. It isn't affiliated with iLovePDF, iLoveIMG, or any other file-tool company.</p>
+    <div class="callout callout--good">
+      <h4>Our Privacy Commitment</h4>
+      <p>Because computation occurs on your local device CPU, ImgPDF does not incur per-file compute costs. This allows us to keep the platform free, fast, and unbounded—without ever logging, storing, or inspecting your personal documents.</p>
+    </div>
 
-    <h2>Questions or feedback</h2>
-    <p>This is a young project, so if something's broken or a tool you need isn't listed yet, that's expected — more are on the way.</p>
+    <h2>Who Operates ImgPDF?</h2>
+    <p>ImgPDF is an independent productivity project engineered and maintained by software craftsmen who believe essential everyday file utilities should be accessible to everyone worldwide, regardless of device or budget. ImgPDF is not affiliated with, sponsored by, or linked to Adobe Acrobat, iLovePDF, iLoveIMG, or any corporate software entity.</p>
+
+    <h2>Get in Touch</h2>
+    <p>Have a question, feedback, or a feature suggestion? Visit our <a href="/contact/">Contact Page</a> or review our <a href="/privacy/">Privacy Policy</a>.</p>
   </div>
 </main>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
-        <p>Free browser-based tools for images, PDFs and everyday files. No signup, ever.</p>
+        <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
       </div>
-      <div><h4>Image</h4><ul><li><a href="/image-tools/image-compressor/">Image Compressor</a></li><li><a href="/image-tools/image-resizer/">Image Resizer</a></li></ul></div>
-      <div><h4>PDF</h4><ul><li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li></ul></div>
-      <div><h4>Utilities</h4><ul><li><a href="/utilities/password-generator/">Password Generator</a></li><li><a href="/utilities/qr-code-generator/">QR Code Generator</a></li></ul></div>
-      <div><h4>Site</h4><ul><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+      <div><h4>Image</h4><ul>
+        <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
+        <li><a href="/image-tools/image-converter/">Image Converter</a></li>
+      </ul></div>
+      <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
+        <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
+        <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
+      </ul></div>
+      <div><h4>Guides</h4><ul>
+        <li><a href="/guides/image-compression-without-quality-loss/">Compression Guide</a></li>
+        <li><a href="/guides/jpg-vs-png-vs-webp/">JPG vs PNG vs WebP</a></li>
+        <li><a href="/guides/">All Guides</a></li>
+      </ul></div>
+      <div><h4>Site</h4><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 ImgPDF</span>
-      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking beyond basic analytics.</span>
+      <span>&copy; 2026 ImgPDF — Free, Fast &amp; Private Browser-Based Tools.</span>
+      <span>Engineered with HTML5, Canvas &amp; Web Crypto APIs.</span>
     </div>
   </div>
 </footer>
+
 <script src="/assets/js/common.js"></script>
 </body>
 </html>

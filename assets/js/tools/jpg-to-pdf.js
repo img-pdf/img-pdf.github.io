@@ -3,7 +3,10 @@
   const fileInput = document.getElementById("file-input");
   const fileList = document.getElementById("file-list");
   const pageSizeChips = document.querySelectorAll(".chip-option[data-pagesize]");
+  const orientationChips = document.querySelectorAll(".chip-option[data-orientation]");
+  const marginChips = document.querySelectorAll(".chip-option[data-margin]");
   const createBtn = document.getElementById("create-btn");
+  const clearBtn = document.getElementById("clear-btn");
   const statusLine = document.getElementById("status-line");
   const resultPanel = document.getElementById("result-panel");
   const resultOriginal = document.getElementById("result-original");
@@ -13,6 +16,8 @@
 
   let items = []; // { id, file, url }
   let pageSize = "fit";
+  let pageOrientation = "auto";
+  let pageMargin = 0; // points
   let idCounter = 0;
 
   function bytesToSize(bytes) {
@@ -26,41 +31,49 @@
     statusLine.classList.toggle("is-error", !!isError);
   }
 
-  function renderList() {
-    fileList.innerHTML = "";
-    items.forEach(function (item, index) {
-      const row = document.createElement("div");
-      row.className = "file-chip";
-      row.style.marginTop = "8px";
-      row.innerHTML =
-        '<img class="file-chip__thumb" src="' + item.url + '" alt="">' +
-        '<div><div class="file-chip__name">' + (index + 1) + ". " + escapeHtml(item.file.name) + '</div>' +
-        '<div class="file-chip__meta">' + bytesToSize(item.file.size) + '</div></div>' +
-        '<div style="margin-left:auto; display:flex; gap:4px;">' +
-        '<button type="button" class="file-chip__remove" data-move="up" data-id="' + item.id + '" aria-label="Move up">&uarr;</button>' +
-        '<button type="button" class="file-chip__remove" data-move="down" data-id="' + item.id + '" aria-label="Move down">&darr;</button>' +
-        '<button type="button" class="file-chip__remove" data-remove="' + item.id + '" aria-label="Remove">&times;</button>' +
-        "</div>";
-      fileList.appendChild(row);
-    });
-    createBtn.disabled = items.length === 0;
-    resultPanel.classList.remove("is-visible");
-  }
-
   function escapeHtml(str) {
     return str.replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
 
+  function renderList() {
+    fileList.innerHTML = "";
+    if (items.length === 0) {
+      createBtn.disabled = true;
+      if (clearBtn) clearBtn.style.display = "none";
+      resultPanel.classList.remove("is-visible");
+      return;
+    }
+
+    if (clearBtn) clearBtn.style.display = "inline-flex";
+    createBtn.disabled = false;
+
+    items.forEach(function (item, index) {
+      const row = document.createElement("div");
+      row.className = "file-chip";
+      row.style.marginTop = "8px";
+      row.innerHTML =
+        '<img class="file-chip__thumb" src="' + item.url + '" alt="">' +
+        '<div><div class="file-chip__name">Page ' + (index + 1) + ": " + escapeHtml(item.file.name) + '</div>' +
+        '<div class="file-chip__meta">' + bytesToSize(item.file.size) + '</div></div>' +
+        '<div style="margin-left:auto; display:flex; gap:4px;">' +
+        '<button type="button" class="file-chip__remove" data-move="up" data-id="' + item.id + '" aria-label="Move page up" ' + (index === 0 ? 'disabled style="opacity:0.3;"' : '') + '>&uarr;</button>' +
+        '<button type="button" class="file-chip__remove" data-move="down" data-id="' + item.id + '" aria-label="Move page down" ' + (index === items.length - 1 ? 'disabled style="opacity:0.3;"' : '') + '>&darr;</button>' +
+        '<button type="button" class="file-chip__remove" data-remove="' + item.id + '" aria-label="Remove page">&times;</button>' +
+        "</div>";
+      fileList.appendChild(row);
+    });
+  }
+
   function addFiles(fileArr) {
     let rejected = 0;
     Array.from(fileArr).forEach(function (file) {
-      if (!/^image\/(jpeg|png)$/.test(file.type)) { rejected++; return; }
+      if (!/^image\/(jpeg|png|webp|gif)$/i.test(file.type)) { rejected++; return; }
       items.push({ id: ++idCounter, file: file, url: URL.createObjectURL(file) });
     });
-    if (rejected > 0) setStatus(rejected + " file(s) skipped — only JPG and PNG are supported.", true);
-    else setStatus("");
+    if (rejected > 0) setStatus(rejected + " file(s) skipped — supports JPG, PNG, and WebP.", true);
+    else setStatus(items.length + " image" + (items.length > 1 ? "s" : "") + " loaded. Ready to build PDF.");
     renderList();
   }
 
@@ -79,17 +92,19 @@
   dropzone.addEventListener("drop", function (e) { addFiles(e.dataTransfer.files); });
 
   fileList.addEventListener("click", function (e) {
-    const removeId = e.target.getAttribute("data-remove");
-    const moveId = e.target.getAttribute("data-move");
-    if (removeId) {
-      items = items.filter(function (it) { return String(it.id) !== removeId; });
+    const removeBtn = e.target.closest("[data-remove]");
+    const moveBtn = e.target.closest("[data-move]");
+    if (removeBtn) {
+      const id = removeBtn.getAttribute("data-remove");
+      items = items.filter(function (it) { return String(it.id) !== id; });
       renderList();
       return;
     }
-    if (moveId) {
-      const id = parseInt(e.target.getAttribute("data-id"), 10);
+    if (moveBtn) {
+      const move = moveBtn.getAttribute("data-move");
+      const id = parseInt(moveBtn.getAttribute("data-id"), 10);
       const idx = items.findIndex(function (it) { return it.id === id; });
-      const swapWith = moveId === "up" ? idx - 1 : idx + 1;
+      const swapWith = move === "up" ? idx - 1 : idx + 1;
       if (swapWith >= 0 && swapWith < items.length) {
         const tmp = items[idx];
         items[idx] = items[swapWith];
@@ -98,6 +113,15 @@
       }
     }
   });
+
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function () {
+      items.forEach(function (it) { if (it.url) URL.revokeObjectURL(it.url); });
+      items = [];
+      renderList();
+      setStatus("Queue cleared.");
+    });
+  }
 
   pageSizeChips.forEach(function (chip) {
     chip.addEventListener("click", function () {
@@ -108,31 +132,73 @@
     });
   });
 
-  function fileToArrayBuffer(file) {
-    return new Promise(function (resolve, reject) {
-      const reader = new FileReader();
-      reader.onload = function () { resolve(reader.result); };
-      reader.onerror = reject;
-      reader.readAsArrayBuffer(file);
+  orientationChips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      orientationChips.forEach(function (c) { c.classList.remove("is-selected"); c.setAttribute("aria-pressed", "false"); });
+      chip.classList.add("is-selected");
+      chip.setAttribute("aria-pressed", "true");
+      pageOrientation = chip.getAttribute("data-orientation");
     });
-  }
+  });
 
-  function getImageDims(url) {
+  marginChips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      marginChips.forEach(function (c) { c.classList.remove("is-selected"); c.setAttribute("aria-pressed", "false"); });
+      chip.classList.add("is-selected");
+      chip.setAttribute("aria-pressed", "true");
+      pageMargin = parseInt(chip.getAttribute("data-margin"), 10);
+    });
+  });
+
+  function fileToUint8Array(file) {
     return new Promise(function (resolve, reject) {
-      const img = new Image();
-      img.onload = function () { resolve({ w: img.naturalWidth, h: img.naturalHeight }); };
-      img.onerror = reject;
-      img.src = url;
+      // If image is webp or gif, convert to png/jpg via canvas first for pdf-lib compatibility
+      if (file.type === "image/webp" || file.type === "image/gif") {
+        const img = new Image();
+        const objUrl = URL.createObjectURL(file);
+        img.onload = function () {
+          const canvas = document.createElement("canvas");
+          canvas.width = img.naturalWidth;
+          canvas.height = img.naturalHeight;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
+          canvas.toBlob(function (blob) {
+            URL.revokeObjectURL(objUrl);
+            const reader = new FileReader();
+            reader.onload = function () { resolve({ bytes: new Uint8Array(reader.result), type: "image/png", w: img.naturalWidth, h: img.naturalHeight }); };
+            reader.onerror = reject;
+            reader.readAsArrayBuffer(blob);
+          }, "image/png");
+        };
+        img.onerror = reject;
+        img.src = objUrl;
+      } else {
+        const img = new Image();
+        const objUrl = URL.createObjectURL(file);
+        img.onload = function () {
+          const w = img.naturalWidth;
+          const h = img.naturalHeight;
+          URL.revokeObjectURL(objUrl);
+          const reader = new FileReader();
+          reader.onload = function () {
+            resolve({ bytes: new Uint8Array(reader.result), type: file.type, w: w, h: h });
+          };
+          reader.onerror = reject;
+          reader.readAsArrayBuffer(file);
+        };
+        img.onerror = reject;
+        img.src = objUrl;
+      }
     });
   }
 
   createBtn.addEventListener("click", async function () {
     if (items.length === 0 || !window.PDFLib) {
-      setStatus(!window.PDFLib ? "PDF engine failed to load — check your connection and retry." : "", true);
+      setStatus(!window.PDFLib ? "PDF generation engine failed to load. Please check network connection." : "", true);
       return;
     }
     createBtn.disabled = true;
-    setStatus("Building PDF…");
+    setStatus("Assembling PDF document…");
 
     try {
       const { PDFDocument } = window.PDFLib;
@@ -141,35 +207,48 @@
       const LETTER = [612, 792];
       let totalOriginal = 0;
 
-      for (const item of items) {
+      for (let i = 0; i < items.length; i++) {
+        const item = items[i];
         totalOriginal += item.file.size;
-        const bytes = await fileToArrayBuffer(item.file);
-        const dims = await getImageDims(item.url);
-        const embedded = item.file.type === "image/png"
-          ? await pdfDoc.embedPng(bytes)
-          : await pdfDoc.embedJpg(bytes);
+        setStatus("Processing image " + (i + 1) + " of " + items.length + "…");
+
+        const converted = await fileToUint8Array(item.file);
+        const embedded = converted.type === "image/png"
+          ? await pdfDoc.embedPng(converted.bytes)
+          : await pdfDoc.embedJpg(converted.bytes);
+
+        const dims = { w: converted.w, h: converted.h };
 
         if (pageSize === "fit") {
           const page = pdfDoc.addPage([dims.w, dims.h]);
           page.drawImage(embedded, { x: 0, y: 0, width: dims.w, height: dims.h });
         } else {
-          const target = pageSize === "a4" ? A4 : LETTER;
-          const page = pdfDoc.addPage(target);
-          const margin = 24;
-          const maxW = target[0] - margin * 2;
-          const maxH = target[1] - margin * 2;
+          let baseSize = pageSize === "a4" ? [...A4] : [...LETTER];
+          const isLandscape = pageOrientation === "landscape" || (pageOrientation === "auto" && dims.w > dims.h);
+          if (isLandscape && baseSize[0] < baseSize[1]) {
+            baseSize = [baseSize[1], baseSize[0]];
+          } else if (!isLandscape && baseSize[0] > baseSize[1]) {
+            baseSize = [baseSize[1], baseSize[0]];
+          }
+
+          const page = pdfDoc.addPage(baseSize);
+          const margin = pageMargin;
+          const maxW = baseSize[0] - margin * 2;
+          const maxH = baseSize[1] - margin * 2;
           const ratio = Math.min(maxW / dims.w, maxH / dims.h);
           const drawW = dims.w * ratio;
           const drawH = dims.h * ratio;
+
           page.drawImage(embedded, {
-            x: (target[0] - drawW) / 2,
-            y: (target[1] - drawH) / 2,
+            x: (baseSize[0] - drawW) / 2,
+            y: (baseSize[1] - drawH) / 2,
             width: drawW,
             height: drawH,
           });
         }
       }
 
+      setStatus("Finalizing PDF compression…");
       const pdfBytes = await pdfDoc.save();
       const blob = new Blob([pdfBytes], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
@@ -179,12 +258,13 @@
       resultSaved.textContent = items.length + (items.length === 1 ? " page" : " pages");
 
       downloadLink.href = url;
-      downloadLink.download = "images.pdf";
+      downloadLink.download = "imgpdf-document.pdf";
       resultPanel.classList.add("is-visible");
-      setStatus("Done — PDF ready.");
+      setStatus("Success! Your PDF is ready for download.");
       resultPanel.scrollIntoView({ behavior: "smooth", block: "nearest" });
     } catch (err) {
-      setStatus("Couldn't build the PDF: " + err.message, true);
+      console.error(err);
+      setStatus("Error compiling PDF: " + err.message, true);
     } finally {
       createBtn.disabled = false;
     }

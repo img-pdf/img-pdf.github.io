@@ -18,13 +18,31 @@
 <header class="site-header">
   <div class="container site-header__bar">
     <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/">Utilities</a>
+      <a href="/developer-tools/">Developer</a>
+      <a href="/guides/">Guides</a>
+      <a href="/about/">About</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+    </div>
   </div>
 </header>
 <main class="notfound">
   <div class="notfound__code">error(404)</div>
   <h1>This page doesn't exist</h1>
-  <p>The tool or page you're looking for isn't here — it may still be on the way, or the link was mistyped.</p>
-  <a class="btn btn--primary" href="/">Back to all tools</a>
+  <p style="max-width:480px; margin: 12px auto 24px; color: var(--text-muted);">The tool or guide you are looking for may have moved, or the address was mistyped. All processing happens right here in your browser.</p>
+  <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+    <a class="btn btn--primary" href="/">Back to all tools</a>
+    <a class="btn btn--secondary" href="/guides/">Browse guides</a>
+  </div>
 </main>
+<script src="/assets/js/common.js"></script>
 </body>
 </html>

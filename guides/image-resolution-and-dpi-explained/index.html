@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Resolution, Pixel Dimensions &amp; DPI Demystified | ImgPDF</title>
+<meta name="description" content="Why 72 DPI vs 300 DPI doesn't change web file size or monitor sharpness. Learn how pixel dimensions, screen PPI, device pixel ratios (Retina @2x), and print calculations actually work.">
+<link rel="canonical" href="https://img-pdf.github.io/guides/image-resolution-and-dpi-explained/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Image Resolution, Pixel Dimensions &amp; DPI Demystified">
+<meta property="og:description" content="Discover the mathematical reality behind DPI, PPI, pixel dimensions, and display densities for web and print.">
+<meta property="og:url" content="https://img-pdf.github.io/guides/image-resolution-and-dpi-explained/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Image Resolution, Pixel Dimensions & DPI Demystified",
+  "description": "Technical clarification on DPI, PPI, device pixel ratios, and print resolution calculations.",
+  "author": {
+    "@type": "Organization",
+    "name": "ImgPDF Engineering Team",
+    "url": "https://img-pdf.github.io/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "ImgPDF",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://img-pdf.github.io/favicon.svg"
+    }
+  },
+  "datePublished": "2026-08-25",
+  "dateModified": "2026-11-06"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://img-pdf.github.io/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://img-pdf.github.io/guides/" },
+    { "@type": "ListItem", "position": 3, "name": "Resolution & DPI Guide", "item": "https://img-pdf.github.io/guides/image-resolution-and-dpi-explained/" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/" class="is-active">Guides</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container prose" style="max-width:760px; padding-top:36px; padding-bottom:60px;">
+    <p class="breadcrumb">
+      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+      <a href="/guides/">Guides</a><span class="breadcrumb__sep">/</span>
+      Resolution &amp; DPI
+    </p>
+
+    <h1>Image Resolution, Pixel Dimensions &amp; DPI Demystified</h1>
+
+    <div class="author-badge">
+      <div class="author-badge__avatar">IP</div>
+      <div class="author-badge__info">
+        <div class="author-badge__name">ImgPDF Technical Team</div>
+        <div class="author-badge__meta">Published: 2026 · 7 min read · Display Science</div>
+      </div>
+    </div>
+
+    <p>One of the most persistent misunderstandings in digital imaging is the belief that setting an image's DPI to "72" makes it smaller or faster for the web, or that changing DPI from 72 to 300 magically enhances its clarity on a computer monitor. In reality, on a digital screen, <strong>DPI has zero effect on file size, download time, or display quality.</strong></p>
+
+    <div class="callout callout--good">
+      <h4>The Golden Rule of Digital Screens</h4>
+      <p>On screens, images exist strictly as a grid of pixels: <code>Width × Height</code>. DPI (Dots Per Inch) is merely a tiny metadata tag that instructions a physical printing press how densely to deposit ink dots onto paper.</p>
+    </div>
+
+    <h2>1. The Myth of "72 DPI for the Web"</h2>
+    <p>In 1984, the original Apple Macintosh computer featured a built-in 9-inch monitor with a resolution of 512×342 pixels. At that physical size, the screen displayed exactly 72 physical pixels per linear inch (matching the typographic standard of 72 points per inch in printing). Graphic design software codified this historical quirk as a default setting.</p>
+    <p>Today, your smartphone display packs between 350 and 460 physical pixels per inch. A 4K desktop monitor packs over 160 PPI. When a web browser renders an image specified as <code>width="800"</code>, it allocates 800 pixel units—completely ignoring any internal DPI metadata tag inside the JPEG or PNG file header.</p>
+
+    <h2>2. Pixels vs. Inches: The Exact Print Formula</h2>
+    <p>DPI only matters when bridging the gap between digital data and physical objects (paper, canvas, vinyl banners). The relationship is governed by simple arithmetic:</p>
+
+    <div class="callout">
+      <p style="font-family:var(--font-mono); font-size:1.05rem; font-weight:700;">
+        Physical Print Inches = Digital Pixel Dimension &divide; Target Print DPI<br>
+        Required Pixels = Physical Print Inches &times; Target Print DPI
+      </p>
+    </div>
+
+    <p>For high-quality offset print publications, magazines, and photo books, <strong>300 DPI</strong> is standard because individual dots become imperceptible to human eyes at a 12-inch reading distance. Therefore:</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Desired Physical Print Size</th>
+            <th>Target Print DPI</th>
+            <th>Required Pixel Dimensions</th>
+            <th>Megapixels</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>4 × 6 inch (Standard Photo)</td>
+            <td>300 DPI</td>
+            <td>1200 × 1800 px</td>
+            <td>2.16 MP</td>
+          </tr>
+          <tr>
+            <td>8.5 × 11 inch (US Letter Document)</td>
+            <td>300 DPI</td>
+            <td>2550 × 3300 px</td>
+            <td>8.41 MP</td>
+          </tr>
+          <tr>
+            <td>A4 (210 × 297 mm)</td>
+            <td>300 DPI</td>
+            <td>2480 × 3508 px</td>
+            <td>8.70 MP</td>
+          </tr>
+          <tr>
+            <td>24 × 36 inch (Large Wall Poster)</td>
+            <td>150 DPI*</td>
+            <td>3600 × 5400 px</td>
+            <td>19.4 MP</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.82rem; color:var(--muted); font-family:var(--font-mono);">*Note: Posters viewed from 4+ feet away require only 150 DPI because optical angular resolution decreases with viewing distance.</p>
+
+    <h2>3. Retina Displays &amp; Device Pixel Ratio (DPR)</h2>
+    <p>If DPI is irrelevant for screens, why do images on modern phones sometimes look fuzzy? This is caused by <strong>Device Pixel Ratio (DPR)</strong>.</p>
+    <p>To keep web layouts readable on ultra-dense screens, browsers distinguish between <em>CSS logical pixels</em> and <em>Hardware physical pixels</em>. On a 2x Retina screen, a 400px wide CSS container actually contains 800 physical hardware sub-pixels.</p>
+    <ul>
+      <li>If you serve a 400×300 image to that 400px container, the browser must stretch 1 image pixel across 4 hardware pixels, causing blur.</li>
+      <li>To look tack-sharp on Retina screens, you must supply an image whose native dimensions are double (800×600) and display it in a 400×300 CSS container using <code>srcset</code> or responsive dimensions.</li>
+    </ul>
+
+    <h2>Summary Checklist</h2>
+    <ol>
+      <li><strong>For Web Publishing:</strong> Disregard DPI entirely. Focus exclusively on pixel dimensions (e.g. 1920px wide for banners, 600px for blog thumbnails) and optimize the file byte size using our <a href="/image-tools/image-compressor/">Image Compressor</a>.</li>
+      <li><strong>For Printing:</strong> Multiply desired physical inches by 300 to find your required pixel dimensions, and use our <a href="/image-tools/image-resizer/">Image Resizer</a> to size the file precisely.</li>
+      <li><strong>For Multi-Page PDFs:</strong> If converting scanned receipts or photos for print, convert them via our <a href="/pdf-tools/jpg-to-pdf/">JPG to PDF tool</a> which automatically computes standardized A4/Letter margins.</li>
+    </ol>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
+      </div>
+      <div><h4>Image</h4><ul>
+        <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
+        <li><a href="/image-tools/image-cropper/">Image Cropper</a></li>
+      </ul></div>
+      <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
+        <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
+      </ul></div>
+      <div><h4>Guides</h4><ul>
+        <li><a href="/guides/image-resolution-and-dpi-explained/">Resolution &amp; DPI</a></li>
+        <li><a href="/guides/image-compression-without-quality-loss/">Compression Guide</a></li>
+        <li><a href="/guides/">All Guides</a></li>
+      </ul></div>
+      <div><h4>Site</h4><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF — Free, Fast &amp; Private Browser-Based Tools.</span>
+      <span>Engineered with HTML5, Canvas &amp; Web Crypto APIs.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+</body>
+</html>

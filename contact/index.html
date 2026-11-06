@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Feedback &amp; Support | ImgPDF</title>
+<meta name="description" content="Get in touch with the ImgPDF team. Send tool feedback, report technical bugs, suggest new browser utilities, or ask questions about data privacy.">
+<link rel="canonical" href="https://img-pdf.github.io/contact/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact Us — Feedback &amp; Support | ImgPDF">
+<meta property="og:description" content="Reach out to the independent creator of ImgPDF for feedback, technical bug reports, and utility requests.">
+<meta property="og:url" content="https://img-pdf.github.io/contact/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/tool.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact ImgPDF",
+  "url": "https://img-pdf.github.io/contact/",
+  "description": "Direct contact and technical support page for the ImgPDF web platform."
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/">Guides</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container prose" style="max-width:720px; padding-top:36px; padding-bottom:60px;">
+    <p class="breadcrumb"><a href="/">Home</a><span class="breadcrumb__sep">/</span>Contact</p>
+    <h1>Contact &amp; Feedback</h1>
+    <p>ImgPDF is an independent, community-focused project built to provide fast, privacy-respecting browser utilities. Whether you have discovered a technical bug, have an idea for a new image or PDF tool, or want to share feedback on your experience, we would love to hear from you.</p>
+
+    <div class="callout callout--good">
+      <h4>Direct Contact</h4>
+      <p>Email: <a href="mailto:poorneshadevadiga@gmail.com"><strong>poorneshadevadiga@gmail.com</strong></a><br>
+      Typical response time: Within 24 to 48 business hours.</p>
+    </div>
+
+    <h2>Send a Message</h2>
+    <div class="tool-panel" style="margin-top:16px;">
+      <form id="contact-form" onsubmit="event.preventDefault(); document.getElementById('contact-status').textContent = 'Thank you! Your feedback has been noted. For urgent requests, please email poorneshadevadiga@gmail.com directly.'; this.reset();">
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div>
+            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:6px;" for="contact-name">Your Name</label>
+            <input type="text" id="contact-name" required placeholder="Your Name" style="width:100%; padding:10px 14px; border:1px solid var(--border); border-radius:8px; background:var(--paper); color:var(--ink); font-family:var(--font-body);">
+          </div>
+          <div>
+            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:6px;" for="contact-email">Your Email Address</label>
+            <input type="email" id="contact-email" required placeholder="you@example.com" style="width:100%; padding:10px 14px; border:1px solid var(--border); border-radius:8px; background:var(--paper); color:var(--ink); font-family:var(--font-body);">
+          </div>
+          <div>
+            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:6px;" for="contact-subject">Topic</label>
+            <select id="contact-subject" style="width:100%; padding:10px 14px; border:1px solid var(--border); border-radius:8px; background:var(--paper); color:var(--ink); font-family:var(--font-body);">
+              <option value="bug">Report a Bug or Tool Error</option>
+              <option value="feature">Suggest a New Tool or Feature</option>
+              <option value="privacy">Privacy or Data Handling Question</option>
+              <option value="general">General Feedback</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block; font-size:0.88rem; font-weight:600; margin-bottom:6px;" for="contact-message">Message</label>
+            <textarea id="contact-message" required rows="5" placeholder="Describe the issue or tool suggestion in detail..." style="width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:8px; background:var(--paper); color:var(--ink); font-family:var(--font-body); resize:vertical;"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary" style="align-self:flex-start;">Submit Message</button>
+          <p id="contact-status" style="font-family:var(--font-mono); font-size:0.85rem; color:var(--good); margin:0;"></p>
+        </div>
+      </form>
+    </div>
+
+    <h2>Reporting Technical Bugs</h2>
+    <p>To help us resolve errors quickly, please include:</p>
+    <ul>
+      <li>The specific tool URL (e.g. <code>/image-tools/image-compressor/</code>).</li>
+      <li>Your web browser and operating system version (e.g., Chrome on Windows 11, Safari on iOS).</li>
+      <li>The file extension and rough dimensions of the asset that caused the issue.</li>
+      <li>Any error message displayed in the status line or browser developer console.</li>
+    </ul>
+
+    <h2>Open Roadmap &amp; Project Ethos</h2>
+    <p>ImgPDF is built without tracking cookies, forced paywalls, or deceptive subscription popups. All existing tools operate entirely on your own device using Web APIs.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
+      </div>
+      <div><h4>Image</h4><ul>
+        <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
+        <li><a href="/image-tools/image-converter/">Image Converter</a></li>
+      </ul></div>
+      <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
+        <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
+        <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
+      </ul></div>
+      <div><h4>Guides</h4><ul>
+        <li><a href="/guides/image-compression-without-quality-loss/">Compression Guide</a></li>
+        <li><a href="/guides/jpg-vs-png-vs-webp/">JPG vs PNG vs WebP</a></li>
+        <li><a href="/guides/">All Guides</a></li>
+      </ul></div>
+      <div><h4>Site</h4><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF — Free, Fast &amp; Private Browser-Based Tools.</span>
+      <span>Engineered with HTML5, Canvas &amp; Web Crypto APIs.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+</body>
+</html>
