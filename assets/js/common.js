@@ -50,5 +50,44 @@
       link.classList.add("is-active");
     }
   });
+
+  // Global Share & Copy-Link Handler
+  document.addEventListener("click", function (e) {
+    const copyBtn = e.target.closest("[data-action='copy-link']");
+    if (copyBtn) {
+      e.preventDefault();
+      const urlToCopy = window.location.href;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(urlToCopy).then(showToast).catch(fallbackCopy);
+      } else {
+        fallbackCopy();
+      }
+
+      function fallbackCopy() {
+        const input = document.createElement("input");
+        input.value = urlToCopy;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand("copy");
+        document.body.removeChild(input);
+        showToast();
+      }
+
+      function showToast() {
+        let toast = document.querySelector(".copy-toast");
+        if (!toast) {
+          toast = document.createElement("div");
+          toast.className = "copy-toast";
+          toast.textContent = "Link copied to clipboard!";
+          document.body.appendChild(toast);
+        }
+        toast.classList.add("is-visible");
+        clearTimeout(toast._timeout);
+        toast._timeout = setTimeout(function () {
+          toast.classList.remove("is-visible");
+        }, 2500);
+      }
+    }
+  });
 })();
 

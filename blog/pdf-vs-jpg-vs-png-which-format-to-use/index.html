@@ -119,160 +119,239 @@
 </header>
 
 <main>
-  <div class="article-wrapper">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
-      <a href="/blog/">Blog</a><span class="breadcrumb__sep">/</span>
-      <a href="/blog/document-guides/">Document Guides</a><span class="breadcrumb__sep">/</span>
-      <span>PDF vs JPG vs PNG</span>
-    </nav>
+  <div class="container">
+    <div class="article-layout">
+      <!-- Sticky Desktop Sidebar TOC -->
+      <aside class="article-sidebar" aria-label="Table of Contents">
+        <div class="sidebar-heading">Contents</div>
+        <ol>
+          <li><a href="#overview">Architectural Differences</a></li>
+          <li><a href="#comparison-matrix">Full Comparison Matrix</a></li>
+          <li><a href="#visual-comparison">Format Structure Diagram</a></li>
+          <li><a href="#when-to-use-pdf">When to Use PDF</a></li>
+          <li><a href="#when-to-use-jpg">When to Use JPG</a></li>
+          <li><a href="#when-to-use-png">When to Use PNG</a></li>
+          <li><a href="#common-mistakes">Common Mistakes &amp; Fixes</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
 
-    <header class="article-hero">
-      <span class="article-category">Document Guides</span>
-      <h1>PDF vs JPG vs PNG: Which File Format Should You Use?</h1>
-      <p class="lead">Choosing between PDF, JPG, and PNG shouldn't be guesswork. Each format was engineered for specific use cases with distinct strengths in text fidelity, photographic compression, and transparency.</p>
-      
-      <div class="article-byline">
-        <div class="byline-avatar">IP</div>
-        <div>
-          <div class="byline-author">ImgPDF Editorial Team</div>
-          <div class="byline-meta">Updated March 2026 &bull; 8 min read &bull; Verified Browser-Safe</div>
+        <div style="margin-top: 32px; padding: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Conversion Suite</div>
+          <p style="font-size: 0.82rem; margin: 0 0 10px; color: var(--ink-soft);">Convert between PDF, JPG, and PNG locally.</p>
+          <a href="/image-tools/image-converter/" class="btn btn--primary" style="display:block; text-align:center; padding:6px 10px; font-size:0.8rem;">Open File Converter</a>
         </div>
+      </aside>
+
+      <!-- Main Article Content -->
+      <div class="article-main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+          <a href="/blog/">Blog</a><span class="breadcrumb__sep">/</span>
+          <a href="/blog/document-guides/">Document Guides</a><span class="breadcrumb__sep">/</span>
+          <span>PDF vs JPG vs PNG</span>
+        </nav>
+
+        <header class="article-hero">
+          <span class="article-category">Document Guides</span>
+          <h1>PDF vs JPG vs PNG: Which File Format Should You Use?</h1>
+          <p class="lead">Choosing between PDF, JPG, and PNG shouldn't be guesswork. Each format was engineered for specific applications with distinct strengths in typography preservation, photographic compression, and transparency.</p>
+          
+          <div class="article-byline">
+            <div class="byline-avatar">IP</div>
+            <div>
+              <div class="byline-author">ImgPDF Editorial Team &bull; Reviewed by Poornesh Devadiga</div>
+              <div class="byline-meta">Published March 8, 2026 &bull; Updated March 15, 2026 &bull; 8 min read</div>
+            </div>
+          </div>
+        </header>
+
+        <!-- Social Share Bar -->
+        <div class="share-bar">
+          <span class="share-label">Share:</span>
+          <button class="share-btn" type="button" data-action="copy-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            <span>Copy Link</span>
+          </button>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?text=PDF%20vs%20JPG%20vs%20PNG%20Comparison&url=https%3A%2F%2Fimg-pdf.github.io%2Fblog%2Fpdf-vs-jpg-vs-png-which-format-to-use%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>Post on X</span>
+          </a>
+          <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimg-pdf.github.io%2Fblog%2Fpdf-vs-jpg-vs-png-which-format-to-use%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.86 0 1.56-.7 1.56-1.56 0-.86-.7-1.56-1.56-1.56-.86 0-1.56.7-1.56 1.56 0 .86.7 1.56 1.56 1.56m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+
+        <!-- Mobile Collapsible TOC -->
+        <details class="toc-box toc-box--collapsible" style="margin-bottom: 28px;">
+          <summary>Table of Contents</summary>
+          <ol>
+            <li><a href="#overview">Architectural Differences</a></li>
+            <li><a href="#comparison-matrix">Full Comparison Matrix</a></li>
+            <li><a href="#visual-comparison">Format Structure Diagram</a></li>
+            <li><a href="#when-to-use-pdf">When to Use PDF</a></li>
+            <li><a href="#when-to-use-jpg">When to Use JPG</a></li>
+            <li><a href="#when-to-use-png">When to Use PNG</a></li>
+            <li><a href="#common-mistakes">Common Mistakes &amp; Fixes</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+          <h2 id="overview">1. Architectural Differences at a Glance</h2>
+          <p>While people often refer to all three as "files," their underlying architectures are fundamentally distinct:</p>
+          <ul>
+            <li><strong>PDF (Portable Document Format):</strong> An ISO-standard container developed by Adobe. Rather than storing a single grid of pixels, a PDF encapsulates selectable text, font subsets, mathematical vector curves, forms, and embedded raster images across numbered physical pages.</li>
+            <li><strong>JPG / JPEG (Joint Photographic Experts Group):</strong> A raster bitmap format designed specifically for continuous-tone photography. It uses lossy compression by discarding color data that the human visual system is least sensitive to.</li>
+            <li><strong>PNG (Portable Network Graphics):</strong> A raster format engineered to replace GIF. It uses lossless DEFLATE compression and supports 8-bit alpha channel transparency with crystal-clear edges.</li>
+          </ul>
+
+          <div class="tool-cta-box">
+            <div>
+              <h3>Convert between formats in your browser</h3>
+              <p>Switch between PDF, JPG, PNG, and WebP using ImgPDF's private client-side converter suite.</p>
+            </div>
+            <a href="/image-tools/image-converter/" class="btn btn--primary">Launch File Converter &rarr;</a>
+          </div>
+
+          <h2 id="comparison-matrix">2. Comprehensive Format Comparison Matrix</h2>
+          <table style="width:100%; border-collapse: collapse; margin: 24px 0; font-size: 0.95rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border); text-align: left;">
+                <th style="padding: 10px 12px;">Feature</th>
+                <th style="padding: 10px 12px;">PDF</th>
+                <th style="padding: 10px 12px;">JPG</th>
+                <th style="padding: 10px 12px;">PNG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 10px 12px; font-weight: 600;">Multi-page Support</td>
+                <td style="padding: 10px 12px; color: var(--accent); font-weight: 600;">Yes (Unlimited)</td>
+                <td style="padding: 10px 12px;">No (Single image)</td>
+                <td style="padding: 10px 12px;">No (Single image)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 10px 12px; font-weight: 600;">Selectable &amp; Searchable Text</td>
+                <td style="padding: 10px 12px; color: var(--accent); font-weight: 600;">Yes (Native vector)</td>
+                <td style="padding: 10px 12px;">No (Baked into pixels)</td>
+                <td style="padding: 10px 12px;">No (Baked into pixels)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 10px 12px; font-weight: 600;">Transparent Background</td>
+                <td style="padding: 10px 12px;">Yes (Layered objects)</td>
+                <td style="padding: 10px 12px; color: #dc2626;">No (Solid matte)</td>
+                <td style="padding: 10px 12px; color: var(--accent); font-weight: 600;">Yes (Alpha channel)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 10px 12px; font-weight: 600;">Compression Type</td>
+                <td style="padding: 10px 12px;">Hybrid (Lossless + Lossy)</td>
+                <td style="padding: 10px 12px;">Lossy (DCT)</td>
+                <td style="padding: 10px 12px;">Lossless (DEFLATE)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 10px 12px; font-weight: 600;">Ideal File Size for Photos</td>
+                <td style="padding: 10px 12px;">Moderate</td>
+                <td style="padding: 10px 12px; color: var(--accent); font-weight: 600;">Smallest (~100-300KB)</td>
+                <td style="padding: 10px 12px;">Large (~2-8MB)</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 12px; font-weight: 600;">Best Use Case</td>
+                <td style="padding: 10px 12px;">Contracts, resumes, visas</td>
+                <td style="padding: 10px 12px;">Camera photos, galleries</td>
+                <td style="padding: 10px 12px;">Logos, UI badges, charts</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="visual-comparison">3. Internal Structure Comparison</h2>
+          <div class="article-diagram">
+            <svg viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- PDF -->
+              <rect x="25" y="20" width="170" height="120" rx="8" fill="var(--surface)" stroke="#dc2626" stroke-width="2"/>
+              <text x="110" y="48" fill="#dc2626" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">PDF Document</text>
+              <rect x="45" y="60" width="130" height="18" rx="3" fill="rgba(220, 38, 38, 0.1)"/>
+              <text x="110" y="73" fill="var(--ink)" font-family="monospace" font-size="9" text-anchor="middle">Vector Text &bull; Fonts</text>
+              <rect x="45" y="84" width="130" height="18" rx="3" fill="rgba(220, 38, 38, 0.1)"/>
+              <text x="110" y="97" fill="var(--ink)" font-family="monospace" font-size="9" text-anchor="middle">Multi-Page Stream Tree</text>
+              <text x="110" y="125" fill="#dc2626" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">ATS Searchable</text>
+
+              <!-- JPG -->
+              <rect x="235" y="20" width="170" height="120" rx="8" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+              <text x="320" y="48" fill="var(--accent)" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">JPG Photo</text>
+              <circle cx="280" cy="80" r="18" fill="rgba(20, 110, 245, 0.2)"/>
+              <circle cx="340" cy="80" r="22" fill="rgba(20, 110, 245, 0.3)"/>
+              <text x="320" y="112" fill="var(--muted)" font-family="sans-serif" font-size="10" text-anchor="middle">Continuous Color Gradients</text>
+              <text x="320" y="126" fill="var(--accent)" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle">Smallest Photo Size</text>
+
+              <!-- PNG -->
+              <rect x="445" y="20" width="170" height="120" rx="8" fill="var(--surface-alt)" stroke="#059669" stroke-width="2"/>
+              <text x="530" y="48" fill="#059669" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">PNG Graphic</text>
+              <path d="M480 65h70M480 80h50M480 95h60" stroke="#059669" stroke-width="3" stroke-linecap="round"/>
+              <text x="530" y="116" fill="var(--ink-soft)" font-family="sans-serif" font-size="10" text-anchor="middle">Lossless Transparency</text>
+              <text x="530" y="128" fill="#059669" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle">Crisp Vector Edges</text>
+            </svg>
+            <div class="article-diagram__caption">Figure 8: Container structure of PDF vs raster encoding of JPG and PNG.</div>
+          </div>
+
+          <h2 id="when-to-use-pdf">4. When You Must Use PDF</h2>
+          <p>PDF is mandatory whenever <strong>document structure, page bounds, and text integrity</strong> must remain inviolate regardless of the screen or printer rendering it:</p>
+          <ul>
+            <li><strong>Employment Resumes &amp; Portfolios:</strong> Applicant Tracking Systems (ATS) read true text streams in PDFs to parse skills and experience. Saving a resume as a JPG makes your text invisible to search crawlers.</li>
+            <li><strong>Legal &amp; Business Contracts:</strong> Retaining page numbers, digital signatures, and precise margins across multi-page agreements.</li>
+            <li><strong>Official Submissions:</strong> Government immigration, visa, and grant portals almost universally reject loose image files in favor of PDF.</li>
+          </ul>
+
+          <h2 id="when-to-use-jpg">5. When JPG is the Superior Choice</h2>
+          <p>JPG remains undefeated for <strong>real-world photographs and colorful continuous-tone artwork</strong>:</p>
+          <ul>
+            <li>Camera shots with millions of colors and natural lighting gradients.</li>
+            <li>E-commerce product photos where fast thumbnail loading is critical.</li>
+            <li>Email newsletter headers where file size must stay under 100KB.</li>
+          </ul>
+
+          <h2 id="when-to-use-png">6. When PNG is Essential</h2>
+          <p>PNG is the undisputed champion for <strong>high-contrast graphics, crisp geometric lines, and transparent assets</strong>:</p>
+          <ul>
+            <li>Company logos and watermarks placed over variable website backgrounds.</li>
+            <li>Software screenshots, UI mockups, and infographic diagrams containing fine text.</li>
+            <li>Scanned signatures with the white paper background erased.</li>
+          </ul>
+
+          <h2 id="common-mistakes">7. Common Mistakes &amp; How to Fix Them</h2>
+          <ul>
+            <li><strong>Mistake 1: Submitting a JPG Image of a Resume.</strong> Recruitment software cannot extract your text from a JPEG bitmap. <em>Fix:</em> Always export resumes as text-native PDF files.</li>
+            <li><strong>Mistake 2: Saving Photographic Scans in PNG.</strong> PNG files for complex real-world scenes will balloon to 10MB+. <em>Fix:</em> Save photographic scans in JPG or WebP.</li>
+            <li><strong>Mistake 3: Trying to Print Loose JPEGs at Specific Inch Dimensions.</strong> JPEGs do not have fixed paper margin bounds. <em>Fix:</em> Convert JPEGs to PDF using our <a href="/pdf-tools/jpg-to-pdf/">JPG to PDF Tool</a> to enforce A4 or Letter physical scale.</li>
+          </ul>
+
+          <h2 id="faq">8. Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <div class="faq-q">Can a JPG contain multiple pages?</div>
+            <div class="faq-a">No. The JPEG standard only defines a single two-dimensional raster image. To package multiple pages together, you must convert your JPG files into a PDF document.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Does converting PNG to JPG ruin transparency?</div>
+            <div class="faq-a">Yes. Because JPG cannot encode alpha transparency, transparent areas are permanently filled with solid white (or black) during conversion.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">What is WebP and how does it fit in?</div>
+            <div class="faq-a">WebP is a modern image format combining the best attributes of JPG and PNG: it supports photographic compression like JPG, transparency like PNG, and is typically 25% smaller.</div>
+          </div>
+        </div>
+
+        <!-- Previous & Next Navigation -->
+        <nav class="article-nav" aria-label="Article navigation">
+          <a href="/blog/how-to-reduce-image-file-size-for-web-and-email/" class="article-nav-card">
+            <span class="article-nav-card__dir">&larr; Previous Guide</span>
+            <p class="article-nav-card__title">How to Reduce Image File Size for Web and Email</p>
+          </a>
+          <a href="/blog/how-to-prepare-documents-for-online-applications/" class="article-nav-card" style="text-align:right;">
+            <span class="article-nav-card__dir">Next Guide &rarr;</span>
+            <p class="article-nav-card__title">How to Prepare Documents for Online Applications</p>
+          </a>
+        </nav>
       </div>
-    </header>
-
-    <div class="toc-box">
-      <div class="toc-title">Table of Contents</div>
-      <ul class="toc-list">
-        <li><a href="#overview">1. Architectural Differences at a Glance</a></li>
-        <li><a href="#comparison-matrix">2. Comprehensive Format Comparison Matrix</a></li>
-        <li><a href="#when-to-use-pdf">3. When You Must Use PDF</a></li>
-        <li><a href="#when-to-use-jpg">4. When JPG is the Superior Choice</a></li>
-        <li><a href="#when-to-use-png">5. When PNG is Essential</a></li>
-        <li><a href="#converting-between">6. Converting Between Formats Locally</a></li>
-        <li><a href="#faq">7. Frequently Asked Questions</a></li>
-      </ul>
-    </div>
-
-    <div class="prose">
-      <h2 id="overview">1. Architectural Differences at a Glance</h2>
-      <p>While people often refer to all three as "files," their underlying architectures are fundamentally distinct:</p>
-      <ul>
-        <li><strong>PDF (Portable Document Format):</strong> An ISO-standard container developed by Adobe. Rather than storing a single grid of pixels, a PDF encapsulates selectable text, font subsets, mathematical vector curves, forms, and embedded raster images across numbered physical pages.</li>
-        <li><strong>JPG / JPEG (Joint Photographic Experts Group):</strong> A raster bitmap format designed specifically for continuous-tone photography. It uses lossy compression by discarding color data that the human visual system is least sensitive to.</li>
-        <li><strong>PNG (Portable Network Graphics):</strong> A raster format engineered to replace GIF. It uses lossless DEFLATE compression and supports 8-bit alpha channel transparency with crystal-clear edges.</li>
-      </ul>
-
-      <div class="tool-cta-box">
-        <h3>Convert between formats in your browser</h3>
-        <p>Switch seamlessly between PDF, JPG, PNG, and WebP using ImgPDF's private client-side converter suite.</p>
-        <a href="/image-tools/image-converter/" class="btn btn--primary">Launch File Converter &rarr;</a>
-      </div>
-
-      <h2 id="comparison-matrix">2. Comprehensive Format Comparison Matrix</h2>
-      <table style="width:100%; border-collapse: collapse; margin: 24px 0; font-size: 0.95rem;">
-        <thead>
-          <tr style="border-bottom: 2px solid var(--border); text-align: left;">
-            <th style="padding: 10px 12px;">Feature</th>
-            <th style="padding: 10px 12px;">PDF</th>
-            <th style="padding: 10px 12px;">JPG</th>
-            <th style="padding: 10px 12px;">PNG</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding: 10px 12px; font-weight: 600;">Multi-page Support</td>
-            <td style="padding: 10px 12px; color: var(--accent); font-weight: 600;">Yes (Unlimited)</td>
-            <td style="padding: 10px 12px;">No (Single image)</td>
-            <td style="padding: 10px 12px;">No (Single image)</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding: 10px 12px; font-weight: 600;">Selectable &amp; Searchable Text</td>
-            <td style="padding: 10px 12px; color: var(--accent); font-weight: 600;">Yes (Native vector)</td>
-            <td style="padding: 10px 12px;">No (Baked into pixels)</td>
-            <td style="padding: 10px 12px;">No (Baked into pixels)</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding: 10px 12px; font-weight: 600;">Transparent Background</td>
-            <td style="padding: 10px 12px;">Yes (Layered objects)</td>
-            <td style="padding: 10px 12px; color: #dc2626;">No (Solid matte)</td>
-            <td style="padding: 10px 12px; color: var(--accent); font-weight: 600;">Yes (Alpha channel)</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding: 10px 12px; font-weight: 600;">Compression Type</td>
-            <td style="padding: 10px 12px;">Hybrid (Lossless + Lossy)</td>
-            <td style="padding: 10px 12px;">Lossy (DCT)</td>
-            <td style="padding: 10px 12px;">Lossless (DEFLATE)</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding: 10px 12px; font-weight: 600;">Ideal File Size for Photos</td>
-            <td style="padding: 10px 12px;">Moderate</td>
-            <td style="padding: 10px 12px; color: var(--accent); font-weight: 600;">Smallest (~100-300KB)</td>
-            <td style="padding: 10px 12px;">Large (~2-8MB)</td>
-          </tr>
-          <tr>
-            <td style="padding: 10px 12px; font-weight: 600;">Best Use Case</td>
-            <td style="padding: 10px 12px;">Contracts, resumes, visas</td>
-            <td style="padding: 10px 12px;">Camera photos, galleries</td>
-            <td style="padding: 10px 12px;">Logos, UI badges, charts</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2 id="when-to-use-pdf">3. When You Must Use PDF</h2>
-      <p>PDF is mandatory whenever <strong>document structure, page bounds, and text integrity</strong> must remain inviolate regardless of the screen or printer rendering it:</p>
-      <ul>
-        <li><strong>Employment Resumes &amp; Portfolios:</strong> Applicant Tracking Systems (ATS) read true text streams in PDFs to parse skills and experience. Saving a resume as a JPG makes your text invisible to search crawlers.</li>
-        <li><strong>Legal &amp; Business Contracts:</strong> Retaining page numbers, digital signatures, and precise margins across multi-page agreements.</li>
-        <li><strong>Official Submissions:</strong> Government immigration, visa, and grant portals almost universally reject loose image files in favor of PDF.</li>
-      </ul>
-
-      <h2 id="when-to-use-jpg">4. When JPG is the Superior Choice</h2>
-      <p>JPG remains undefeated for <strong>real-world photographs and colorful continuous-tone artwork</strong>:</p>
-      <ul>
-        <li>Camera shots with millions of colors and natural lighting gradients.</li>
-        <li>E-commerce product photos where fast thumbnail loading is critical.</li>
-        <li>Email newsletter headers where file size must stay under 100KB.</li>
-      </ul>
-
-      <h2 id="when-to-use-png">5. When PNG is Essential</h2>
-      <p>PNG is the undisputed champion for <strong>high-contrast graphics, crisp geometric lines, and transparent assets</strong>:</p>
-      <ul>
-        <li>Company logos and watermarks placed over variable website backgrounds.</li>
-        <li>Software screenshots, UI mockups, and infographic diagrams containing fine text.</li>
-        <li>Scanned signatures with the white paper background erased.</li>
-      </ul>
-
-      <h2 id="converting-between">6. Converting Between Formats Locally</h2>
-      <p>Depending on what you need to achieve, ImgPDF provides instant tools directly in your browser:</p>
-      <ul>
-        <li>Have photos you need to submit as a document? Use <a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a>.</li>
-        <li>Have a JPG logo that needs transparent editing? Use <a href="/image-tools/image-converter/">Image Converter (JPG to PNG)</a>.</li>
-        <li>Have a heavy PNG photo that needs shrinking? Use <a href="/image-tools/image-compressor/">Image Compressor</a>.</li>
-      </ul>
-
-      <h2 id="faq">7. Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <div class="faq-q">Can a JPG contain multiple pages?</div>
-        <div class="faq-a">No. The JPEG standard only defines a single two-dimensional raster image. To package multiple pages together, you must convert your JPG files into a PDF document.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Does converting PNG to JPG ruin transparency?</div>
-        <div class="faq-a">Yes. Because JPG cannot encode alpha transparency, transparent areas are permanently filled with solid white (or black) during conversion.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">What is WebP and how does it fit in?</div>
-        <div class="faq-a">WebP is a modern image format combining the best attributes of JPG and PNG: it supports photographic compression like JPG, transparency like PNG, and is typically 25% smaller.</div>
-      </div>
-    </div>
-
-    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);">
-      <h3>Next Steps &amp; Related Guides</h3>
-      <ul style="margin-top: 12px; line-height: 1.8;">
-        <li><a href="/blog/how-to-prepare-documents-for-online-applications/">How to Prepare Documents for Online Applications</a> &mdash; Practical submission checklist.</li>
-        <li><a href="/blog/how-to-convert-images-into-pdf/">How to Convert Images into PDF</a> &mdash; Step-by-step tutorial.</li>
-        <li><a href="/guides/jpg-vs-png-vs-webp/">Technical Format Deep-Dive: JPG vs PNG vs WebP</a> &mdash; In-depth compression mechanics.</li>
-      </ul>
     </div>
   </div>
 </main>
@@ -284,12 +363,12 @@
         <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
         <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
       </div>
-      <div><h4>Image</h4><ul>
+      <div><h4>Image Tools</h4><ul>
         <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
         <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
         <li><a href="/image-tools/image-converter/">Image Converter</a></li>
       </ul></div>
-      <div><h4>PDF</h4><ul>
+      <div><h4>PDF Tools</h4><ul>
         <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
         <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
         <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
@@ -300,11 +379,11 @@
         <li><a href="/blog/image-guides/">Image Guides</a></li>
         <li><a href="/guides/">All Guides</a></li>
       </ul></div>
-      <div><h4>Site</h4><ul>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
+      <div><h4>Trust &amp; Legal</h4><ul>
+        <li><a href="/about/">About ImgPDF</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">

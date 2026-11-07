@@ -119,133 +119,209 @@
 </header>
 
 <main>
-  <div class="article-wrapper">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
-      <a href="/blog/">Blog</a><span class="breadcrumb__sep">/</span>
-      <a href="/blog/document-guides/">Document Guides</a><span class="breadcrumb__sep">/</span>
-      <span>Protect Privacy with Online Tools</span>
-    </nav>
+  <div class="container">
+    <div class="article-layout">
+      <!-- Sticky Desktop Sidebar TOC -->
+      <aside class="article-sidebar" aria-label="Table of Contents">
+        <div class="sidebar-heading">Contents</div>
+        <ol>
+          <li><a href="#the-hidden-risks">Hidden Cloud Converter Risks</a></li>
+          <li><a href="#how-client-side-works">In-Browser Architecture</a></li>
+          <li><a href="#visual-architecture">Privacy Architecture Diagram</a></li>
+          <li><a href="#audit-checklist">The DevTools Audit Test</a></li>
+          <li><a href="#compliance-regulations">GDPR, HIPAA &amp; CCPA Rules</a></li>
+          <li><a href="#common-mistakes">Common Mistakes &amp; Fixes</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
 
-    <header class="article-hero">
-      <span class="article-category">Document Guides</span>
-      <h1>How to Protect Privacy with Online PDF and Image Tools</h1>
-      <p class="lead">Every year, millions of confidential tax returns, medical records, and ID scans are uploaded to "free" online converter sites. Here is what actually happens to those files, and how client-side technology eliminates the risk entirely.</p>
-      
-      <div class="article-byline">
-        <div class="byline-avatar">IP</div>
-        <div>
-          <div class="byline-author">ImgPDF Editorial Team</div>
-          <div class="byline-meta">Updated March 2026 &bull; 8 min read &bull; Verified Browser-Safe</div>
+        <div style="margin-top: 32px; padding: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Zero Server</div>
+          <p style="font-size: 0.82rem; margin: 0 0 10px; color: var(--ink-soft);">Discover our local client-side security architecture.</p>
+          <a href="/about/" class="btn btn--primary" style="display:block; text-align:center; padding:6px 10px; font-size:0.8rem;">About ImgPDF</a>
         </div>
-      </div>
-    </header>
+      </aside>
 
-    <div class="toc-box">
-      <div class="toc-title">Table of Contents</div>
-      <ul class="toc-list">
-        <li><a href="#the-hidden-risks">1. The Hidden Risks of Cloud File Converters</a></li>
-        <li><a href="#how-client-side-works">2. How Client-Side (In-Browser) Architecture Works</a></li>
-        <li><a href="#audit-checklist">3. How to Verify Any Website's Privacy Claims in DevTools</a></li>
-        <li><a href="#compliance-regulations">4. Regulatory Implications: GDPR, HIPAA, and CCPA</a></li>
-        <li><a href="#best-practices">5. Best Practices for Handling Sensitive Records</a></li>
-        <li><a href="#faq">6. Frequently Asked Questions</a></li>
-      </ul>
-    </div>
+      <!-- Main Article Content -->
+      <div class="article-main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+          <a href="/blog/">Blog</a><span class="breadcrumb__sep">/</span>
+          <a href="/blog/document-guides/">Document Guides</a><span class="breadcrumb__sep">/</span>
+          <span>Protect Privacy with Online Tools</span>
+        </nav>
 
-    <div class="prose">
-      <h2 id="the-hidden-risks">1. The Hidden Risks of Cloud File Converters</h2>
-      <p>When you use a conventional file conversion website, the workflow seems straightforward: you drag your PDF, wait for a progress bar, and download the finished result. Behind that simple interface lies an extensive client-server transmission pipeline:</p>
-      <ul>
-        <li><strong>Server Disk Storage:</strong> Your file is uploaded across the public internet to a cloud server. While most services promise deletion "within 1 or 2 hours," your data temporarily resides on third-party virtual machines, persistent logs, and disk caches.</li>
-        <li><strong>Data Breach Vulnerabilities:</strong> Cloud buckets and server temp directories are prime targets for automated exploit bots. If a converter site experiences an intrusion, your tax forms or passport scans could be compromised.</li>
-        <li><strong>AI Model Ingestion:</strong> Some commercial providers reserve the right in their terms of service to use uploaded content for algorithmic training and machine learning dataset synthesis.</li>
-      </ul>
+        <header class="article-hero">
+          <span class="article-category">Document Guides</span>
+          <h1>How to Protect Privacy with Online PDF and Image Tools</h1>
+          <p class="lead">Every year, millions of confidential tax returns, medical records, and ID scans are uploaded to "free" online converter sites. Here is what actually happens to those files, and how client-side technology eliminates the risk entirely.</p>
+          
+          <div class="article-byline">
+            <div class="byline-avatar">IP</div>
+            <div>
+              <div class="byline-author">ImgPDF Editorial Team &bull; Reviewed by Poornesh Devadiga</div>
+              <div class="byline-meta">Published March 10, 2026 &bull; Updated March 15, 2026 &bull; 8 min read</div>
+            </div>
+          </div>
+        </header>
 
-      <div class="tool-cta-box">
-        <h3>Zero server uploads, guaranteed</h3>
-        <p>ImgPDF uses pure browser APIs. Everything is computed on your local CPU. Your sensitive files never leave your device.</p>
-        <a href="/about/" class="btn btn--primary">Learn About Our Architecture &rarr;</a>
-      </div>
-
-      <h2 id="how-client-side-works">2. How Client-Side (In-Browser) Architecture Works</h2>
-      <p>Until recently, web browsers lacked the raw computing power to manipulate heavy PDF object streams or perform complex image convolutions. That has completely changed with modern web standards:</p>
-      <ul>
-        <li><strong>HTML5 Canvas 2D &amp; WebGL:</strong> Allows browsers to resample, compress, crop, and convert image formats directly in GPU-accelerated video memory.</li>
-        <li><strong>WebAssembly (WASM):</strong> Enables compiled C/C++ and Rust engines to execute complex algorithms inside the browser tab at near-native CPU speeds.</li>
-        <li><strong>Web Crypto API:</strong> Standardized cryptography primitives execute directly against operating system entropy pools for hashing and key generation.</li>
-      </ul>
-      <p>Because these operations run locally, no file chunks are ever uploaded. Computation happens entirely on your machine, eliminating data leakage by design.</p>
-
-      <h2 id="audit-checklist">3. How to Verify Any Website's Privacy Claims in DevTools</h2>
-      <p>Never rely solely on marketing claims. You can verify whether an online tool is truly private using your browser's built-in developer tools:</p>
-
-      <div class="step-card">
-        <div class="step-badge">1</div>
-        <div class="step-content">
-          <h4>Open Browser Developer Tools</h4>
-          <p>Press <kbd>F12</kbd> (or right-click anywhere and select <strong>Inspect</strong>) and click on the <strong>Network</strong> tab.</p>
+        <!-- Social Share Bar -->
+        <div class="share-bar">
+          <span class="share-label">Share:</span>
+          <button class="share-btn" type="button" data-action="copy-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            <span>Copy Link</span>
+          </button>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?text=How%20to%20Protect%20Privacy%20with%20Online%20PDF%20and%20Image%20Tools&url=https%3A%2F%2Fimg-pdf.github.io%2Fblog%2Fhow-to-protect-privacy-with-online-pdf-and-image-tools%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>Post on X</span>
+          </a>
+          <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimg-pdf.github.io%2Fblog%2Fhow-to-protect-privacy-with-online-pdf-and-image-tools%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.86 0 1.56-.7 1.56-1.56 0-.86-.7-1.56-1.56-1.56-.86 0-1.56.7-1.56 1.56 0 .86.7 1.56 1.56 1.56m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
-      </div>
 
-      <div class="step-card">
-        <div class="step-badge">2</div>
-        <div class="step-content">
-          <h4>Filter by "Fetch/XHR" or "Media"</h4>
-          <p>Look at outgoing network requests while you upload and process your file.</p>
+        <!-- Mobile Collapsible TOC -->
+        <details class="toc-box toc-box--collapsible" style="margin-bottom: 28px;">
+          <summary>Table of Contents</summary>
+          <ol>
+            <li><a href="#the-hidden-risks">Hidden Cloud Converter Risks</a></li>
+            <li><a href="#how-client-side-works">In-Browser Architecture</a></li>
+            <li><a href="#visual-architecture">Privacy Architecture Diagram</a></li>
+            <li><a href="#audit-checklist">The DevTools Audit Test</a></li>
+            <li><a href="#compliance-regulations">GDPR, HIPAA &amp; CCPA Rules</a></li>
+            <li><a href="#common-mistakes">Common Mistakes &amp; Fixes</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+          <h2 id="the-hidden-risks">1. The Hidden Risks of Cloud File Converters</h2>
+          <p>When you use a conventional file conversion website, the workflow seems straightforward: you drag your PDF, wait for a progress bar, and download the finished result. Behind that simple interface lies an extensive client-server transmission pipeline:</p>
+          <ul>
+            <li><strong>Server Disk Storage:</strong> Your file is uploaded across the public internet to a cloud server. While most services promise deletion "within 1 or 2 hours," your data temporarily resides on third-party virtual machines, persistent logs, and disk caches.</li>
+            <li><strong>Data Breach Vulnerabilities:</strong> Cloud buckets and server temp directories are prime targets for automated exploit bots. If a converter site experiences an intrusion, your tax forms or passport scans could be compromised.</li>
+            <li><strong>AI Model Ingestion:</strong> Some commercial providers reserve the right in their terms of service to use uploaded content for algorithmic training and machine learning dataset synthesis.</li>
+          </ul>
+
+          <div class="tool-cta-box">
+            <div>
+              <h3>Zero server uploads, guaranteed</h3>
+              <p>ImgPDF uses pure browser APIs. Everything is computed on your local CPU. Your sensitive files never leave your device.</p>
+            </div>
+            <a href="/about/" class="btn btn--primary">Our Architecture &rarr;</a>
+          </div>
+
+          <h2 id="how-client-side-works">2. How Client-Side (In-Browser) Architecture Works</h2>
+          <p>Until recently, web browsers lacked the raw computing power to manipulate heavy PDF object streams or perform complex image convolutions. That has completely changed with modern web standards:</p>
+          <ul>
+            <li><strong>HTML5 Canvas 2D &amp; WebGL:</strong> Allows browsers to resample, compress, crop, and convert image formats directly in GPU-accelerated video memory.</li>
+            <li><strong>WebAssembly (WASM):</strong> Enables compiled C/C++ and Rust engines to execute complex algorithms inside the browser tab at near-native CPU speeds.</li>
+            <li><strong>Web Crypto API:</strong> Standardized cryptography primitives execute directly against operating system entropy pools for hashing and key generation.</li>
+          </ul>
+          <p>Because these operations run locally, no file chunks are ever uploaded. Computation happens entirely on your machine, eliminating data leakage by design.</p>
+
+          <h2 id="visual-architecture">3. Cloud Upload vs Client-Side Security Model</h2>
+          <div class="article-diagram">
+            <svg viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Cloud Model (Insecure) -->
+              <rect x="25" y="20" width="260" height="120" rx="8" fill="var(--surface)" stroke="#dc2626" stroke-width="2"/>
+              <text x="155" y="45" fill="#dc2626" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Traditional Cloud Converters</text>
+              <text x="75" y="75" fill="var(--ink)" font-family="sans-serif" font-size="10" text-anchor="middle">Your Device</text>
+              <path d="M110 72h45" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+              <path d="M147 68l6 4-6 4" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="132" y="64" fill="#dc2626" font-family="monospace" font-size="8" text-anchor="middle">Upload</text>
+              <rect x="180" y="58" width="85" height="30" rx="4" fill="rgba(220, 38, 38, 0.15)"/>
+              <text x="222" y="77" fill="#dc2626" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Cloud VM Disk</text>
+              <text x="155" y="115" fill="#dc2626" font-family="monospace" font-size="9" text-anchor="middle">&times; Logs, Caches, Breach Exposure</text>
+
+              <!-- ImgPDF Model (Secure) -->
+              <rect x="345" y="20" width="270" height="120" rx="8" fill="var(--surface-alt)" stroke="#059669" stroke-width="2"/>
+              <text x="480" y="45" fill="#059669" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">ImgPDF Client-Side Model</text>
+              <rect x="365" y="55" width="230" height="45" rx="6" fill="var(--surface)" stroke="#059669" stroke-width="1.8"/>
+              <circle cx="395" cy="77" r="12" fill="rgba(16, 185, 129, 0.2)" stroke="#059669" stroke-width="1.5"/>
+              <path d="M391 77l3 3 5-5" stroke="#059669" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="495" y="73" fill="var(--ink)" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Local Device RAM &bull; CPU Sandbox</text>
+              <text x="495" y="89" fill="#059669" font-family="monospace" font-size="9" text-anchor="middle">Zero Bytes Transmitted Across Internet</text>
+              <text x="480" y="125" fill="#059669" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">&check; Works Offline in Airplane Mode</text>
+            </svg>
+            <div class="article-diagram__caption">Figure 10: Comparison of remote cloud server risk versus local device execution.</div>
+          </div>
+
+          <h2 id="audit-checklist">4. How to Verify Any Website's Privacy Claims in DevTools</h2>
+          <p>Never rely solely on marketing claims. You can verify whether an online tool is truly private using your browser's built-in developer tools:</p>
+
+          <div class="step-card">
+            <div class="step-badge">Step 1</div>
+            <div class="step-content">
+              <h4>Open Browser Developer Tools</h4>
+              <p>Press <kbd>F12</kbd> (or right-click anywhere and select <strong>Inspect</strong>) and click on the <strong>Network</strong> tab.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">Step 2</div>
+            <div class="step-content">
+              <h4>Filter by "Fetch/XHR" or "Media"</h4>
+              <p>Look at outgoing network requests while you upload and process your file.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">Step 3</div>
+            <div class="step-content">
+              <h4>Verify Payload Size</h4>
+              <p>On a cloud converter, you will see a multi-megabyte <code>POST</code> request containing your file data. On ImgPDF, you will see <strong>zero file data transmitted</strong>. In fact, you can turn off Wi-Fi entirely after the page loads and the tools continue to work!</p>
+            </div>
+          </div>
+
+          <div class="callout callout--good">
+            <h4>The Airplane Mode Test</h4>
+            <p>A true client-side tool works completely offline. Load ImgPDF, disconnect your internet connection (turn on Airplane mode), and convert or compress a file. The operation finishes in seconds without an internet connection.</p>
+          </div>
+
+          <h2 id="compliance-regulations">5. Regulatory Implications: GDPR, HIPAA, and CCPA</h2>
+          <p>For accountants, healthcare providers, paralegals, and HR professionals, uploading client records to unvetted third-party converter sites can trigger severe regulatory penalties:</p>
+          <ul>
+            <li><strong>HIPAA:</strong> Uploading Protected Health Information (PHI) to a service without an executed Business Associate Agreement (BAA) is a federal compliance violation.</li>
+            <li><strong>GDPR (Article 28):</strong> Transmitting EU citizens' personally identifiable information to unauthorized servers requires formal data processor contracts.</li>
+          </ul>
+          <p>Because client-side tools do not transmit data across networks, they avoid classification as data processors, preserving end-to-end data confidentiality.</p>
+
+          <h2 id="common-mistakes">6. Common Mistakes &amp; How to Fix Them</h2>
+          <ul>
+            <li><strong>Mistake 1: Trusting "Files Deleted in 1 Hour" Promises.</strong> Temporary files often persist in disk swap spaces, unencrypted backups, and cloud access logs. <em>Fix:</em> Use in-browser utilities where files never leave local RAM.</li>
+            <li><strong>Mistake 2: Leaving Redacted Text in Selectable Streams.</strong> Placing a black visual box over text in basic PDF viewers does not erase the underlying text stream. <em>Fix:</em> Use true cryptographic redaction or raster flattening before distribution.</li>
+            <li><strong>Mistake 3: Downloading Untrusted Desktop Converter Software.</strong> Many desktop freeware converters bundle spyware and telemetry background daemons. <em>Fix:</em> Rely on audited, sandboxed web standards in your browser.</li>
+          </ul>
+
+          <h2 id="faq">7. Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <div class="faq-q">Can the owners of ImgPDF view my uploaded files?</div>
+            <div class="faq-a">No. Your files are processed inside your browser sandbox and never hit our web server or any backend database. We couldn't inspect them even if we wanted to.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Why do traditional converter websites still upload files to servers?</div>
+            <div class="faq-a">Legacy converter tools were built 15 years ago using old command-line software running on Linux backends. Modern browser-side computing has made this centralized approach obsolete.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Are password generators on ImgPDF secure?</div>
+            <div class="faq-a">Yes. Our <a href="/utilities/password-generator/">Password Generator</a> uses the browser's hardware-backed <code>crypto.getRandomValues()</code> API, ensuring true cryptographic entropy without server communication.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="step-card">
-        <div class="step-badge">3</div>
-        <div class="step-content">
-          <h4>Verify Payload Size</h4>
-          <p>On a cloud converter, you will see a multi-megabyte <code>POST</code> request containing your file data. On ImgPDF, you will see <strong>zero file data transmitted</strong>. In fact, you can turn off Wi-Fi entirely after the page loads and the tools continue to work!</p>
-        </div>
+        <!-- Previous & Next Navigation (Cyclical) -->
+        <nav class="article-nav" aria-label="Article navigation">
+          <a href="/blog/how-to-prepare-documents-for-online-applications/" class="article-nav-card">
+            <span class="article-nav-card__dir">&larr; Previous Guide</span>
+            <p class="article-nav-card__title">How to Prepare Documents for Applications</p>
+          </a>
+          <a href="/blog/how-to-compress-a-pdf-without-losing-quality/" class="article-nav-card" style="text-align:right;">
+            <span class="article-nav-card__dir">First Guide &rarr;</span>
+            <p class="article-nav-card__title">How to Compress a PDF Without Losing Quality</p>
+          </a>
+        </nav>
       </div>
-
-      <div class="callout callout--good">
-        <h4>The Airplane Mode Test</h4>
-        <p>A true client-side tool works completely offline. Load ImgPDF, disconnect your internet connection (turn on Airplane mode), and convert or compress a file. The operation finishes in seconds without an internet connection.</p>
-      </div>
-
-      <h2 id="compliance-regulations">4. Regulatory Implications: GDPR, HIPAA, and CCPA</h2>
-      <p>For accountants, healthcare providers, paralegals, and HR professionals, uploading client records to unvetted third-party converter sites can trigger severe regulatory penalties:</p>
-      <ul>
-        <li><strong>HIPAA:</strong> Uploading Protected Health Information (PHI) to a service without an executed Business Associate Agreement (BAA) is a federal compliance violation.</li>
-        <li><strong>GDPR (Article 28):</strong> Transmitting EU citizens' personally identifiable information to unauthorized servers requires formal data processor contracts.</li>
-      </ul>
-      <p>Because client-side tools do not transmit data across networks, they avoid classification as data processors, preserving end-to-end data confidentiality.</p>
-
-      <h2 id="best-practices">5. Best Practices for Handling Sensitive Records</h2>
-      <ul>
-        <li>Redact sensitive account numbers and social security identifiers before converting.</li>
-        <li>Avoid third-party software installers that may bundle adware or telemetry daemons.</li>
-        <li>Always clear browser cache on shared public computers after finishing your session.</li>
-      </ul>
-
-      <h2 id="faq">6. Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <div class="faq-q">Can the owners of ImgPDF view my uploaded files?</div>
-        <div class="faq-a">No. Your files are processed inside your browser sandbox and never hit our web server or any backend database. We couldn't inspect them even if we wanted to.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Why do traditional converter websites still upload files to servers?</div>
-        <div class="faq-a">Legacy converter tools were built 15 years ago using old command-line software running on Linux backends. Modern browser-side computing has made this centralized approach obsolete.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Are password generators on ImgPDF secure?</div>
-        <div class="faq-a">Yes. Our <a href="/utilities/password-generator/">Password Generator</a> uses the browser's hardware-backed <code>crypto.getRandomValues()</code> API, ensuring true cryptographic entropy without server communication.</div>
-      </div>
-    </div>
-
-    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);">
-      <h3>Related Security Tools &amp; Trust Information</h3>
-      <ul style="margin-top: 12px; line-height: 1.8;">
-        <li><a href="/about/">ImgPDF Architecture Overview</a> &mdash; Discover our zero-server technical model.</li>
-        <li><a href="/privacy/">Privacy Policy</a> &mdash; Plain-English legal commitments.</li>
-        <li><a href="/utilities/hash-generator/">Hash Generator</a> &mdash; Verify cryptographic SHA-256 and SHA-512 checksums in-browser.</li>
-      </ul>
     </div>
   </div>
 </main>
@@ -257,12 +333,12 @@
         <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
         <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
       </div>
-      <div><h4>Image</h4><ul>
+      <div><h4>Image Tools</h4><ul>
         <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
         <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
         <li><a href="/image-tools/image-converter/">Image Converter</a></li>
       </ul></div>
-      <div><h4>PDF</h4><ul>
+      <div><h4>PDF Tools</h4><ul>
         <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
         <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
         <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
@@ -273,11 +349,11 @@
         <li><a href="/blog/image-guides/">Image Guides</a></li>
         <li><a href="/guides/">All Guides</a></li>
       </ul></div>
-      <div><h4>Site</h4><ul>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
+      <div><h4>Trust &amp; Legal</h4><ul>
+        <li><a href="/about/">About ImgPDF</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">

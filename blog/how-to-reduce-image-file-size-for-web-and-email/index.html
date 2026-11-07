@@ -119,145 +119,236 @@
 </header>
 
 <main>
-  <div class="article-wrapper">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
-      <a href="/blog/">Blog</a><span class="breadcrumb__sep">/</span>
-      <a href="/blog/image-guides/">Image Guides</a><span class="breadcrumb__sep">/</span>
-      <span>Reduce Image Size for Web and Email</span>
-    </nav>
+  <div class="container">
+    <div class="article-layout">
+      <!-- Sticky Desktop Sidebar TOC -->
+      <aside class="article-sidebar" aria-label="Table of Contents">
+        <div class="sidebar-heading">Contents</div>
+        <ol>
+          <li><a href="#why-image-weight-matters">Why Image Weight Matters</a></li>
+          <li><a href="#three-pillars">The 3 Pillars of Optimization</a></li>
+          <li><a href="#visual-pillars">3-Pillars Diagram</a></li>
+          <li><a href="#step-by-step">Step-by-Step Workflow</a></li>
+          <li><a href="#metadata-stripping">Stripping EXIF Metadata</a></li>
+          <li><a href="#target-benchmarks">Target Weight Benchmarks</a></li>
+          <li><a href="#common-mistakes">Common Mistakes &amp; Fixes</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
 
-    <header class="article-hero">
-      <span class="article-category">Image Guides</span>
-      <h1>How to Reduce Image File Size for Web and Email</h1>
-      <p class="lead">Heavy images destroy website page speed, harm Google Core Web Vitals rankings, and bounce back from email inboxes. Here is how to slash image bytes by 70% to 90% without making pictures look degraded.</p>
-      
-      <div class="article-byline">
-        <div class="byline-avatar">IP</div>
-        <div>
-          <div class="byline-author">ImgPDF Editorial Team</div>
-          <div class="byline-meta">Updated March 2026 &bull; 7 min read &bull; Verified Browser-Safe</div>
+        <div style="margin-top: 32px; padding: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Image Compressor</div>
+          <p style="font-size: 0.82rem; margin: 0 0 10px; color: var(--ink-soft);">Optimize JPG, PNG, and WebP instantly.</p>
+          <a href="/image-tools/image-compressor/" class="btn btn--primary" style="display:block; text-align:center; padding:6px 10px; font-size:0.8rem;">Compress Image Now</a>
         </div>
-      </div>
-    </header>
+      </aside>
 
-    <div class="toc-box">
-      <div class="toc-title">Table of Contents</div>
-      <ul class="toc-list">
-        <li><a href="#why-image-weight-matters">1. Why Unoptimized Images Hurt Websites &amp; Emails</a></li>
-        <li><a href="#three-pillars">2. The 3 Pillars of Image Optimization</a></li>
-        <li><a href="#step-by-step">3. Step-by-Step Optimization Workflow</a></li>
-        <li><a href="#metadata-stripping">4. Stripping EXIF Metadata for Speed &amp; Privacy</a></li>
-        <li><a href="#target-benchmarks">5. Target File Size Benchmarks (Web vs Email)</a></li>
-        <li><a href="#faq">6. Frequently Asked Questions</a></li>
-      </ul>
-    </div>
+      <!-- Main Article Content -->
+      <div class="article-main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+          <a href="/blog/">Blog</a><span class="breadcrumb__sep">/</span>
+          <a href="/blog/image-guides/">Image Guides</a><span class="breadcrumb__sep">/</span>
+          <span>Reduce Image Size for Web and Email</span>
+        </nav>
 
-    <div class="prose">
-      <h2 id="why-image-weight-matters">1. Why Unoptimized Images Hurt Websites &amp; Emails</h2>
-      <p>Modern smartphones take breathtaking photos at 12 to 50 megapixels. However, a single raw phone photo can weigh between <strong>4MB and 15MB</strong>. If you embed three such photos onto a web page, users must download 30MB of data just to read an article!</p>
-      <p>For websites, heavy images are the primary cause of poor <strong>Largest Contentful Paint (LCP)</strong> scores, leading to high bounce rates and penalized Google search rankings. For email, messages larger than 10MB to 20MB are rejected by corporate mail filters or truncated by Gmail's "Message clipped" limit.</p>
+        <header class="article-hero">
+          <span class="article-category">Image Guides</span>
+          <h1>How to Reduce Image File Size for Web and Email</h1>
+          <p class="lead">Heavy images destroy website page speed, hurt Google Core Web Vitals rankings, and bounce back from email inboxes. Here is how to slash image bytes by 70% to 90% without making pictures look degraded.</p>
+          
+          <div class="article-byline">
+            <div class="byline-avatar">IP</div>
+            <div>
+              <div class="byline-author">ImgPDF Editorial Team &bull; Reviewed by Poornesh Devadiga</div>
+              <div class="byline-meta">Published March 7, 2026 &bull; Updated March 15, 2026 &bull; 7 min read</div>
+            </div>
+          </div>
+        </header>
 
-      <div class="tool-cta-box">
-        <h3>Compress your images right now</h3>
-        <p>Use ImgPDF's free Image Compressor. Fine-tune your quality slider and see live file size reductions before saving.</p>
-        <a href="/image-tools/image-compressor/" class="btn btn--primary">Launch Image Compressor &rarr;</a>
-      </div>
-
-      <h2 id="three-pillars">2. The 3 Pillars of Image Optimization</h2>
-      <p>True image optimization does not rely solely on turning down a quality slider. It involves three complementary steps:</p>
-      
-      <table style="width:100%; border-collapse: collapse; margin: 24px 0; font-size: 0.95rem;">
-        <thead>
-          <tr style="border-bottom: 2px solid var(--border); text-align: left;">
-            <th style="padding: 10px 12px;">Pillar</th>
-            <th style="padding: 10px 12px;">Action</th>
-            <th style="padding: 10px 12px;">Impact</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding: 10px 12px; font-weight: 600;">1. Resolution Scaling</td>
-            <td style="padding: 10px 12px;">Scale 4000px camera photos down to 1200&ndash;1600px width</td>
-            <td style="padding: 10px 12px; color: var(--accent);">Eliminates 60%&ndash;75% of raw pixels</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--border);">
-            <td style="padding: 10px 12px; font-weight: 600;">2. Format Selection</td>
-            <td style="padding: 10px 12px;">Use WebP or optimized JPEG instead of uncompressed PNG</td>
-            <td style="padding: 10px 12px; color: var(--accent);">Saves 25%&ndash;40% byte overhead</td>
-          </tr>
-          <tr>
-            <td style="padding: 10px 12px; font-weight: 600;">3. Quality Tuning</td>
-            <td style="padding: 10px 12px;">Set encoder quality to 80% &ndash; 85%</td>
-            <td style="padding: 10px 12px; color: var(--accent);">Removes imperceptible high frequencies</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2 id="step-by-step">3. Step-by-Step Optimization Workflow</h2>
-      
-      <div class="step-card">
-        <div class="step-badge">1</div>
-        <div class="step-content">
-          <h4>Scale down excessive dimensions first</h4>
-          <p>If your photo is <code>4032x3024</code>, no computer screen or phone display can render all those pixels simultaneously. Open the <a href="/image-tools/image-resizer/">Image Resizer</a> and scale the width down to <code>1200px</code> or <code>1600px</code> with locked aspect ratio.</p>
+        <!-- Social Share Bar -->
+        <div class="share-bar">
+          <span class="share-label">Share:</span>
+          <button class="share-btn" type="button" data-action="copy-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            <span>Copy Link</span>
+          </button>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?text=How%20to%20Reduce%20Image%20File%20Size%20for%20Web%20and%20Email&url=https%3A%2F%2Fimg-pdf.github.io%2Fblog%2Fhow-to-reduce-image-file-size-for-web-and-email%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>Post on X</span>
+          </a>
+          <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimg-pdf.github.io%2Fblog%2Fhow-to-reduce-image-file-size-for-web-and-email%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.86 0 1.56-.7 1.56-1.56 0-.86-.7-1.56-1.56-1.56-.86 0-1.56.7-1.56 1.56 0 .86.7 1.56 1.56 1.56m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
-      </div>
 
-      <div class="step-card">
-        <div class="step-badge">2</div>
-        <div class="step-content">
-          <h4>Apply intelligent compression</h4>
-          <p>Take the resized image into the <a href="/image-tools/image-compressor/">Image Compressor</a>. Set the quality slider to <strong>80%</strong>. Human eyes cannot distinguish 80% quality from 100% quality at normal viewing distances, yet the file size drops by more than half.</p>
+        <!-- Mobile Collapsible TOC -->
+        <details class="toc-box toc-box--collapsible" style="margin-bottom: 28px;">
+          <summary>Table of Contents</summary>
+          <ol>
+            <li><a href="#why-image-weight-matters">Why Image Weight Matters</a></li>
+            <li><a href="#three-pillars">The 3 Pillars of Optimization</a></li>
+            <li><a href="#visual-pillars">3-Pillars Diagram</a></li>
+            <li><a href="#step-by-step">Step-by-Step Workflow</a></li>
+            <li><a href="#metadata-stripping">Stripping EXIF Metadata</a></li>
+            <li><a href="#target-benchmarks">Target Weight Benchmarks</a></li>
+            <li><a href="#common-mistakes">Common Mistakes &amp; Fixes</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+          <h2 id="why-image-weight-matters">1. Why Unoptimized Images Hurt Websites &amp; Emails</h2>
+          <p>Modern smartphones take breathtaking photos at 12 to 50 megapixels. However, a single raw phone photo can weigh between <strong>4MB and 15MB</strong>. If you embed three such photos onto a web page, users must download 30MB of data just to read an article!</p>
+          <p>For websites, heavy images are the primary cause of poor <strong>Largest Contentful Paint (LCP)</strong> scores, leading to high bounce rates and penalized Google search rankings. For email, messages larger than 10MB to 20MB are rejected by corporate mail filters or truncated by Gmail's "Message clipped" limit.</p>
+
+          <div class="tool-cta-box">
+            <div>
+              <h3>Compress your images right now</h3>
+              <p>Fine-tune your quality slider and see live byte savings before downloading.</p>
+            </div>
+            <a href="/image-tools/image-compressor/" class="btn btn--primary">Launch Image Compressor &rarr;</a>
+          </div>
+
+          <h2 id="three-pillars">2. The 3 Pillars of Image Optimization</h2>
+          <p>True image optimization does not rely solely on turning down a quality slider. It involves three complementary steps:</p>
+          
+          <table style="width:100%; border-collapse: collapse; margin: 24px 0; font-size: 0.95rem;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border); text-align: left;">
+                <th style="padding: 10px 12px;">Pillar</th>
+                <th style="padding: 10px 12px;">Action</th>
+                <th style="padding: 10px 12px;">Impact</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 10px 12px; font-weight: 600;">1. Resolution Scaling</td>
+                <td style="padding: 10px 12px;">Scale 4000px camera photos down to 1200&ndash;1600px width</td>
+                <td style="padding: 10px 12px; color: var(--accent); font-weight:600;">Eliminates 60%&ndash;75% of raw pixels</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border);">
+                <td style="padding: 10px 12px; font-weight: 600;">2. Format Selection</td>
+                <td style="padding: 10px 12px;">Use WebP or optimized JPEG instead of uncompressed PNG</td>
+                <td style="padding: 10px 12px; color: var(--accent); font-weight:600;">Saves 25%&ndash;40% byte overhead</td>
+              </tr>
+              <tr>
+                <td style="padding: 10px 12px; font-weight: 600;">3. Quality Tuning</td>
+                <td style="padding: 10px 12px;">Set encoder quality to 80% &ndash; 85%</td>
+                <td style="padding: 10px 12px; color: #059669; font-weight:600;">Removes imperceptible high frequencies</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="visual-pillars">3. Optimization Compound Effect</h2>
+          <div class="article-diagram">
+            <svg viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Raw -->
+              <rect x="20" y="25" width="125" height="110" rx="6" fill="var(--surface)" stroke="#dc2626" stroke-width="2"/>
+              <text x="82" y="55" fill="#dc2626" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">Raw Camera Shot</text>
+              <text x="82" y="78" fill="var(--ink)" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">8.5 MB</text>
+              <text x="82" y="100" fill="var(--muted)" font-family="sans-serif" font-size="9" text-anchor="middle">4032 &times; 3024 px</text>
+
+              <!-- Pillar 1 -->
+              <path d="M152 80h25" stroke="var(--accent)" stroke-width="2"/>
+              <rect x="180" y="32" width="115" height="95" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-width="1.8"/>
+              <text x="237" y="58" fill="var(--accent)" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">1. Resize</text>
+              <text x="237" y="78" fill="var(--ink)" font-family="monospace" font-size="11" text-anchor="middle">1.8 MB</text>
+              <text x="237" y="98" fill="var(--muted)" font-family="sans-serif" font-size="9" text-anchor="middle">Scale to 1400px</text>
+
+              <!-- Pillar 2 -->
+              <path d="M300 80h25" stroke="var(--accent)" stroke-width="2"/>
+              <rect x="330" y="32" width="115" height="95" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-width="1.8"/>
+              <text x="387" y="58" fill="var(--accent)" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">2. WebP Format</text>
+              <text x="387" y="78" fill="var(--ink)" font-family="monospace" font-size="11" text-anchor="middle">520 KB</text>
+              <text x="387" y="98" fill="var(--muted)" font-family="sans-serif" font-size="9" text-anchor="middle">Modern codec</text>
+
+              <!-- Pillar 3 Output -->
+              <path d="M450 80h25" stroke="var(--accent)" stroke-width="2"/>
+              <rect x="480" y="25" width="135" height="110" rx="8" fill="var(--surface-alt)" stroke="#059669" stroke-width="2"/>
+              <text x="547" y="55" fill="#059669" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle">3. 80% Quantize</text>
+              <text x="547" y="80" fill="#059669" font-family="monospace" font-size="14" font-weight="bold" text-anchor="middle">120 KB (-98%)</text>
+              <text x="547" y="102" fill="var(--ink-soft)" font-family="sans-serif" font-size="10" text-anchor="middle">Fast LCP &bull; Email Safe</text>
+            </svg>
+            <div class="article-diagram__caption">Figure 7: Sequential reduction across dimensions, codec, and quantization.</div>
+          </div>
+
+          <h2 id="step-by-step">4. Step-by-Step Optimization Workflow</h2>
+          
+          <div class="step-card">
+            <div class="step-badge">Step 1</div>
+            <div class="step-content">
+              <h4>Scale down excessive dimensions first</h4>
+              <p>If your photo is <code>4032x3024</code>, no computer screen or phone display can render all those pixels simultaneously. Open the <a href="/image-tools/image-resizer/">Image Resizer</a> and scale the width down to <code>1200px</code> or <code>1600px</code> with locked aspect ratio.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">Step 2</div>
+            <div class="step-content">
+              <h4>Apply intelligent compression</h4>
+              <p>Take the resized image into the <a href="/image-tools/image-compressor/">Image Compressor</a>. Set the quality slider to <strong>80%</strong>. Human eyes cannot distinguish 80% quality from 100% quality at normal viewing distances, yet the file size drops by more than half.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">Step 3</div>
+            <div class="step-content">
+              <h4>Download and verify file weight</h4>
+              <p>Check the output size. An original 6MB photo will typically finish at under <strong>180KB</strong>—a 97% reduction that loads in a split-second on mobile 4G.</p>
+            </div>
+          </div>
+
+          <h2 id="metadata-stripping">5. Stripping EXIF Metadata for Speed &amp; Privacy</h2>
+          <p>Digital cameras and smartphones embed extensive <strong>EXIF data</strong> inside image files: GPS latitude/longitude coordinates of where the photo was taken, exact device serial numbers, lens settings, and date timestamps. Stripping EXIF metadata saves between 5KB and 60KB per image while protecting your physical privacy before publishing online.</p>
+
+          <div class="callout callout--good">
+            <h4>Did you know?</h4>
+            <p>When you compress images with ImgPDF, canvas re-encoding automatically strips unnecessary EXIF tracking metadata, keeping your exact location private.</p>
+          </div>
+
+          <h2 id="target-benchmarks">6. Target File Size Benchmarks (Web vs Email)</h2>
+          <ul>
+            <li><strong>Full-Width Website Hero Banner:</strong> Under <code>250 KB</code> (max <code>1920px</code> width).</li>
+            <li><strong>Standard Blog Article Inline Image:</strong> Under <code>100 KB</code> (max <code>1200px</code> width).</li>
+            <li><strong>Email Newsletter Graphic / Header:</strong> Under <code>80 KB</code> (max <code>600px</code> width to prevent inbox lag).</li>
+            <li><strong>E-Commerce Product Thumbnail:</strong> Under <code>40 KB</code> (max <code>400px</code> width).</li>
+          </ul>
+
+          <h2 id="common-mistakes">7. Common Mistakes &amp; How to Fix Them</h2>
+          <ul>
+            <li><strong>Mistake 1: Setting Compression to 20% to Meet Size.</strong> Dragging the quality slider too low creates terrible JPEG blockiness. <em>Fix:</em> Scale the pixel dimensions down by 30% first, then use 80% quality.</li>
+            <li><strong>Mistake 2: Saving Photographic Images in PNG.</strong> PNG is lossless, meaning a photograph with complex texture gradients will remain huge (often 5MB). <em>Fix:</em> Save photos in WebP or JPG.</li>
+            <li><strong>Mistake 3: Re-compressing Compressed JPEGs Repeatedly.</strong> Repeated lossy encoding compounds noise. <em>Fix:</em> Always compress from the original high-resolution master file.</li>
+          </ul>
+
+          <h2 id="faq">8. Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <div class="faq-q">Will 80% compression make my product photos look cheap?</div>
+            <div class="faq-a">No. Modern JPEG and WebP quantizers remove only sub-visual frequencies that human retinas cannot detect. Textures, highlights, and color vibrancy remain rich and lifelike.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Should I use PNG or WebP for transparent logos?</div>
+            <div class="faq-a">WebP supports alpha transparency and is supported across 98%+ of all modern browsers, typically delivering transparent logos at half the size of traditional 24-bit PNGs.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Can I batch compress multiple photos together?</div>
+            <div class="faq-a">Yes! ImgPDF allows you to drag in multiple files and optimize them in parallel directly in your browser.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="step-card">
-        <div class="step-badge">3</div>
-        <div class="step-content">
-          <h4>Download and verify file weight</h4>
-          <p>Check the output size. An original 6MB photo will typically finish at under <strong>180KB</strong>—a 97% reduction that loads in a split-second on mobile 4G.</p>
-        </div>
+        <!-- Previous & Next Navigation -->
+        <nav class="article-nav" aria-label="Article navigation">
+          <a href="/blog/how-to-resize-image-without-distortion/" class="article-nav-card">
+            <span class="article-nav-card__dir">&larr; Previous Guide</span>
+            <p class="article-nav-card__title">How to Resize Images Without Distortion</p>
+          </a>
+          <a href="/blog/pdf-vs-jpg-vs-png-which-format-to-use/" class="article-nav-card" style="text-align:right;">
+            <span class="article-nav-card__dir">Next Guide &rarr;</span>
+            <p class="article-nav-card__title">PDF vs JPG vs PNG: Which Format to Use?</p>
+          </a>
+        </nav>
       </div>
-
-      <h2 id="metadata-stripping">4. Stripping EXIF Metadata for Speed &amp; Privacy</h2>
-      <p>Digital cameras and smartphones embed extensive <strong>EXIF data</strong> inside image files: GPS latitude/longitude coordinates of where the photo was taken, exact device serial numbers, lens settings, and date timestamps. Stripping EXIF metadata saves between 5KB and 60KB per image while protecting your physical privacy before publishing online.</p>
-
-      <div class="callout callout--good">
-        <h4>Did you know?</h4>
-        <p>When you compress images with ImgPDF, canvas re-encoding automatically strips unnecessary EXIF tracking metadata, keeping your exact location private.</p>
-      </div>
-
-      <h2 id="target-benchmarks">5. Target File Size Benchmarks (Web vs Email)</h2>
-      <ul>
-        <li><strong>Full-Width Website Hero Banner:</strong> Under <code>250 KB</code> (max <code>1920px</code> width).</li>
-        <li><strong>Standard Blog Article Inline Image:</strong> Under <code>100 KB</code> (max <code>1200px</code> width).</li>
-        <li><strong>Email Newsletter Graphic / Header:</strong> Under <code>80 KB</code> (max <code>600px</code> width to prevent inbox lag).</li>
-        <li><strong>E-Commerce Product Thumbnail:</strong> Under <code>40 KB</code> (max <code>400px</code> width).</li>
-      </ul>
-
-      <h2 id="faq">6. Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <div class="faq-q">Will 80% compression make my product photos look cheap?</div>
-        <div class="faq-a">No. Modern JPEG and WebP quantizers remove only sub-visual frequencies that human retinas cannot detect. Textures, highlights, and color vibrancy remain rich and lifelike.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Should I use PNG or WebP for transparent logos?</div>
-        <div class="faq-a">WebP supports alpha transparency and is supported across 98%+ of all modern browsers, typically delivering transparent logos at half the size of traditional 24-bit PNGs.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I batch compress multiple photos together?</div>
-        <div class="faq-a">Yes! ImgPDF allows you to drag in multiple files and optimize them in parallel directly in your browser.</div>
-      </div>
-    </div>
-
-    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);">
-      <h3>Recommended Tools &amp; Tutorials</h3>
-      <ul style="margin-top: 12px; line-height: 1.8;">
-        <li><a href="/image-tools/image-compressor/">Image Compressor</a> &mdash; Rapid client-side JPEG, PNG, and WebP compression.</li>
-        <li><a href="/image-tools/image-resizer/">Image Resizer</a> &mdash; Scale down pixel dimensions cleanly.</li>
-        <li><a href="/guides/image-compression-without-quality-loss/">In-Depth Compression Guide</a> &mdash; Advanced technical metrics.</li>
-      </ul>
     </div>
   </div>
 </main>
@@ -269,12 +360,12 @@
         <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
         <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
       </div>
-      <div><h4>Image</h4><ul>
+      <div><h4>Image Tools</h4><ul>
         <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
         <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
         <li><a href="/image-tools/image-converter/">Image Converter</a></li>
       </ul></div>
-      <div><h4>PDF</h4><ul>
+      <div><h4>PDF Tools</h4><ul>
         <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
         <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
         <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
@@ -285,11 +376,11 @@
         <li><a href="/blog/image-guides/">Image Guides</a></li>
         <li><a href="/guides/">All Guides</a></li>
       </ul></div>
-      <div><h4>Site</h4><ul>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
+      <div><h4>Trust &amp; Legal</h4><ul>
+        <li><a href="/about/">About ImgPDF</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">

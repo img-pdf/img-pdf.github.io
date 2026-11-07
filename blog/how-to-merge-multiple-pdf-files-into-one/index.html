@@ -119,124 +119,211 @@
 </header>
 
 <main>
-  <div class="article-wrapper">
-    <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
-      <a href="/blog/">Blog</a><span class="breadcrumb__sep">/</span>
-      <a href="/blog/pdf-guides/">PDF Guides</a><span class="breadcrumb__sep">/</span>
-      <span>Merge Multiple PDF Files</span>
-    </nav>
+  <div class="container">
+    <div class="article-layout">
+      <!-- Sticky Desktop Sidebar TOC -->
+      <aside class="article-sidebar" aria-label="Table of Contents">
+        <div class="sidebar-heading">Contents</div>
+        <ol>
+          <li><a href="#why-merge-pdfs">Common Merge Scenarios</a></li>
+          <li><a href="#how-merging-works">How Stream Merging Works</a></li>
+          <li><a href="#visual-merge">Merge Architecture Diagram</a></li>
+          <li><a href="#step-by-step-guide">Step-by-Step Tutorial</a></li>
+          <li><a href="#page-order-and-orientation">Page Ordering &amp; Rotation</a></li>
+          <li><a href="#common-mistakes">Common Mistakes &amp; Fixes</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
 
-    <header class="article-hero">
-      <span class="article-category">PDF Guides</span>
-      <h1>How to Merge Multiple PDF Files into One Master Document</h1>
-      <p class="lead">Whether you are packaging bank statements for a mortgage, preparing academic credentials, or assembling a client contract dossier, combining PDF files into a single structured document should be instantaneous and secure.</p>
-      
-      <div class="article-byline">
-        <div class="byline-avatar">IP</div>
-        <div>
-          <div class="byline-author">ImgPDF Editorial Team</div>
-          <div class="byline-meta">Updated March 2026 &bull; 6 min read &bull; Verified Browser-Safe</div>
+        <div style="margin-top: 32px; padding: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 6px;">Free Merge Tool</div>
+          <p style="font-size: 0.82rem; margin: 0 0 10px; color: var(--ink-soft);">Combine unlimited PDFs with instant drag-and-drop.</p>
+          <a href="/pdf-tools/merge-pdf/" class="btn btn--primary" style="display:block; text-align:center; padding:6px 10px; font-size:0.8rem;">Merge PDFs Now</a>
         </div>
-      </div>
-    </header>
+      </aside>
 
-    <div class="toc-box">
-      <div class="toc-title">Table of Contents</div>
-      <ul class="toc-list">
-        <li><a href="#why-merge-pdfs">1. Common Scenarios for Merging PDFs</a></li>
-        <li><a href="#how-merging-works">2. How Document Stream Merging Works Behind the Scenes</a></li>
-        <li><a href="#step-by-step-guide">3. Step-by-Step: Merging PDFs with ImgPDF</a></li>
-        <li><a href="#page-order-and-orientation">4. Controlling Page Sequences and Document Structure</a></li>
-        <li><a href="#handling-sensitive-records">5. Safe Handling for Confidential Financial &amp; Legal Records</a></li>
-        <li><a href="#faq">6. Frequently Asked Questions</a></li>
-      </ul>
-    </div>
+      <!-- Main Article Content -->
+      <div class="article-main">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+          <a href="/blog/">Blog</a><span class="breadcrumb__sep">/</span>
+          <a href="/blog/pdf-guides/">PDF Guides</a><span class="breadcrumb__sep">/</span>
+          <span>Merge Multiple PDF Files</span>
+        </nav>
 
-    <div class="prose">
-      <h2 id="why-merge-pdfs">1. Common Scenarios for Merging PDFs</h2>
-      <p>Managing dozens of disconnected PDF files leads to lost attachments and frustrated recipients. Merging is essential for:</p>
-      <ul>
-        <li><strong>Job Applications:</strong> Combining a cover letter, tailored resume, letter of recommendation, and portfolio samples into one cohesive PDF submission.</li>
-        <li><strong>Visa &amp; Immigration Packages:</strong> Assembling passport scans, tax returns, employment verification letters, and travel itineraries into a single sequential file.</li>
-        <li><strong>Accounting &amp; Tax Filings:</strong> Grouping monthly expense receipts, 1099/W-2 forms, and balance sheets for your CPA or tax authority.</li>
-        <li><strong>Academic Portfolios:</strong> Stacking thesis chapters, research papers, and bibliography appendices together.</li>
-      </ul>
+        <header class="article-hero">
+          <span class="article-category">PDF Guides</span>
+          <h1>How to Merge Multiple PDF Files into One Master Document</h1>
+          <p class="lead">Whether you are packaging bank statements for a mortgage, assembling academic credentials, or organizing a client contract dossier, combining PDF files into a single structured document should be instantaneous, ordered, and private.</p>
+          
+          <div class="article-byline">
+            <div class="byline-avatar">IP</div>
+            <div>
+              <div class="byline-author">ImgPDF Editorial Team &bull; Reviewed by Poornesh Devadiga</div>
+              <div class="byline-meta">Published March 2, 2026 &bull; Updated March 15, 2026 &bull; 6 min read</div>
+            </div>
+          </div>
+        </header>
 
-      <div class="tool-cta-box">
-        <h3>Merge your PDF files right now</h3>
-        <p>No software to install, no watermark, and no email address required. Combine unlimited PDF documents with instant drag-and-drop.</p>
-        <a href="/pdf-tools/merge-pdf/" class="btn btn--primary">Launch Merge PDF Tool &rarr;</a>
-      </div>
-
-      <h2 id="how-merging-works">2. How Document Stream Merging Works Behind the Scenes</h2>
-      <p>A PDF file is not a simple image; it is an organized database of document streams containing page trees, font dictionaries, form fields, and vector drawings. When you merge PDFs properly:</p>
-      <ol>
-        <li>The PDF engine parses the <strong>Root Catalog</strong> and <strong>Pages Tree</strong> of each input document.</li>
-        <li>Individual page objects (<code>/Page</code>) and their dependent content streams (<code>/Contents</code>) are re-indexed to prevent object ID collisions.</li>
-        <li>A consolidated root catalog is generated, preserving text selectable status and hyperlink integrity.</li>
-      </ol>
-      <p>Using client-side WebAssembly and modern JavaScript libraries like <code>pdf-lib</code>, ImgPDF performs this entire synthesis directly within your device's browser memory.</p>
-
-      <h2 id="step-by-step-guide">3. Step-by-Step: Merging PDFs with ImgPDF</h2>
-      
-      <div class="step-card">
-        <div class="step-badge">1</div>
-        <div class="step-content">
-          <h4>Add your PDF files</h4>
-          <p>Navigate to the <a href="/pdf-tools/merge-pdf/">ImgPDF Merge Tool</a> and drag all the PDF documents you want to merge into the workspace. You can also click the file picker to select multiple files at once.</p>
+        <!-- Social Share Bar -->
+        <div class="share-bar">
+          <span class="share-label">Share:</span>
+          <button class="share-btn" type="button" data-action="copy-link">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            <span>Copy Link</span>
+          </button>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?text=How%20to%20Merge%20Multiple%20PDF%20Files%20into%20One&url=https%3A%2F%2Fimg-pdf.github.io%2Fblog%2Fhow-to-merge-multiple-pdf-files-into-one%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <span>Post on X</span>
+          </a>
+          <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fimg-pdf.github.io%2Fblog%2Fhow-to-merge-multiple-pdf-files-into-one%2F" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c.86 0 1.56-.7 1.56-1.56 0-.86-.7-1.56-1.56-1.56-.86 0-1.56.7-1.56 1.56 0 .86.7 1.56 1.56 1.56m1.39 9.74v-8.37H5.07v8.37h2.78z"/></svg>
+            <span>LinkedIn</span>
+          </a>
         </div>
-      </div>
 
-      <div class="step-card">
-        <div class="step-badge">2</div>
-        <div class="step-content">
-          <h4>Arrange the file order</h4>
-          <p>Review the list of uploaded documents. Use the up and down controls or drag the cards to arrange files in the exact sequence you want them to appear in the final consolidated PDF.</p>
+        <!-- Mobile Collapsible TOC -->
+        <details class="toc-box toc-box--collapsible" style="margin-bottom: 28px;">
+          <summary>Table of Contents</summary>
+          <ol>
+            <li><a href="#why-merge-pdfs">Common Merge Scenarios</a></li>
+            <li><a href="#how-merging-works">How Stream Merging Works</a></li>
+            <li><a href="#visual-merge">Merge Architecture Diagram</a></li>
+            <li><a href="#step-by-step-guide">Step-by-Step Tutorial</a></li>
+            <li><a href="#page-order-and-orientation">Page Ordering &amp; Rotation</a></li>
+            <li><a href="#common-mistakes">Common Mistakes &amp; Fixes</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+          </ol>
+        </details>
+
+        <div class="prose">
+          <h2 id="why-merge-pdfs">1. Common Scenarios for Merging PDFs</h2>
+          <p>Managing dozens of disconnected PDF files leads to lost email attachments and frustrated recruiters or clients. Merging is essential for:</p>
+          <ul>
+            <li><strong>Job Applications:</strong> Combining a cover letter, tailored resume, letters of recommendation, and portfolio samples into one cohesive submission.</li>
+            <li><strong>Visa &amp; Immigration Packages:</strong> Assembling passport scans, tax returns, employment verification letters, and travel bookings into a single sequential file.</li>
+            <li><strong>Accounting &amp; Tax Filings:</strong> Grouping monthly expense receipts, 1099/W-2 forms, and balance sheets for your accountant.</li>
+            <li><strong>Academic Portfolios:</strong> Stacking thesis chapters, research papers, and bibliography appendices together.</li>
+          </ul>
+
+          <div class="tool-cta-box">
+            <div>
+              <h3>Merge your PDF files right now</h3>
+              <p>No software to install, no watermark, and no email required. Combine files instantly in local RAM.</p>
+            </div>
+            <a href="/pdf-tools/merge-pdf/" class="btn btn--primary">Launch Merge Tool &rarr;</a>
+          </div>
+
+          <h2 id="how-merging-works">2. How Document Stream Merging Works Behind the Scenes</h2>
+          <p>A PDF file is not a simple image; it is an organized database of document streams containing page trees, font dictionaries, form fields, and vector drawings. When you merge PDFs properly:</p>
+          <ol>
+            <li>The PDF engine parses the <strong>Root Catalog</strong> and <strong>Pages Tree</strong> of each input document.</li>
+            <li>Individual page objects (<code>/Page</code>) and their dependent content streams (<code>/Contents</code>) are re-indexed to prevent object ID collisions.</li>
+            <li>A consolidated root catalog is generated, preserving text selectable status and hyperlink integrity.</li>
+          </ol>
+          <p>Using client-side WebAssembly and modern JavaScript libraries like <code>pdf-lib</code>, ImgPDF performs this entire synthesis directly within your device's browser memory.</p>
+
+          <h2 id="visual-merge">3. Document Merge Pipeline</h2>
+          <div class="article-diagram">
+            <svg viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Doc 1 -->
+              <rect x="25" y="20" width="85" height="115" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+              <text x="67" y="50" fill="var(--ink)" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Cover Letter</text>
+              <text x="67" y="70" fill="var(--muted)" font-family="monospace" font-size="9" text-anchor="middle">Page 1</text>
+
+              <!-- Doc 2 -->
+              <rect x="130" y="20" width="85" height="115" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+              <text x="172" y="50" fill="var(--ink)" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Resume</text>
+              <text x="172" y="70" fill="var(--muted)" font-family="monospace" font-size="9" text-anchor="middle">Pages 2-3</text>
+
+              <!-- Doc 3 -->
+              <rect x="235" y="20" width="85" height="115" rx="5" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+              <text x="277" y="50" fill="var(--ink)" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle">Certificates</text>
+              <text x="277" y="70" fill="var(--muted)" font-family="monospace" font-size="9" text-anchor="middle">Pages 4-6</text>
+
+              <!-- Merge Arrow -->
+              <path d="M340 78h45" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+              <path d="M375 72l8 6-8 6" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="362" y="62" fill="var(--accent)" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">Merge</text>
+
+              <!-- Unified Output -->
+              <rect x="410" y="15" width="200" height="125" rx="8" fill="var(--surface-alt)" stroke="var(--accent)" stroke-width="2"/>
+              <text x="510" y="45" fill="var(--ink)" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle">Unified Master PDF</text>
+              <text x="510" y="70" fill="#059669" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">6 Sequential Pages</text>
+              <text x="510" y="95" fill="var(--ink-soft)" font-family="sans-serif" font-size="10" text-anchor="middle">Clean Table of Contents &bull; Searchable</text>
+              <rect x="440" y="108" width="140" height="20" rx="4" fill="rgba(20, 110, 245, 0.1)"/>
+              <text x="510" y="122" fill="var(--accent)" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">Object Streams Re-indexed</text>
+            </svg>
+            <div class="article-diagram__caption">Figure 2: In-browser page tree binding and catalog consolidation.</div>
+          </div>
+
+          <h2 id="step-by-step-guide">4. Step-by-Step: Merging PDFs with ImgPDF</h2>
+          
+          <div class="step-card">
+            <div class="step-badge">Step 1</div>
+            <div class="step-content">
+              <h4>Add your PDF documents</h4>
+              <p>Navigate to the <a href="/pdf-tools/merge-pdf/">ImgPDF Merge Tool</a> and drag all the PDF documents you want to combine into the dropzone. You can also click the file picker to select multiple files at once.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">Step 2</div>
+            <div class="step-content">
+              <h4>Arrange the file order</h4>
+              <p>Review the list of uploaded documents. Use the up and down controls or drag the cards to arrange files in the exact sequence you want them to appear in the final consolidated PDF.</p>
+            </div>
+          </div>
+
+          <div class="step-card">
+            <div class="step-badge">Step 3</div>
+            <div class="step-content">
+              <h4>Merge and save</h4>
+              <p>Click <strong>Merge PDFs</strong>. The tool binds the page streams together in less than a second. Click <strong>Download Merged PDF</strong> to save the final document directly to your computer or phone.</p>
+            </div>
+          </div>
+
+          <div class="callout callout--good">
+            <h4>Need to remove or reorder individual pages first?</h4>
+            <p>If one of your files has extra blank pages or out-of-order scans, use our <a href="/pdf-tools/split-pdf/">PDF Splitter</a> to extract only the needed pages prior to merging.</p>
+          </div>
+
+          <h2 id="page-order-and-orientation">5. Page Ordering &amp; Rotation Handling</h2>
+          <p>When assembling files from various sources, you will often encounter mixed orientations (such as a landscape financial spreadsheet merged between portrait letter pages). Modern PDF specifications support per-page rotation dictionaries (<code>/Rotate 90</code>, <code>/Rotate 180</code>, <code>/Rotate 270</code>), meaning each page maintains its proper viewing angle automatically upon merge without warping text.</p>
+
+          <h2 id="common-mistakes">6. Common Mistakes &amp; How to Fix Them</h2>
+          <ul>
+            <li><strong>Mistake 1: Merging Locked or Password-Protected PDFs.</strong> Merging engines cannot inspect encrypted cross-reference tables without the password. <em>Fix:</em> Unlock the PDF in your reader or print-to-PDF before adding it to the merge stack.</li>
+            <li><strong>Mistake 2: Ignoring Out-of-Order Pages in Multi-Page Sub-files.</strong> If an internal file has page 3 before page 2, merging will not reorder its internal pages automatically. <em>Fix:</em> Use the <a href="/pdf-tools/split-pdf/">PDF Splitter</a> to extract and arrange sheets first.</li>
+            <li><strong>Mistake 3: Exceeding Portal Limits with Combined File Sizes.</strong> Merging 5 uncompressed files can easily yield a 25MB output. <em>Fix:</em> Check the compressed size using our <a href="/blog/how-to-compress-a-pdf-without-losing-quality/">PDF Compression Guide</a> after merging.</li>
+          </ul>
+
+          <h2 id="faq">7. Frequently Asked Questions</h2>
+          <div class="faq-item">
+            <div class="faq-q">Is there a limit to how many PDFs I can merge?</div>
+            <div class="faq-a">ImgPDF does not enforce artificial file limits. You can merge 2, 10, or 50+ files smoothly, constrained only by your device's available memory.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Does merging PDFs affect digital signatures?</div>
+            <div class="faq-a">Cryptographic digital signatures (PKI signatures) are designed to become invalid if document structure changes. If a PDF contains an active cryptographic signature, merging it into a new document will invalidate the original certificate stamp, though the visual signature line will remain intact.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Can I merge image files (JPG/PNG) directly with PDFs?</div>
+            <div class="faq-a">Yes! You can first convert your pictures to PDF using our <a href="/pdf-tools/jpg-to-pdf/">JPG to PDF Converter</a>, then merge them with your other PDF documents.</div>
+          </div>
         </div>
-      </div>
 
-      <div class="step-card">
-        <div class="step-badge">3</div>
-        <div class="step-content">
-          <h4>Merge and save</h4>
-          <p>Click <strong>Merge PDFs</strong>. The tool binds the page streams together in less than a second. Click <strong>Download Merged PDF</strong> to save the final document directly to your computer or phone.</p>
-        </div>
+        <!-- Previous & Next Navigation -->
+        <nav class="article-nav" aria-label="Article navigation">
+          <a href="/blog/how-to-compress-a-pdf-without-losing-quality/" class="article-nav-card">
+            <span class="article-nav-card__dir">&larr; Previous Guide</span>
+            <p class="article-nav-card__title">How to Compress a PDF Without Losing Quality</p>
+          </a>
+          <a href="/blog/how-to-convert-images-into-pdf/" class="article-nav-card" style="text-align:right;">
+            <span class="article-nav-card__dir">Next Guide &rarr;</span>
+            <p class="article-nav-card__title">How to Convert Images into PDF (JPG, PNG, WebP)</p>
+          </a>
+        </nav>
       </div>
-
-      <div class="callout callout--good">
-        <h4>Need to remove or reorder individual pages first?</h4>
-        <p>If one of your files has extra blank pages or out-of-order scans, use our <a href="/pdf-tools/split-pdf/">PDF Splitter</a> to extract only the needed pages prior to merging.</p>
-      </div>
-
-      <h2 id="page-order-and-orientation">4. Controlling Page Sequences and Document Structure</h2>
-      <p>When assembling files from various sources, you will often encounter mixed orientations (such as a landscape financial spreadsheet merged between portrait letter pages). Modern PDF specifications support per-page rotation dictionaries (<code>/Rotate 90</code>, <code>/Rotate 180</code>, <code>/Rotate 270</code>), meaning each page maintains its proper viewing angle automatically upon merge without warping text.</p>
-
-      <h2 id="handling-sensitive-records">5. Safe Handling for Confidential Financial &amp; Legal Records</h2>
-      <p>Most commercial free PDF converters upload your files to external cloud servers, creating potential compliance vulnerabilities under GDPR, HIPAA, and CCPA regulations. When dealing with confidential contracts, SSNs, and banking credentials, client-side execution is vital. Because ImgPDF operates completely inside your local browser sandbox, your files never cross the network.</p>
-
-      <h2 id="faq">6. Frequently Asked Questions</h2>
-      <div class="faq-item">
-        <div class="faq-q">Is there a limit to how many PDFs I can merge?</div>
-        <div class="faq-a">ImgPDF does not enforce artificial file limits. You can merge 2, 10, or 50+ files smoothly, constrained only by your device's available memory.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Does merging PDFs affect digital signatures?</div>
-        <div class="faq-a">Cryptographic digital signatures (PKI signatures) are designed to become invalid if document structure changes. If a PDF contains an active cryptographic signature, merging it into a new document will invalidate the original certificate stamp, though the visual signature line will remain intact.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I merge image files (JPG/PNG) directly with PDFs?</div>
-        <div class="faq-a">Yes! You can first convert your pictures to PDF using our <a href="/pdf-tools/jpg-to-pdf/">JPG to PDF Converter</a>, then merge them with your other PDF documents.</div>
-      </div>
-    </div>
-
-    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);">
-      <h3>Next Steps &amp; Related Guides</h3>
-      <ul style="margin-top: 12px; line-height: 1.8;">
-        <li><a href="/blog/how-to-compress-a-pdf-without-losing-quality/">How to Compress a PDF Without Losing Quality</a> &mdash; Keep your merged document compact.</li>
-        <li><a href="/blog/how-to-split-pdf-into-separate-pages/">How to Split PDF into Separate Pages</a> &mdash; Extract specific chapters or discard blank sheets.</li>
-        <li><a href="/blog/how-to-prepare-documents-for-online-applications/">How to Prepare Documents for Online Applications</a> &mdash; Master job and visa portal uploads.</li>
-      </ul>
     </div>
   </div>
 </main>
@@ -248,12 +335,12 @@
         <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
         <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
       </div>
-      <div><h4>Image</h4><ul>
+      <div><h4>Image Tools</h4><ul>
         <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
         <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
         <li><a href="/image-tools/image-converter/">Image Converter</a></li>
       </ul></div>
-      <div><h4>PDF</h4><ul>
+      <div><h4>PDF Tools</h4><ul>
         <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
         <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
         <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
@@ -264,11 +351,11 @@
         <li><a href="/blog/image-guides/">Image Guides</a></li>
         <li><a href="/guides/">All Guides</a></li>
       </ul></div>
-      <div><h4>Site</h4><ul>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
+      <div><h4>Trust &amp; Legal</h4><ul>
+        <li><a href="/about/">About ImgPDF</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">

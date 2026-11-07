@@ -106,128 +106,280 @@
     </nav>
 
     <div class="blog-header">
-      <span class="article-category">Productivity Insights</span>
+      <span class="article-category">Productivity &amp; Tech Insights</span>
       <h1>ImgPDF Editorial Blog</h1>
-      <p class="blog-subtitle">Clear, technical, and actionable guides for compressing documents, optimizing graphics, and safeguarding your digital privacy without subscription barriers.</p>
+      <p class="lead">Actionable, deeply-researched guides for compressing documents, optimizing digital graphics, and safeguarding sensitive paperwork without server uploads.</p>
     </div>
 
     <!-- Featured Article Banner -->
-    <section class="featured-card" aria-label="Featured Guide">
-      <div class="featured-badge">Featured Deep-Dive</div>
-      <h2><a href="/blog/how-to-compress-a-pdf-without-losing-quality/">How to Compress a PDF Without Losing Quality (100% In-Browser Guide)</a></h2>
-      <p>Discover how modern client-side stream compaction and balanced DPI resampling dramatically shrink multi-megabyte documents without sacrificing crisp text readability or legal signature fidelity.</p>
-      <div class="article-card-meta" style="margin-top: 14px;">
-        <span>PDF Guides</span> &bull; <span>7 min read</span> &bull; <span>March 2026</span>
+    <a href="/blog/how-to-compress-a-pdf-without-losing-quality/" class="featured-card" aria-label="Read featured article: How to Compress a PDF Without Losing Quality">
+      <div class="featured-card__visual">
+        <svg viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:280px; height:auto;" aria-hidden="true">
+          <rect x="20" y="25" width="120" height="150" rx="6" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+          <path d="M40 50h60M40 70h80M40 90h70M40 110h50" stroke="var(--ink-soft)" stroke-width="3" stroke-linecap="round"/>
+          <rect x="50" y="130" width="60" height="25" rx="4" fill="rgba(220, 38, 38, 0.15)"/>
+          <text x="80" y="147" fill="#dc2626" font-family="monospace" font-size="12" font-weight="bold" text-anchor="middle">12.4 MB</text>
+          
+          <path d="M155 100h28" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M173 93l10 7-10 7" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          
+          <rect x="195" y="45" width="105" height="130" rx="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+          <path d="M215 70h50M215 88h65M215 106h55M215 124h40" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="215" y="142" width="65" height="22" rx="4" fill="rgba(16, 185, 129, 0.18)"/>
+          <text x="247" y="157" fill="#059669" font-family="monospace" font-size="11" font-weight="bold" text-anchor="middle">1.8 MB (-85%)</text>
+        </svg>
       </div>
-    </section>
+      <div class="featured-card__content">
+        <div class="article-card__tag article-card__tag--pdf">PDF Guides &bull; Editor's Pick</div>
+        <h2 class="featured-card__title">How to Compress a PDF Without Losing Quality (100% In-Browser Guide)</h2>
+        <p class="featured-card__excerpt">Discover how modern client-side stream compaction and balanced DPI resampling dramatically shrink multi-megabyte documents without sacrificing crisp text readability, vector curves, or legal signature fidelity.</p>
+        <div class="article-card__meta">
+          <span>7 min read &bull; Updated March 2026</span>
+          <span style="color:var(--accent); font-weight:600;">Read Full Guide &rarr;</span>
+        </div>
+      </div>
+    </a>
 
     <!-- Search & Filter Controls -->
     <div class="blog-controls">
-      <div class="blog-filter-pills" id="category-filter-pills" role="tablist">
-        <button class="filter-pill is-active" type="button" data-filter="all">All Articles (10)</button>
+      <div class="blog-filter-pills" id="category-filter-pills" role="tablist" aria-label="Filter guides by topic">
+        <button class="filter-pill is-active" type="button" data-filter="all">All Topics (10)</button>
         <button class="filter-pill" type="button" data-filter="pdf">PDF Guides (4)</button>
         <button class="filter-pill" type="button" data-filter="image">Image Guides (3)</button>
         <button class="filter-pill" type="button" data-filter="document">Document Guides (3)</button>
       </div>
 
-      <div class="blog-search-box">
-        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input type="search" id="blog-search-input" placeholder="Search guides by title or keyword..." aria-label="Search blog guides">
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap; flex-grow:1; justify-content:flex-end;">
+        <select id="blog-sort-select" class="blog-sort-select" aria-label="Sort guides">
+          <option value="newest">Sort: Newest First</option>
+          <option value="oldest">Sort: Oldest First</option>
+          <option value="readtime">Sort: Quickest Read</option>
+        </select>
+
+        <div class="blog-search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="search" id="blog-search-input" placeholder="Search guides by title or keyword..." aria-label="Search blog guides">
+        </div>
       </div>
     </div>
 
     <!-- Articles Grid -->
     <div class="blog-grid" id="blog-article-grid">
-      <!-- 1. PDF Guides -->
-      <article class="article-card" data-category="pdf" data-title="how to compress a pdf without losing quality" data-keywords="shrink size dps lossy lossless mb kb email">
-        <span class="article-category">PDF Guides</span>
-        <h2 class="article-card-title"><a href="/blog/how-to-compress-a-pdf-without-losing-quality/">How to Compress a PDF Without Losing Quality</a></h2>
-        <p class="article-card-excerpt">Learn how client-side stream compaction and balanced DPI resampling shrink documents by 50% to 80% while keeping text laser-sharp.</p>
-        <div class="article-card-meta">
-          <span>7 min read</span> &bull; <span>March 2026</span>
+      <!-- 1. PDF Guides: Compress PDF -->
+      <article class="article-card" data-category="pdf" data-date="2026-03-01" data-readtime="7" data-title="how to compress a pdf without losing quality" data-keywords="shrink size dpi lossy lossless mb kb email stream">
+        <div class="article-card__banner">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="25" y="10" width="50" height="60" rx="4" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+            <path d="M35 25h30M35 35h20M35 45h25" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M50 48v16m-6-6l6 6 6-6" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag article-card__tag--pdf">PDF Guides</span>
+          <h2 class="article-card__title"><a href="/blog/how-to-compress-a-pdf-without-losing-quality/">How to Compress a PDF Without Losing Quality</a></h2>
+          <p class="article-card__desc">Learn how client-side stream compaction and balanced DPI resampling shrink documents by 50% to 80% while keeping text laser-sharp.</p>
+          <div class="article-card__meta">
+            <span>7 min read</span>
+            <span>March 1, 2026</span>
+          </div>
         </div>
       </article>
 
-      <article class="article-card" data-category="pdf" data-title="how to merge multiple pdf files into one master document" data-keywords="combine stack join arrange pages reorder order">
-        <span class="article-category">PDF Guides</span>
-        <h2 class="article-card-title"><a href="/blog/how-to-merge-multiple-pdf-files-into-one/">How to Merge Multiple PDF Files into One</a></h2>
-        <p class="article-card-excerpt">Combine several PDF documents into a structured master file in seconds. Order pages, resolve orientation, and merge without server uploads.</p>
-        <div class="article-card-meta">
-          <span>6 min read</span> &bull; <span>March 2026</span>
+      <!-- 2. PDF Guides: Merge PDF -->
+      <article class="article-card" data-category="pdf" data-date="2026-03-02" data-readtime="6" data-title="how to merge multiple pdf files into one master document" data-keywords="combine stack join arrange pages reorder order">
+        <div class="article-card__banner">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="20" y="20" width="38" height="48" rx="3" fill="var(--surface)" stroke="var(--border)" stroke-width="1.8"/>
+            <rect x="42" y="12" width="38" height="48" rx="3" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+            <path d="M50 24h22M50 32h16M50 40h20" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="38" cy="46" r="10" fill="var(--surface)" stroke="var(--ink-soft)" stroke-width="1.5"/>
+            <path d="M38 41v10M33 46h10" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag article-card__tag--pdf">PDF Guides</span>
+          <h2 class="article-card__title"><a href="/blog/how-to-merge-multiple-pdf-files-into-one/">How to Merge Multiple PDF Files into One</a></h2>
+          <p class="article-card__desc">Combine several PDF documents into a structured master file in seconds. Order pages, resolve orientation, and merge without server uploads.</p>
+          <div class="article-card__meta">
+            <span>6 min read</span>
+            <span>March 2, 2026</span>
+          </div>
         </div>
       </article>
 
-      <article class="article-card" data-category="pdf" data-title="how to convert images into pdf jpg png webp" data-keywords="photo pictures scans format a4 margins">
-        <span class="article-category">PDF Guides</span>
-        <h2 class="article-card-title"><a href="/blog/how-to-convert-images-into-pdf/">How to Convert Images into PDF (JPG, PNG, WebP)</a></h2>
-        <p class="article-card-excerpt">Turn photo scans, receipts, and screenshots into standardized, print-ready PDF files with customizable page dimensions and margins.</p>
-        <div class="article-card-meta">
-          <span>6 min read</span> &bull; <span>March 2026</span>
+      <!-- 3. PDF Guides: Convert Images to PDF -->
+      <article class="article-card" data-category="pdf" data-date="2026-03-03" data-readtime="6" data-title="how to convert images into pdf jpg png webp" data-keywords="photo pictures scans format a4 margins booklet">
+        <div class="article-card__banner">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="18" y="20" width="36" height="36" rx="4" fill="var(--surface)" stroke="var(--border)" stroke-width="1.8"/>
+            <circle cx="28" cy="30" r="3" fill="var(--muted)"/>
+            <path d="M22 48l8-10 10 12" stroke="var(--ink-soft)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M52 38h14m-4-4l4 4-4 4" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="68" y="16" width="22" height="44" rx="3" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.8"/>
+            <text x="79" y="42" fill="var(--accent)" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">PDF</text>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag article-card__tag--pdf">PDF Guides</span>
+          <h2 class="article-card__title"><a href="/blog/how-to-convert-images-into-pdf/">How to Convert Images into PDF (JPG, PNG, WebP)</a></h2>
+          <p class="article-card__desc">Turn photo scans, receipts, and screenshots into standardized, print-ready PDF files with customizable page dimensions and margins.</p>
+          <div class="article-card__meta">
+            <span>6 min read</span>
+            <span>March 3, 2026</span>
+          </div>
         </div>
       </article>
 
-      <article class="article-card" data-category="pdf" data-title="how to split pdf into separate pages or extract specific ranges" data-keywords="extract range slice burst cut remove blank">
-        <span class="article-category">PDF Guides</span>
-        <h2 class="article-card-title"><a href="/blog/how-to-split-pdf-into-separate-pages/">How to Split PDF into Separate Pages or Extract Specific Ranges</a></h2>
-        <p class="article-card-excerpt">Extract single sheets, page ranges, or split documents by section for legal discovery, tax filings, and portfolio submissions.</p>
-        <div class="article-card-meta">
-          <span>6 min read</span> &bull; <span>March 2026</span>
+      <!-- 4. PDF Guides: Split PDF -->
+      <article class="article-card" data-category="pdf" data-date="2026-03-04" data-readtime="6" data-title="how to split pdf into separate pages or extract specific ranges" data-keywords="extract range slice burst cut remove blank">
+        <div class="article-card__banner">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="18" y="16" width="30" height="46" rx="3" fill="var(--surface)" stroke="var(--border)" stroke-width="1.8"/>
+            <rect x="52" y="16" width="30" height="46" rx="3" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="M48 10v60" stroke="var(--accent)" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <circle cx="48" cy="40" r="6" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M46 38l4 4m0-4l-4 4" stroke="var(--accent)" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag article-card__tag--pdf">PDF Guides</span>
+          <h2 class="article-card__title"><a href="/blog/how-to-split-pdf-into-separate-pages/">How to Split PDF into Separate Pages</a></h2>
+          <p class="article-card__desc">Extract single sheets, page ranges, or split documents by section for legal discovery, tax filings, and portfolio submissions.</p>
+          <div class="article-card__meta">
+            <span>6 min read</span>
+            <span>March 4, 2026</span>
+          </div>
         </div>
       </article>
 
-      <!-- 2. Image Guides -->
-      <article class="article-card" data-category="image" data-title="how to convert jpg to png without quality loss" data-keywords="lossless transparency background cutout artifacts">
-        <span class="article-category">Image Guides</span>
-        <h2 class="article-card-title"><a href="/blog/how-to-convert-jpg-to-png/">How to Convert JPG to PNG Without Quality Loss</a></h2>
-        <p class="article-card-excerpt">Learn when to choose PNG, how to avoid generational compression artifacts, and prepare images for transparent cutouts.</p>
-        <div class="article-card-meta">
-          <span>6 min read</span> &bull; <span>March 2026</span>
+      <!-- 5. Image Guides: JPG to PNG -->
+      <article class="article-card" data-category="image" data-date="2026-03-05" data-readtime="6" data-title="how to convert jpg to png without quality loss" data-keywords="lossless transparency background cutout artifacts">
+        <div class="article-card__banner">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="16" y="22" width="30" height="34" rx="3" fill="var(--surface)" stroke="var(--border)" stroke-width="1.8"/>
+            <text x="31" y="42" fill="var(--ink-soft)" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle">JPG</text>
+            <path d="M48 39h12m-3-4l4 4-4 4" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="62" y="22" width="30" height="34" rx="3" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.8"/>
+            <path d="M66 26h8v8h-8zM80 26h8v8h-8zM73 34h8v8h-8zM66 42h8v8h-8zM80 42h8v8h-8z" fill="rgba(16, 185, 129, 0.15)"/>
+            <text x="77" y="42" fill="#059669" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle">PNG</text>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag article-card__tag--image">Image Guides</span>
+          <h2 class="article-card__title"><a href="/blog/how-to-convert-jpg-to-png/">How to Convert JPG to PNG Without Quality Loss</a></h2>
+          <p class="article-card__desc">Learn when to choose PNG, how to avoid generational compression artifacts, and prepare images for transparent cutouts.</p>
+          <div class="article-card__meta">
+            <span>6 min read</span>
+            <span>March 5, 2026</span>
+          </div>
         </div>
       </article>
 
-      <article class="article-card" data-category="image" data-title="how to resize images without distortion or blurriness" data-keywords="aspect ratio scale pixels bicubic dimensions crop">
-        <span class="article-category">Image Guides</span>
-        <h2 class="article-card-title"><a href="/blog/how-to-resize-image-without-distortion/">How to Resize Images Without Distortion or Blurriness</a></h2>
-        <p class="article-card-excerpt">Master aspect ratio locking, bicubic interpolation, and smart cropping to scale pictures cleanly for web and social media.</p>
-        <div class="article-card-meta">
-          <span>7 min read</span> &bull; <span>March 2026</span>
+      <!-- 6. Image Guides: Resize Image -->
+      <article class="article-card" data-category="image" data-date="2026-03-06" data-readtime="7" data-title="how to resize images without distortion or blurriness" data-keywords="aspect ratio scale pixels bicubic dimensions crop lock">
+        <div class="article-card__banner">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="18" y="16" width="64" height="46" rx="4" fill="var(--surface)" stroke="var(--border)" stroke-width="1.8"/>
+            <rect x="28" y="24" width="44" height="30" rx="2" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+            <circle cx="50" cy="39" r="6" fill="rgba(20, 110, 245, 0.15)" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M48 39h4" stroke="var(--accent)" stroke-width="1.5"/>
+            <path d="M14 12l8 8M86 12l-8 8M14 66l8-8M86 66l-8-8" stroke="var(--muted)" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag article-card__tag--image">Image Guides</span>
+          <h2 class="article-card__title"><a href="/blog/how-to-resize-image-without-distortion/">How to Resize Images Without Distortion or Blurriness</a></h2>
+          <p class="article-card__desc">Master aspect ratio locking, bicubic interpolation, and smart cropping to scale pictures cleanly for web and social media.</p>
+          <div class="article-card__meta">
+            <span>7 min read</span>
+            <span>March 6, 2026</span>
+          </div>
         </div>
       </article>
 
-      <article class="article-card" data-category="image" data-title="how to reduce image file size for web and email" data-keywords="compress speed lcp web vitals exif metadata optimize">
-        <span class="article-category">Image Guides</span>
-        <h2 class="article-card-title"><a href="/blog/how-to-reduce-image-file-size-for-web-and-email/">How to Reduce Image File Size for Web and Email</a></h2>
-        <p class="article-card-excerpt">Cut image bytes by 70% to 90% using the 3-pillar optimization method: resolution scaling, format selection, and quantizer tuning.</p>
-        <div class="article-card-meta">
-          <span>7 min read</span> &bull; <span>March 2026</span>
+      <!-- 7. Image Guides: Reduce File Size -->
+      <article class="article-card" data-category="image" data-date="2026-03-07" data-readtime="7" data-title="how to reduce image file size for web and email" data-keywords="compress speed lcp web vitals exif metadata optimize">
+        <div class="article-card__banner">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="50" cy="42" r="28" stroke="var(--border)" stroke-width="3"/>
+            <path d="M26 54 A24 24 0 1 1 74 54" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+            <path d="M50 42L66 28" stroke="#059669" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="50" cy="42" r="4" fill="var(--ink)"/>
+            <text x="50" y="66" fill="var(--ink-soft)" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">&lt; 100 KB</text>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag article-card__tag--image">Image Guides</span>
+          <h2 class="article-card__title"><a href="/blog/how-to-reduce-image-file-size-for-web-and-email/">How to Reduce Image File Size for Web and Email</a></h2>
+          <p class="article-card__desc">Cut image bytes by 70% to 90% using the 3-pillar optimization method: resolution scaling, format selection, and quantizer tuning.</p>
+          <div class="article-card__meta">
+            <span>7 min read</span>
+            <span>March 7, 2026</span>
+          </div>
         </div>
       </article>
 
-      <!-- 3. Document Guides -->
-      <article class="article-card" data-category="document" data-title="pdf vs jpg vs png which file format should you use" data-keywords="comparison vector raster text transparency comparison">
-        <span class="article-category">Document Guides</span>
-        <h2 class="article-card-title"><a href="/blog/pdf-vs-jpg-vs-png-which-format-to-use/">PDF vs JPG vs PNG: Which File Format Should You Use?</a></h2>
-        <p class="article-card-excerpt">Comprehensive breakdown of when to choose PDF, JPG, or PNG based on text searchability, transparency, multi-page needs, and print scale.</p>
-        <div class="article-card-meta">
-          <span>8 min read</span> &bull; <span>March 2026</span>
+      <!-- 8. Document Guides: PDF vs JPG vs PNG -->
+      <article class="article-card" data-category="document" data-date="2026-03-08" data-readtime="8" data-title="pdf vs jpg vs png which file format should you use" data-keywords="comparison vector raster text transparency comparison">
+        <div class="article-card__banner">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="12" y="24" width="22" height="32" rx="3" fill="var(--surface)" stroke="#dc2626" stroke-width="1.8"/>
+            <text x="23" y="44" fill="#dc2626" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">PDF</text>
+            <rect x="39" y="24" width="22" height="32" rx="3" fill="var(--surface)" stroke="var(--accent)" stroke-width="1.8"/>
+            <text x="50" y="44" fill="var(--accent)" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">JPG</text>
+            <rect x="66" y="24" width="22" height="32" rx="3" fill="var(--surface)" stroke="#059669" stroke-width="1.8"/>
+            <text x="77" y="44" fill="#059669" font-family="monospace" font-size="8" font-weight="bold" text-anchor="middle">PNG</text>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag article-card__tag--document">Document Guides</span>
+          <h2 class="article-card__title"><a href="/blog/pdf-vs-jpg-vs-png-which-format-to-use/">PDF vs JPG vs PNG: Which Format to Use?</a></h2>
+          <p class="article-card__desc">Comprehensive breakdown of when to choose PDF, JPG, or PNG based on text searchability, transparency, multi-page needs, and print scale.</p>
+          <div class="article-card__meta">
+            <span>8 min read</span>
+            <span>March 8, 2026</span>
+          </div>
         </div>
       </article>
 
-      <article class="article-card" data-category="document" data-title="how to prepare documents for online applications job visa university" data-keywords="resume cv transcripts upload limits 2mb ats screening">
-        <span class="article-category">Document Guides</span>
-        <h2 class="article-card-title"><a href="/blog/how-to-prepare-documents-for-online-applications/">How to Prepare Documents for Online Applications</a></h2>
-        <p class="article-card-excerpt">Avoid portal rejection errors with this complete checklist: meet 2MB file limits, combine resumes and transcripts, and maintain ATS readability.</p>
-        <div class="article-card-meta">
-          <span>7 min read</span> &bull; <span>March 2026</span>
+      <!-- 9. Document Guides: Prepare Documents -->
+      <article class="article-card" data-category="document" data-date="2026-03-09" data-readtime="7" data-title="how to prepare documents for online applications job visa university" data-keywords="resume cv transcripts upload limits 2mb ats screening checklist">
+        <div class="article-card__banner">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="24" y="14" width="52" height="56" rx="4" fill="var(--surface)" stroke="var(--border)" stroke-width="1.8"/>
+            <path d="M34 26h20M34 36h32M34 46h24" stroke="var(--ink-soft)" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="64" cy="54" r="12" fill="var(--surface)" stroke="#059669" stroke-width="2"/>
+            <path d="M59 54l3 3 7-7" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag article-card__tag--document">Document Guides</span>
+          <h2 class="article-card__title"><a href="/blog/how-to-prepare-documents-for-online-applications/">How to Prepare Documents for Applications</a></h2>
+          <p class="article-card__desc">Avoid portal rejection errors with this complete checklist: meet 2MB file limits, combine resumes and transcripts, and maintain ATS readability.</p>
+          <div class="article-card__meta">
+            <span>7 min read</span>
+            <span>March 9, 2026</span>
+          </div>
         </div>
       </article>
 
-      <article class="article-card" data-category="document" data-title="how to protect privacy with online pdf and image tools" data-keywords="security gdpr hipaa client side local browser devtools offline">
-        <span class="article-category">Document Guides</span>
-        <h2 class="article-card-title"><a href="/blog/how-to-protect-privacy-with-online-pdf-and-image-tools/">How to Protect Privacy with Online PDF and Image Tools</a></h2>
-        <p class="article-card-excerpt">Understand the security vulnerabilities of cloud converters, and learn how in-browser execution guarantees zero server data exposure.</p>
-        <div class="article-card-meta">
-          <span>8 min read</span> &bull; <span>March 2026</span>
+      <!-- 10. Document Guides: Protect Privacy -->
+      <article class="article-card" data-category="document" data-date="2026-03-10" data-readtime="8" data-title="how to protect privacy with online pdf and image tools" data-keywords="security gdpr hipaa client side local browser devtools offline zero server">
+        <div class="article-card__banner">
+          <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M50 16L30 24v18c0 14 8 26 20 30 12-4 20-16 20-30V24L50 16z" fill="var(--surface)" stroke="var(--accent)" stroke-width="2"/>
+            <circle cx="50" cy="38" r="5" fill="var(--accent)"/>
+            <path d="M46 44h8v7h-8z" fill="var(--accent)"/>
+          </svg>
+        </div>
+        <div class="article-card__body">
+          <span class="article-card__tag article-card__tag--document">Document Guides</span>
+          <h2 class="article-card__title"><a href="/blog/how-to-protect-privacy-with-online-pdf-and-image-tools/">How to Protect Privacy with Online Tools</a></h2>
+          <p class="article-card__desc">Understand the security vulnerabilities of cloud converters, and learn how in-browser execution guarantees zero server data exposure.</p>
+          <div class="article-card__meta">
+            <span>8 min read</span>
+            <span>March 10, 2026</span>
+          </div>
         </div>
       </article>
     </div>
@@ -239,14 +391,43 @@
       <button class="btn btn--outline" id="reset-search-btn" type="button">Clear Search Filter</button>
     </div>
 
-    <!-- Popular Hubs & Related Tools -->
-    <div class="tool-cta-box" style="margin-top: 56px;">
-      <h3>Explore ImgPDF Topic Hubs</h3>
-      <p>Browse focused collections of guides and tools organized by file format:</p>
-      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
-        <a href="/blog/pdf-guides/" class="btn btn--primary">PDF Guides Hub &rarr;</a>
-        <a href="/blog/image-guides/" class="btn btn--outline">Image Guides Hub &rarr;</a>
-        <a href="/blog/document-guides/" class="btn btn--outline">Document Guides Hub &rarr;</a>
+    <!-- Popular Guides Section (Grounded in Real Tools & Practical Need) -->
+    <section class="popular-guides-section" aria-labelledby="popular-guides-heading">
+      <div class="popular-guides-header">
+        <h2 id="popular-guides-heading">Most Consulted Workflow Guides</h2>
+        <p>Our top recommended practical guides addressing everyday file size limits, document stacking, and web image performance.</p>
+      </div>
+      <div class="popular-guides-grid">
+        <a href="/blog/how-to-compress-a-pdf-without-losing-quality/" class="popular-guide-item">
+          <span class="popular-guide-item__tag">Essential &bull; PDF</span>
+          <h3>Compressing Heavy PDFs for Web Portals</h3>
+          <p>Beat restrictive 2MB and 500KB job and visa portal upload ceilings without degrading text sharpness or barcodes.</p>
+        </a>
+
+        <a href="/blog/how-to-merge-multiple-pdf-files-into-one/" class="popular-guide-item">
+          <span class="popular-guide-item__tag">Workflow &bull; PDF</span>
+          <h3>Merging Multi-Page Application Packets</h3>
+          <p>Step-by-step instructions on compiling tax statements, cover letters, and transcripts into one coherent dossier.</p>
+        </a>
+
+        <a href="/blog/how-to-reduce-image-file-size-for-web-and-email/" class="popular-guide-item">
+          <span class="popular-guide-item__tag">Performance &bull; Images</span>
+          <h3>Optimizing Pictures for Lightning Fast Websites</h3>
+          <p>Learn the 3-pillar method to slash image bytes by 70% to 90% and pass Core Web Vitals with flying colors.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Topic Hubs & Related Free Tools -->
+    <div class="tool-cta-box" style="margin-top: 40px;">
+      <div>
+        <h3>Need to edit or convert a file right now?</h3>
+        <p>ImgPDF offers 100% free, private browser utilities that process your files locally without account registration.</p>
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <a href="/pdf-tools/merge-pdf/" class="btn btn--primary">Merge PDF</a>
+        <a href="/image-tools/image-compressor/" class="btn btn--outline">Compress Image</a>
+        <a href="/pdf-tools/jpg-to-pdf/" class="btn btn--outline">JPG to PDF</a>
       </div>
     </div>
   </div>
@@ -259,12 +440,12 @@
         <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
         <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
       </div>
-      <div><h4>Image</h4><ul>
+      <div><h4>Image Tools</h4><ul>
         <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
         <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
         <li><a href="/image-tools/image-converter/">Image Converter</a></li>
       </ul></div>
-      <div><h4>PDF</h4><ul>
+      <div><h4>PDF Tools</h4><ul>
         <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
         <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
         <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
@@ -275,11 +456,11 @@
         <li><a href="/blog/image-guides/">Image Guides</a></li>
         <li><a href="/guides/">All Guides</a></li>
       </ul></div>
-      <div><h4>Site</h4><ul>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
+      <div><h4>Trust &amp; Legal</h4><ul>
+        <li><a href="/about/">About ImgPDF</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms of Service</a></li>
       </ul></div>
     </div>
     <div class="footer-bottom">
@@ -293,8 +474,10 @@
 <script>
   (function() {
     const searchInput = document.getElementById('blog-search-input');
+    const sortSelect = document.getElementById('blog-sort-select');
     const filterPills = document.querySelectorAll('#category-filter-pills .filter-pill');
-    const cards = document.querySelectorAll('#blog-article-grid .article-card');
+    const grid = document.getElementById('blog-article-grid');
+    const cards = Array.from(grid.querySelectorAll('.article-card'));
     const emptyState = document.getElementById('blog-empty-state');
     const resetBtn = document.getElementById('reset-search-btn');
 
@@ -302,25 +485,42 @@
 
     function updateArticles() {
       const query = (searchInput.value || '').trim().toLowerCase();
-      let visibleCount = 0;
+      const sortMode = sortSelect ? sortSelect.value : 'newest';
+
+      let visibleCards = [];
 
       cards.forEach(card => {
         const cat = card.getAttribute('data-category');
-        const title = card.getAttribute('data-title') || '';
-        const keywords = card.getAttribute('data-keywords') || '';
+        const title = (card.getAttribute('data-title') || '').toLowerCase();
+        const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
         const matchesCategory = (currentFilter === 'all' || cat === currentFilter);
         const matchesSearch = !query || title.includes(query) || keywords.includes(query);
 
         if (matchesCategory && matchesSearch) {
           card.style.display = '';
-          visibleCount++;
+          visibleCards.push(card);
         } else {
           card.style.display = 'none';
         }
       });
 
+      // Sort visible cards
+      visibleCards.sort((a, b) => {
+        if (sortMode === 'newest') {
+          return (b.getAttribute('data-date') || '').localeCompare(a.getAttribute('data-date') || '');
+        } else if (sortMode === 'oldest') {
+          return (a.getAttribute('data-date') || '').localeCompare(b.getAttribute('data-date') || '');
+        } else if (sortMode === 'readtime') {
+          return parseInt(a.getAttribute('data-readtime') || '0', 10) - parseInt(b.getAttribute('data-readtime') || '0', 10);
+        }
+        return 0;
+      });
+
+      // Re-append sorted cards in grid
+      visibleCards.forEach(card => grid.appendChild(card));
+
       if (emptyState) {
-        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+        emptyState.style.display = visibleCards.length === 0 ? 'block' : 'none';
       }
     }
 
@@ -337,10 +537,15 @@
       searchInput.addEventListener('input', updateArticles);
     }
 
+    if (sortSelect) {
+      sortSelect.addEventListener('change', updateArticles);
+    }
+
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
         if (searchInput) searchInput.value = '';
         currentFilter = 'all';
+        if (sortSelect) sortSelect.value = 'newest';
         filterPills.forEach(p => p.classList.toggle('is-active', p.getAttribute('data-filter') === 'all'));
         updateArticles();
       });
