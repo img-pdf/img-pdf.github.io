@@ -7,12 +7,20 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   sitemaps:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -26,12 +34,16 @@ jobs:
         run: |
           git status --porcelain
           if [ -n "$(git status --porcelain sitemap.xml Sitemap.xml sitemap.txt Sitemap.txt)" ]; then
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              echo "Error: Sitemaps are out of date in this Pull Request. Please run 'npm run build:sitemap' locally and commit the changes."
+              exit 1
+            fi
             echo "Sitemaps changed after generation. Committing updates..."
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add sitemap.xml Sitemap.xml sitemap.txt Sitemap.txt
-            git commit -m "Auto-regenerate dual sitemaps (sitemap.xml and sitemap.txt)"
-            git push
+            git commit -m "Auto-regenerate dual sitemaps (sitemap.xml and sitemap.txt) [skip ci]"
+            git push origin HEAD:main
           else
             echo "Sitemaps are completely in sync with the codebase."
           fi
