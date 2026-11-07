@@ -30,6 +30,9 @@ jobs:
       - name: Generate Dual Sitemaps (XML & TXT)
         run: node scripts/generate-sitemaps.js
 
+      - name: Validate Sitemaps & Robots.txt
+        run: node scripts/validate-sitemaps.js
+
       - name: Verify Sitemap Match & Git Cleanliness
         run: |
           git status --porcelain

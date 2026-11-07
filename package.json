@@ -7,7 +7,8 @@
     "dev": "node server.js",
     "start": "node server.js",
     "build:sitemap": "node scripts/generate-sitemaps.js",
-    "build": "node scripts/generate-sitemaps.js",
+    "test:sitemap": "node scripts/validate-sitemaps.js",
+    "build": "node scripts/generate-sitemaps.js && node scripts/validate-sitemaps.js",
     "lint": "node -e 'console.log(\"No lint errors found\")'"
   },
   "dependencies": {
