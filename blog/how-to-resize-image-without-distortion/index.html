@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Resize Images Without Distortion or Blurriness — ImgPDF</title>
+<meta name="description" content="Master image resizing without squished faces or blurry graphics. Learn how aspect ratio locking and bicubic resampling maintain crisp proportions.">
+<link rel="canonical" href="https://img-pdf.github.io/blog/how-to-resize-image-without-distortion/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Resize Images Without Distortion or Blurriness">
+<meta property="og:description" content="Step-by-step guide to scaling pictures cleanly. Learn aspect ratios, resampling methods, and how to fit images to exact pixel requirements without warping.">
+<meta property="og:url" content="https://img-pdf.github.io/blog/how-to-resize-image-without-distortion/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How to Resize Images Without Distortion or Blurriness",
+      "description": "Master image resizing without squished faces or blurry graphics. Learn how aspect ratio locking and bicubic resampling maintain crisp proportions.",
+      "url": "https://img-pdf.github.io/blog/how-to-resize-image-without-distortion/",
+      "datePublished": "2026-03-06T08:00:00+00:00",
+      "dateModified": "2026-03-15T10:00:00+00:00",
+      "author": {
+        "@type": "Organization",
+        "name": "ImgPDF Editorial Team",
+        "url": "https://img-pdf.github.io/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ImgPDF",
+        "url": "https://img-pdf.github.io/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://img-pdf.github.io/favicon.svg"
+        }
+      },
+      "mainEntityOfPage": "https://img-pdf.github.io/blog/how-to-resize-image-without-distortion/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://img-pdf.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://img-pdf.github.io/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Image Guides",
+          "item": "https://img-pdf.github.io/blog/image-guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Resize Images Without Distortion",
+          "item": "https://img-pdf.github.io/blog/how-to-resize-image-without-distortion/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/">Guides</a>
+      <a href="/blog/" data-nav-section="/blog/" class="is-active">Blog</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
+    <a href="/blog/" class="is-active">Blog</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="article-wrapper">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+      <a href="/blog/">Blog</a><span class="breadcrumb__sep">/</span>
+      <a href="/blog/image-guides/">Image Guides</a><span class="breadcrumb__sep">/</span>
+      <span>Resize Images Without Distortion</span>
+    </nav>
+
+    <header class="article-hero">
+      <span class="article-category">Image Guides</span>
+      <h1>How to Resize Images Without Distortion or Blurriness</h1>
+      <p class="lead">Stretching an image changes natural human proportions and makes text unreadable. Here is how to scale images accurately using locked aspect ratios and smooth bicubic resampling.</p>
+      
+      <div class="article-byline">
+        <div class="byline-avatar">IP</div>
+        <div>
+          <div class="byline-author">ImgPDF Editorial Team</div>
+          <div class="byline-meta">Updated March 2026 &bull; 7 min read &bull; Verified Browser-Safe</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="toc-box">
+      <div class="toc-title">Table of Contents</div>
+      <ul class="toc-list">
+        <li><a href="#why-distortion-happens">1. Why Distortion Happens: Understanding Aspect Ratios</a></li>
+        <li><a href="#resampling-algorithms">2. How Modern Resampling Preserves Detail</a></li>
+        <li><a href="#step-by-step">3. Step-by-Step: Resizing Images Accurately</a></li>
+        <li><a href="#crop-vs-resize">4. When to Resize vs When to Crop</a></li>
+        <li><a href="#popular-dimensions">5. Standard Pixel Dimensions for Web, Social &amp; ID Cards</a></li>
+        <li><a href="#faq">6. Frequently Asked Questions</a></li>
+      </ul>
+    </div>
+
+    <div class="prose">
+      <h2 id="why-distortion-happens">1. Why Distortion Happens: Understanding Aspect Ratios</h2>
+      <p>An image's <strong>aspect ratio</strong> is the proportional relationship between its width and its height (written as <code>Width : Height</code>). For instance, most smartphone photos use <code>4:3</code> or <code>16:9</code>, while professional DSLR cameras shoot in <code>3:2</code>, and Instagram square posts use <code>1:1</code>.</p>
+      <p>Distortion occurs when you manually override both dimensions without keeping them in sync. If you take a <code>1920x1080</code> image (<code>16:9</code>) and force it into <code>1000x1000</code> (<code>1:1</code>), the pixels are compressed horizontally by 48%, giving humans unnaturally tall, narrow faces.</p>
+      <p>The solution is simple: always enable <strong>Lock Aspect Ratio</strong> in your resizing tool.</p>
+
+      <div class="tool-cta-box">
+        <h3>Resize your images cleanly right now</h3>
+        <p>Use ImgPDF's free Image Resizer. Lock proportions with one click and preview results before downloading.</p>
+        <a href="/image-tools/image-resizer/" class="btn btn--primary">Launch Image Resizer &rarr;</a>
+      </div>
+
+      <h2 id="resampling-algorithms">2. How Modern Resampling Preserves Detail</h2>
+      <p>When you scale an image down (downsampling) or up (upsampling), the computer must calculate new pixel values:</p>
+      <ul>
+        <li><strong>Bicubic Interpolation:</strong> Examines a 4x4 neighborhood of 16 surrounding pixels to produce smooth gradients and preserve fine edge clarity. This is the gold standard used by ImgPDF.</li>
+        <li><strong>Bilinear Interpolation:</strong> Averages the nearest 4 pixels. Fast, but produces slightly softer results on sharp text.</li>
+        <li><strong>Nearest Neighbor:</strong> Grabs the closest raw pixel. Useful only for pixel-art retro games; for photographs, it causes jagged aliasing.</li>
+      </ul>
+
+      <h2 id="step-by-step">3. Step-by-Step: Resizing Images Accurately</h2>
+      
+      <div class="step-card">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h4>Load your image</h4>
+          <p>Drop your JPEG, PNG, or WebP into the <a href="/image-tools/image-resizer/">Image Resizer</a>. The tool displays current dimensions in pixels.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h4>Ensure "Lock Aspect Ratio" is checked</h4>
+          <p>Keep the lock icon active. When you enter a new width (e.g. <code>1200px</code>), the matching height is calculated automatically.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h4>Apply and download</h4>
+          <p>Click <strong>Resize Image</strong>. The high-precision canvas pipeline scales the pixels and gives you an instant download link.</p>
+        </div>
+      </div>
+
+      <h2 id="crop-vs-resize">4. When to Resize vs When to Crop</h2>
+      <p>What if a portal demands an exact square <code>600x600px</code>, but your photo is a <code>16:9</code> landscape rectangle? Resizing directly will warp the photo. Instead, follow this two-step technique:</p>
+      <ol>
+        <li>First, open our free <a href="/image-tools/image-cropper/">Image Cropper</a> and set the crop box to a <code>1:1</code> square ratio centered on your subject. This discards extraneous side areas without distorting the subject.</li>
+        <li>Next, feed that square image into the <a href="/image-tools/image-resizer/">Image Resizer</a> and set the width to <code>600px</code>. Both dimensions will now hit <code>600x600</code> with zero warping!</li>
+      </ol>
+
+      <div class="callout callout--good">
+        <h4>Pro-Tip: Avoid Massive Upscaling</h4>
+        <p>Downscaling (shrinking a photo) always looks crisp because extra pixel information is intelligently averaged. Upscaling (enlarging a 200px thumbnail to 2000px) requires inventing new pixel data, which will inevitably appear blurry or pixelated.</p>
+      </div>
+
+      <h2 id="popular-dimensions">5. Standard Pixel Dimensions for Web, Social &amp; ID Cards</h2>
+      <table style="width:100%; border-collapse: collapse; margin: 24px 0; font-size: 0.95rem;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--border); text-align: left;">
+            <th style="padding: 10px 12px;">Platform / Requirement</th>
+            <th style="padding: 10px 12px;">Target Dimensions</th>
+            <th style="padding: 10px 12px;">Aspect Ratio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 10px 12px; font-weight: 600;">Website Hero Banner</td>
+            <td style="padding: 10px 12px;">1920 &times; 1080 px</td>
+            <td style="padding: 10px 12px;">16:9</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 10px 12px; font-weight: 600;">Blog Featured Image</td>
+            <td style="padding: 10px 12px;">1200 &times; 630 px</td>
+            <td style="padding: 10px 12px;">1.91:1</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border);">
+            <td style="padding: 10px 12px; font-weight: 600;">Square Social / Avatar</td>
+            <td style="padding: 10px 12px;">1080 &times; 1080 px</td>
+            <td style="padding: 10px 12px;">1:1</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 12px; font-weight: 600;">US Visa / Passport Photo</td>
+            <td style="padding: 10px 12px;">600 &times; 600 px (2&quot;&times;2&quot; @ 300 DPI)</td>
+            <td style="padding: 10px 12px;">1:1</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="faq">6. Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">Can I resize in percentage instead of pixels?</div>
+        <div class="faq-a">Yes. In the ImgPDF Resizer, you can choose percentage mode (for instance, scale down to 50% or 75%) to quickly cut dimensions without manual arithmetic.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Does resizing reduce file size?</div>
+        <div class="faq-a">Significantly. Reducing an image's width and height by 50% cuts total pixel count by 75%, leading to drastically smaller files.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is my image uploaded to any server during resizing?</div>
+        <div class="faq-a">No. All pixel interpolation occurs locally on your machine via HTML5 Canvas. Your photo remains strictly confidential.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);">
+      <h3>Next Steps &amp; Related Guides</h3>
+      <ul style="margin-top: 12px; line-height: 1.8;">
+        <li><a href="/image-tools/image-cropper/">Image Cropper</a> &mdash; Cut away unwanted boundaries and set fixed ratios.</li>
+        <li><a href="/blog/how-to-reduce-image-file-size-for-web-and-email/">How to Reduce Image File Size</a> &mdash; Compression strategies for web &amp; email.</li>
+        <li><a href="/blog/how-to-convert-jpg-to-png/">How to Convert JPG to PNG</a> &mdash; Maintain lossless pixel clarity.</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
+      </div>
+      <div><h4>Image</h4><ul>
+        <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
+        <li><a href="/image-tools/image-converter/">Image Converter</a></li>
+      </ul></div>
+      <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
+        <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
+        <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
+      </ul></div>
+      <div><h4>Blog &amp; Guides</h4><ul>
+        <li><a href="/blog/">ImgPDF Blog</a></li>
+        <li><a href="/blog/pdf-guides/">PDF Guides</a></li>
+        <li><a href="/blog/image-guides/">Image Guides</a></li>
+        <li><a href="/guides/">All Guides</a></li>
+      </ul></div>
+      <div><h4>Site</h4><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF — Free, Fast &amp; Private Browser-Based Tools.</span>
+      <span>Engineered with HTML5, Canvas &amp; Web Crypto APIs.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+</body>
+</html>

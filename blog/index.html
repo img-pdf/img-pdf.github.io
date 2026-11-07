@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ImgPDF Blog — Free PDF &amp; Image Tutorials, Guides &amp; Tips</title>
+<meta name="description" content="Explore expert tutorials and step-by-step guides for PDF document management, image compression, formatting workflows, and browser-safe digital productivity.">
+<link rel="canonical" href="https://img-pdf.github.io/blog/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ImgPDF Blog — Free PDF &amp; Image Tutorials, Guides &amp; Tips">
+<meta property="og:description" content="Practical, educational guides for manipulating PDFs, optimizing images, and mastering browser-based digital workflows.">
+<meta property="og:url" content="https://img-pdf.github.io/blog/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "name": "ImgPDF Blog",
+      "url": "https://img-pdf.github.io/blog/",
+      "description": "Educational articles, tutorials, and technical insights covering PDF manipulation, image optimization, and privacy-first digital tools.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "ImgPDF",
+        "url": "https://img-pdf.github.io/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://img-pdf.github.io/favicon.svg"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://img-pdf.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://img-pdf.github.io/blog/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/">Guides</a>
+      <a href="/blog/" data-nav-section="/blog/" class="is-active">Blog</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
+    <a href="/blog/" class="is-active">Blog</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="container" style="padding-top: 36px; padding-bottom: 60px;">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+      <span>Blog</span>
+    </nav>
+
+    <div class="blog-header">
+      <span class="article-category">Productivity Insights</span>
+      <h1>ImgPDF Editorial Blog</h1>
+      <p class="blog-subtitle">Clear, technical, and actionable guides for compressing documents, optimizing graphics, and safeguarding your digital privacy without subscription barriers.</p>
+    </div>
+
+    <!-- Featured Article Banner -->
+    <section class="featured-card" aria-label="Featured Guide">
+      <div class="featured-badge">Featured Deep-Dive</div>
+      <h2><a href="/blog/how-to-compress-a-pdf-without-losing-quality/">How to Compress a PDF Without Losing Quality (100% In-Browser Guide)</a></h2>
+      <p>Discover how modern client-side stream compaction and balanced DPI resampling dramatically shrink multi-megabyte documents without sacrificing crisp text readability or legal signature fidelity.</p>
+      <div class="article-card-meta" style="margin-top: 14px;">
+        <span>PDF Guides</span> &bull; <span>7 min read</span> &bull; <span>March 2026</span>
+      </div>
+    </section>
+
+    <!-- Search & Filter Controls -->
+    <div class="blog-controls">
+      <div class="blog-filter-pills" id="category-filter-pills" role="tablist">
+        <button class="filter-pill is-active" type="button" data-filter="all">All Articles (10)</button>
+        <button class="filter-pill" type="button" data-filter="pdf">PDF Guides (4)</button>
+        <button class="filter-pill" type="button" data-filter="image">Image Guides (3)</button>
+        <button class="filter-pill" type="button" data-filter="document">Document Guides (3)</button>
+      </div>
+
+      <div class="blog-search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" id="blog-search-input" placeholder="Search guides by title or keyword..." aria-label="Search blog guides">
+      </div>
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="blog-grid" id="blog-article-grid">
+      <!-- 1. PDF Guides -->
+      <article class="article-card" data-category="pdf" data-title="how to compress a pdf without losing quality" data-keywords="shrink size dps lossy lossless mb kb email">
+        <span class="article-category">PDF Guides</span>
+        <h2 class="article-card-title"><a href="/blog/how-to-compress-a-pdf-without-losing-quality/">How to Compress a PDF Without Losing Quality</a></h2>
+        <p class="article-card-excerpt">Learn how client-side stream compaction and balanced DPI resampling shrink documents by 50% to 80% while keeping text laser-sharp.</p>
+        <div class="article-card-meta">
+          <span>7 min read</span> &bull; <span>March 2026</span>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="pdf" data-title="how to merge multiple pdf files into one master document" data-keywords="combine stack join arrange pages reorder order">
+        <span class="article-category">PDF Guides</span>
+        <h2 class="article-card-title"><a href="/blog/how-to-merge-multiple-pdf-files-into-one/">How to Merge Multiple PDF Files into One</a></h2>
+        <p class="article-card-excerpt">Combine several PDF documents into a structured master file in seconds. Order pages, resolve orientation, and merge without server uploads.</p>
+        <div class="article-card-meta">
+          <span>6 min read</span> &bull; <span>March 2026</span>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="pdf" data-title="how to convert images into pdf jpg png webp" data-keywords="photo pictures scans format a4 margins">
+        <span class="article-category">PDF Guides</span>
+        <h2 class="article-card-title"><a href="/blog/how-to-convert-images-into-pdf/">How to Convert Images into PDF (JPG, PNG, WebP)</a></h2>
+        <p class="article-card-excerpt">Turn photo scans, receipts, and screenshots into standardized, print-ready PDF files with customizable page dimensions and margins.</p>
+        <div class="article-card-meta">
+          <span>6 min read</span> &bull; <span>March 2026</span>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="pdf" data-title="how to split pdf into separate pages or extract specific ranges" data-keywords="extract range slice burst cut remove blank">
+        <span class="article-category">PDF Guides</span>
+        <h2 class="article-card-title"><a href="/blog/how-to-split-pdf-into-separate-pages/">How to Split PDF into Separate Pages or Extract Specific Ranges</a></h2>
+        <p class="article-card-excerpt">Extract single sheets, page ranges, or split documents by section for legal discovery, tax filings, and portfolio submissions.</p>
+        <div class="article-card-meta">
+          <span>6 min read</span> &bull; <span>March 2026</span>
+        </div>
+      </article>
+
+      <!-- 2. Image Guides -->
+      <article class="article-card" data-category="image" data-title="how to convert jpg to png without quality loss" data-keywords="lossless transparency background cutout artifacts">
+        <span class="article-category">Image Guides</span>
+        <h2 class="article-card-title"><a href="/blog/how-to-convert-jpg-to-png/">How to Convert JPG to PNG Without Quality Loss</a></h2>
+        <p class="article-card-excerpt">Learn when to choose PNG, how to avoid generational compression artifacts, and prepare images for transparent cutouts.</p>
+        <div class="article-card-meta">
+          <span>6 min read</span> &bull; <span>March 2026</span>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="image" data-title="how to resize images without distortion or blurriness" data-keywords="aspect ratio scale pixels bicubic dimensions crop">
+        <span class="article-category">Image Guides</span>
+        <h2 class="article-card-title"><a href="/blog/how-to-resize-image-without-distortion/">How to Resize Images Without Distortion or Blurriness</a></h2>
+        <p class="article-card-excerpt">Master aspect ratio locking, bicubic interpolation, and smart cropping to scale pictures cleanly for web and social media.</p>
+        <div class="article-card-meta">
+          <span>7 min read</span> &bull; <span>March 2026</span>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="image" data-title="how to reduce image file size for web and email" data-keywords="compress speed lcp web vitals exif metadata optimize">
+        <span class="article-category">Image Guides</span>
+        <h2 class="article-card-title"><a href="/blog/how-to-reduce-image-file-size-for-web-and-email/">How to Reduce Image File Size for Web and Email</a></h2>
+        <p class="article-card-excerpt">Cut image bytes by 70% to 90% using the 3-pillar optimization method: resolution scaling, format selection, and quantizer tuning.</p>
+        <div class="article-card-meta">
+          <span>7 min read</span> &bull; <span>March 2026</span>
+        </div>
+      </article>
+
+      <!-- 3. Document Guides -->
+      <article class="article-card" data-category="document" data-title="pdf vs jpg vs png which file format should you use" data-keywords="comparison vector raster text transparency comparison">
+        <span class="article-category">Document Guides</span>
+        <h2 class="article-card-title"><a href="/blog/pdf-vs-jpg-vs-png-which-format-to-use/">PDF vs JPG vs PNG: Which File Format Should You Use?</a></h2>
+        <p class="article-card-excerpt">Comprehensive breakdown of when to choose PDF, JPG, or PNG based on text searchability, transparency, multi-page needs, and print scale.</p>
+        <div class="article-card-meta">
+          <span>8 min read</span> &bull; <span>March 2026</span>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="document" data-title="how to prepare documents for online applications job visa university" data-keywords="resume cv transcripts upload limits 2mb ats screening">
+        <span class="article-category">Document Guides</span>
+        <h2 class="article-card-title"><a href="/blog/how-to-prepare-documents-for-online-applications/">How to Prepare Documents for Online Applications</a></h2>
+        <p class="article-card-excerpt">Avoid portal rejection errors with this complete checklist: meet 2MB file limits, combine resumes and transcripts, and maintain ATS readability.</p>
+        <div class="article-card-meta">
+          <span>7 min read</span> &bull; <span>March 2026</span>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="document" data-title="how to protect privacy with online pdf and image tools" data-keywords="security gdpr hipaa client side local browser devtools offline">
+        <span class="article-category">Document Guides</span>
+        <h2 class="article-card-title"><a href="/blog/how-to-protect-privacy-with-online-pdf-and-image-tools/">How to Protect Privacy with Online PDF and Image Tools</a></h2>
+        <p class="article-card-excerpt">Understand the security vulnerabilities of cloud converters, and learn how in-browser execution guarantees zero server data exposure.</p>
+        <div class="article-card-meta">
+          <span>8 min read</span> &bull; <span>March 2026</span>
+        </div>
+      </article>
+    </div>
+
+    <!-- Empty search state -->
+    <div id="blog-empty-state" style="display: none; text-align: center; padding: 48px 16px;">
+      <h3 style="margin-bottom: 8px;">No matching articles found</h3>
+      <p style="color: var(--muted); margin-bottom: 16px;">Try adjusting your search terms or browse our category hubs below.</p>
+      <button class="btn btn--outline" id="reset-search-btn" type="button">Clear Search Filter</button>
+    </div>
+
+    <!-- Popular Hubs & Related Tools -->
+    <div class="tool-cta-box" style="margin-top: 56px;">
+      <h3>Explore ImgPDF Topic Hubs</h3>
+      <p>Browse focused collections of guides and tools organized by file format:</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;">
+        <a href="/blog/pdf-guides/" class="btn btn--primary">PDF Guides Hub &rarr;</a>
+        <a href="/blog/image-guides/" class="btn btn--outline">Image Guides Hub &rarr;</a>
+        <a href="/blog/document-guides/" class="btn btn--outline">Document Guides Hub &rarr;</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
+      </div>
+      <div><h4>Image</h4><ul>
+        <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
+        <li><a href="/image-tools/image-converter/">Image Converter</a></li>
+      </ul></div>
+      <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
+        <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
+        <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
+      </ul></div>
+      <div><h4>Blog &amp; Guides</h4><ul>
+        <li><a href="/blog/">ImgPDF Blog</a></li>
+        <li><a href="/blog/pdf-guides/">PDF Guides</a></li>
+        <li><a href="/blog/image-guides/">Image Guides</a></li>
+        <li><a href="/guides/">All Guides</a></li>
+      </ul></div>
+      <div><h4>Site</h4><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF — Free, Fast &amp; Private Browser-Based Tools.</span>
+      <span>Engineered with HTML5, Canvas &amp; Web Crypto APIs.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+<script>
+  (function() {
+    const searchInput = document.getElementById('blog-search-input');
+    const filterPills = document.querySelectorAll('#category-filter-pills .filter-pill');
+    const cards = document.querySelectorAll('#blog-article-grid .article-card');
+    const emptyState = document.getElementById('blog-empty-state');
+    const resetBtn = document.getElementById('reset-search-btn');
+
+    let currentFilter = 'all';
+
+    function updateArticles() {
+      const query = (searchInput.value || '').trim().toLowerCase();
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const title = card.getAttribute('data-title') || '';
+        const keywords = card.getAttribute('data-keywords') || '';
+        const matchesCategory = (currentFilter === 'all' || cat === currentFilter);
+        const matchesSearch = !query || title.includes(query) || keywords.includes(query);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (emptyState) {
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('is-active'));
+        pill.classList.add('is-active');
+        currentFilter = pill.getAttribute('data-filter') || 'all';
+        updateArticles();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', updateArticles);
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        currentFilter = 'all';
+        filterPills.forEach(p => p.classList.toggle('is-active', p.getAttribute('data-filter') === 'all'));
+        updateArticles();
+      });
+    }
+  })();
+</script>
+</body>
+</html>

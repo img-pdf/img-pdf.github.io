@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Convert Images into PDF (JPG, PNG, WebP to PDF) — ImgPDF</title>
+<meta name="description" content="Step-by-step guide to turning photos, screenshots, and scans into clean, multi-page PDF documents with custom margins, orientation, and zero quality loss.">
+<link rel="canonical" href="https://img-pdf.github.io/blog/how-to-convert-images-into-pdf/">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Convert Images into PDF (JPG, PNG, WebP to PDF)">
+<meta property="og:description" content="Convert any image into a print-ready PDF in seconds. Learn how to arrange multiple images into a unified booklet without uploading files.">
+<meta property="og:url" content="https://img-pdf.github.io/blog/how-to-convert-images-into-pdf/">
+<meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "How to Convert Images into PDF (JPG, PNG, WebP to PDF)",
+      "description": "Step-by-step guide to turning photos, screenshots, and scans into clean, multi-page PDF documents with custom margins, orientation, and zero quality loss.",
+      "url": "https://img-pdf.github.io/blog/how-to-convert-images-into-pdf/",
+      "datePublished": "2026-03-03T08:00:00+00:00",
+      "dateModified": "2026-03-15T10:00:00+00:00",
+      "author": {
+        "@type": "Organization",
+        "name": "ImgPDF Editorial Team",
+        "url": "https://img-pdf.github.io/about/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ImgPDF",
+        "url": "https://img-pdf.github.io/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://img-pdf.github.io/favicon.svg"
+        }
+      },
+      "mainEntityOfPage": "https://img-pdf.github.io/blog/how-to-convert-images-into-pdf/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://img-pdf.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://img-pdf.github.io/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "PDF Guides",
+          "item": "https://img-pdf.github.io/blog/pdf-guides/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Convert Images into PDF",
+          "item": "https://img-pdf.github.io/blog/how-to-convert-images-into-pdf/"
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container site-header__bar">
+    <a href="/" class="brand"><span class="brand__mark">IMG</span> ImgPDF</a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/image-tools/" data-nav-section="/image-tools/">Image Tools</a>
+      <a href="/pdf-tools/" data-nav-section="/pdf-tools/">PDF Tools</a>
+      <a href="/utilities/" data-nav-section="/utilities/">Utilities</a>
+      <a href="/developer-tools/" data-nav-section="/developer-tools/">Developer</a>
+      <a href="/guides/" data-nav-section="/guides/">Guides</a>
+      <a href="/blog/" data-nav-section="/blog/" class="is-active">Blog</a>
+      <a href="/about/" data-nav-section="/about/">About</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Theme</span>
+      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile">
+    <a href="/image-tools/">Image Tools</a>
+    <a href="/pdf-tools/">PDF Tools</a>
+    <a href="/utilities/">Utilities</a>
+    <a href="/developer-tools/">Developer Tools</a>
+    <a href="/text-tools/">Text Tools</a>
+    <a href="/guides/">Guides</a>
+    <a href="/blog/" class="is-active">Blog</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="article-wrapper">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a><span class="breadcrumb__sep">/</span>
+      <a href="/blog/">Blog</a><span class="breadcrumb__sep">/</span>
+      <a href="/blog/pdf-guides/">PDF Guides</a><span class="breadcrumb__sep">/</span>
+      <span>Convert Images into PDF</span>
+    </nav>
+
+    <header class="article-hero">
+      <span class="article-category">PDF Guides</span>
+      <h1>How to Convert Images into PDF (JPG, PNG, WebP)</h1>
+      <p class="lead">From official passport photos and expense receipts to smartphone book scans, converting loose images into a clean, uniform PDF is the standard requirement for professional sharing. Here is how to do it instantly without losing resolution.</p>
+      
+      <div class="article-byline">
+        <div class="byline-avatar">IP</div>
+        <div>
+          <div class="byline-author">ImgPDF Editorial Team</div>
+          <div class="byline-meta">Updated March 2026 &bull; 6 min read &bull; Verified Browser-Safe</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="toc-box">
+      <div class="toc-title">Table of Contents</div>
+      <ul class="toc-list">
+        <li><a href="#why-convert">1. Why Convert Images to PDF Instead of Sending JPEGs?</a></li>
+        <li><a href="#image-formats">2. Supported Formats: JPG, PNG, and Modern WebP</a></li>
+        <li><a href="#step-by-step">3. Step-by-Step Conversion Guide</a></li>
+        <li><a href="#page-layout">4. Page Layout: A4 vs US Letter and Margin Setup</a></li>
+        <li><a href="#compression-balance">5. Balancing File Size vs Visual Clarity</a></li>
+        <li><a href="#faq">6. Frequently Asked Questions</a></li>
+      </ul>
+    </div>
+
+    <div class="prose">
+      <h2 id="why-convert">1. Why Convert Images to PDF Instead of Sending JPEGs?</h2>
+      <p>Sending standalone photo attachments (like <code>IMG_4901.jpg</code>) often causes rendering problems: messaging apps compress them aggressively, email services display them in erratic thumbnail grids, and print dimensions become unpredictable. Packing images into a PDF provides three major advantages:</p>
+      <ul>
+        <li><strong>Fixed Physical Dimensions:</strong> PDFs specify exact real-world page dimensions (such as standard A4 or US Letter), ensuring the recipient prints your documents at true 100% scale without edge clipping.</li>
+        <li><strong>Universal Compatibility:</strong> Every smartphone, tablet, desktop operating system, and web browser has a built-in PDF viewer.</li>
+        <li><strong>Multi-Page Continuity:</strong> You can bundle 10 photos of a multi-page contract into a single chronological file rather than emailing 10 separate attachments.</li>
+      </ul>
+
+      <div class="tool-cta-box">
+        <h3>Convert your images right now</h3>
+        <p>Use ImgPDF's free client-side image converter. Drop your JPGs, PNGs, or WebP files and download a clean PDF in seconds.</p>
+        <a href="/pdf-tools/jpg-to-pdf/" class="btn btn--primary">Launch JPG to PDF Converter &rarr;</a>
+      </div>
+
+      <h2 id="image-formats">2. Supported Formats: JPG, PNG, and Modern WebP</h2>
+      <p>Different image formats serve different purposes:</p>
+      <ul>
+        <li><strong>JPEG / JPG:</strong> Best for real-world photographic scans, ID cards, and receipts. The lossy DCT compression keeps document sizes remarkably small.</li>
+        <li><strong>PNG:</strong> Best for screenshots, line drawings, charts, and digital signatures where crisp high-contrast pixel boundaries and alpha transparency are required.</li>
+        <li><strong>WebP:</strong> Google's modern format providing 25% to 34% smaller file sizes than comparable JPEGs. ImgPDF decodes WebP natively using the browser graphics pipeline.</li>
+      </ul>
+
+      <h2 id="step-by-step">3. Step-by-Step Conversion Guide</h2>
+      
+      <div class="step-card">
+        <div class="step-badge">1</div>
+        <div class="step-content">
+          <h4>Import your source pictures</h4>
+          <p>Open the <a href="/pdf-tools/jpg-to-pdf/">JPG to PDF Tool</a> and drag your photos into the dropzone. You can add images one by one or select a whole batch at once.</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-badge">2</div>
+        <div class="step-content">
+          <h4>Configure page geometry and order</h4>
+          <p>Rearrange image thumbnails so pages follow the intended sequence. Choose page size (<strong>A4</strong> for international standards or <strong>US Letter</strong> for North America), and set your margin preference (None, Small, or Wide).</p>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-badge">3</div>
+        <div class="step-content">
+          <h4>Generate and download PDF</h4>
+          <p>Click <strong>Convert to PDF</strong>. The tool embeds each image into an individual PDF page canvas and generates the download link immediately on your machine.</p>
+        </div>
+      </div>
+
+      <h2 id="page-layout">4. Page Layout: A4 vs US Letter and Margin Setup</h2>
+      <p>When converting photos of documents, setting proper margins prevents your content from getting cut off during physical printing:</p>
+      <ul>
+        <li><strong>Small Margin (10mm / 0.5 in):</strong> Recommended for forms, receipts, and scans where you want maximum printable area while preserving standard desktop printer grab margins.</li>
+        <li><strong>Zero Margin (Full Bleed):</strong> Ideal for presentation slides, full-page artwork, and high-resolution photo portfolios.</li>
+        <li><strong>Auto-Orientation:</strong> The tool automatically checks whether each image is portrait or landscape and matches the PDF page orientation accordingly, avoiding unwanted sideways rotation.</li>
+      </ul>
+
+      <div class="callout callout--good">
+        <h4>Pro-Tip: Pre-Crop Scans for Crisp Results</h4>
+        <p>If your photo contains unnecessary background elements (like a desk or shadow around a document), use our free <a href="/image-tools/image-cropper/">Image Cropper</a> to isolate the document boundary before converting to PDF.</p>
+      </div>
+
+      <h2 id="compression-balance">5. Balancing File Size vs Visual Clarity</h2>
+      <p>Modern smartphone cameras shoot 12MP to 48MP photos, resulting in 5MB to 15MB per picture. A 5-page PDF made from raw camera photos could easily reach 50MB—far above typical 5MB email limits. Before bundling, consider running your photos through our <a href="/image-tools/image-compressor/">Image Compressor</a> to optimize JPEG stream quality to 80&ndash;85%, reducing size by up to 70% with no noticeable difference in text readability.</p>
+
+      <h2 id="faq">6. Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-q">Will my photos look pixelated or blurry after conversion?</div>
+        <div class="faq-a">No. ImgPDF maintains the original pixel resolution of your image files during stream packaging, avoiding unwanted downsampling unless you choose to compress them.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can I convert multiple images into a single multi-page PDF?</div>
+        <div class="faq-a">Yes! You can select multiple images at once, reorder them as desired, and generate a single unified multi-page PDF document in one click.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Are my private photos uploaded to a cloud server?</div>
+        <div class="faq-a">Never. ImgPDF operates completely inside your browser client tab using HTML5 Canvas and JavaScript. Your images never leave your computer or phone.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);">
+      <h3>Related Tools &amp; Tutorials</h3>
+      <ul style="margin-top: 12px; line-height: 1.8;">
+        <li><a href="/image-tools/image-resizer/">Image Resizer Tool</a> &mdash; Adjust pixel dimensions and aspect ratios.</li>
+        <li><a href="/blog/how-to-merge-multiple-pdf-files-into-one/">How to Merge Multiple PDF Files</a> &mdash; Combine existing PDF files into a single master document.</li>
+        <li><a href="/blog/pdf-vs-jpg-vs-png-which-format-to-use/">PDF vs JPG vs PNG: Which Format to Choose?</a> &mdash; In-depth format comparison.</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand" style="margin-bottom:10px;"><span class="brand__mark">IMG</span> ImgPDF</a>
+        <p>Free browser-based tools for images, PDFs and everyday files. 100% private, no signup, zero server uploads.</p>
+      </div>
+      <div><h4>Image</h4><ul>
+        <li><a href="/image-tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/image-tools/image-resizer/">Image Resizer</a></li>
+        <li><a href="/image-tools/image-converter/">Image Converter</a></li>
+      </ul></div>
+      <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
+        <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
+        <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
+      </ul></div>
+      <div><h4>Blog &amp; Guides</h4><ul>
+        <li><a href="/blog/">ImgPDF Blog</a></li>
+        <li><a href="/blog/pdf-guides/">PDF Guides</a></li>
+        <li><a href="/blog/image-guides/">Image Guides</a></li>
+        <li><a href="/guides/">All Guides</a></li>
+      </ul></div>
+      <div><h4>Site</h4><ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 ImgPDF — Free, Fast &amp; Private Browser-Based Tools.</span>
+      <span>Engineered with HTML5, Canvas &amp; Web Crypto APIs.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/common.js"></script>
+</body>
+</html>

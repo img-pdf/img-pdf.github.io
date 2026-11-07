@@ -110,6 +110,19 @@ function inspectHtmlFile(filePath) {
       priority = '0.8';
       changefreq = 'monthly';
     }
+  } else if (urlPath.startsWith('/blog/')) {
+    if (
+      urlPath === '/blog/' ||
+      urlPath === '/blog/pdf-guides/' ||
+      urlPath === '/blog/image-guides/' ||
+      urlPath === '/blog/document-guides/'
+    ) {
+      priority = '0.8';
+      changefreq = 'weekly';
+    } else {
+      priority = '0.8';
+      changefreq = 'monthly';
+    }
   } else if (
     urlPath.startsWith('/utilities/') ||
     urlPath.startsWith('/developer-tools/') ||
@@ -149,10 +162,11 @@ function inspectHtmlFile(filePath) {
  * 2. Image Tools
  * 3. PDF Tools
  * 4. Guides
- * 5. Utilities
- * 6. Developer Tools
- * 7. Text Tools
- * 8. Trust pages (About, Contact, Privacy, Terms)
+ * 5. Blog
+ * 6. Utilities
+ * 7. Developer Tools
+ * 8. Text Tools
+ * 9. Trust pages (About, Contact, Privacy, Terms)
  */
 function sortPages(a, b) {
   const getOrderWeight = (url) => {
@@ -164,6 +178,8 @@ function sortPages(a, b) {
     if (p.startsWith('/pdf-tools/')) return 35;
     if (p === '/guides/') return 40;
     if (p.startsWith('/guides/')) return 45;
+    if (p === '/blog/') return 46;
+    if (p.startsWith('/blog/')) return 48;
     if (p === '/utilities/') return 50;
     if (p.startsWith('/utilities/')) return 55;
     if (p === '/developer-tools/') return 60;
