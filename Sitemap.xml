@@ -25,13 +25,13 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://img-pdf.github.io/image-tools/image-resizer/</loc>
+    <loc>https://img-pdf.github.io/image-tools/image-cropper/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://img-pdf.github.io/image-tools/image-cropper/</loc>
+    <loc>https://img-pdf.github.io/image-tools/image-resizer/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -67,19 +67,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://img-pdf.github.io/guides/image-compression-without-quality-loss/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://img-pdf.github.io/guides/jpg-vs-png-vs-webp/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://img-pdf.github.io/guides/image-resolution-and-dpi-explained/</loc>
+    <loc>https://img-pdf.github.io/guides/choose-website-image-formats/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -91,13 +79,25 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://img-pdf.github.io/guides/reduce-pdf-file-size/</loc>
+    <loc>https://img-pdf.github.io/guides/image-compression-without-quality-loss/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://img-pdf.github.io/guides/choose-website-image-formats/</loc>
+    <loc>https://img-pdf.github.io/guides/image-resolution-and-dpi-explained/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/guides/jpg-vs-png-vs-webp/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/guides/reduce-pdf-file-size/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -106,6 +106,18 @@
     <loc>https://img-pdf.github.io/utilities/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/utilities/base64-encoder-decoder/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/utilities/hash-generator/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -121,25 +133,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://img-pdf.github.io/utilities/uuid-generator/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://img-pdf.github.io/utilities/hash-generator/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://img-pdf.github.io/utilities/base64-encoder-decoder/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://img-pdf.github.io/utilities/url-encoder-decoder/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/utilities/uuid-generator/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -163,13 +163,13 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://img-pdf.github.io/text-tools/word-counter/</loc>
+    <loc>https://img-pdf.github.io/text-tools/character-counter/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://img-pdf.github.io/text-tools/character-counter/</loc>
+    <loc>https://img-pdf.github.io/text-tools/word-counter/</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

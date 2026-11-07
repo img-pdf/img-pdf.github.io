@@ -1,0 +1,37 @@
+name: Validate & Generate Sitemaps
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  sitemaps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate Dual Sitemaps (XML & TXT)
+        run: node scripts/generate-sitemaps.js
+
+      - name: Verify Sitemap Match & Git Cleanliness
+        run: |
+          git status --porcelain
+          if [ -n "$(git status --porcelain sitemap.xml Sitemap.xml sitemap.txt Sitemap.txt)" ]; then
+            echo "Sitemaps changed after generation. Committing updates..."
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add sitemap.xml Sitemap.xml sitemap.txt Sitemap.txt
+            git commit -m "Auto-regenerate dual sitemaps (sitemap.xml and sitemap.txt)"
+            git push
+          else
+            echo "Sitemaps are completely in sync with the codebase."
+          fi

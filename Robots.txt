@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://img-pdf.github.io/sitemap.xml
+Sitemap: https://img-pdf.github.io/sitemap.txt

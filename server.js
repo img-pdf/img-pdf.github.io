@@ -15,6 +15,11 @@ app.get(['/sitemap.xml', '/Sitemap.xml'], (req, res) => {
   res.sendFile(path.join(__dirname, 'sitemap.xml'));
 });
 
+app.get(['/sitemap.txt', '/Sitemap.txt'], (req, res) => {
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  res.sendFile(path.join(__dirname, 'sitemap.txt'));
+});
+
 app.get('/sitemap', (req, res) => {
   res.redirect(301, '/sitemap.xml');
 });

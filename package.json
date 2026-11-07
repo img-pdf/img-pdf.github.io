@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "build": "node -e 'console.log(\"Static site build complete\")'",
+    "build:sitemap": "node scripts/generate-sitemaps.js",
+    "build": "node scripts/generate-sitemaps.js",
     "lint": "node -e 'console.log(\"No lint errors found\")'"
   },
   "dependencies": {
