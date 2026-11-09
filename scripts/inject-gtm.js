@@ -1,8 +1,11 @@
 /**
  * inject-gtm.js
- * Injects Google Tag Manager (container: GTM-MH56QT6Z) into all public HTML pages of ImgPDF.
- * Follows the official Google Tag Manager installation specification:
- * - Head snippet as high as possible in <head>
+ * Injects and updates the Google Tag Manager / Google tag snippet (container: GTM-MH56QT6Z)
+ * across all public HTML pages of ImgPDF.
+ *
+ * Current Google Tag / Google Tag Manager specification:
+ * - Asynchronous Google Tag script immediately after <head>
+ * - dataLayer and gtag initialization
  * - Noscript iframe immediately after opening <body>
  */
 
@@ -11,12 +14,13 @@ import path from 'node:path';
 
 const GTM_CONTAINER_ID = 'GTM-MH56QT6Z';
 
-const GTM_HEAD_SNIPPET = `<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');</script>
+const NEW_GTM_HEAD_SNIPPET = `<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=${GTM_CONTAINER_ID}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+</script>
 <!-- End Google Tag Manager -->\n`;
 
 const GTM_BODY_SNIPPET = `<!-- Google Tag Manager (noscript) -->
@@ -42,24 +46,28 @@ function walkDir(dir) {
 }
 
 const htmlFiles = walkDir('.');
-console.log(`Found ${htmlFiles.length} HTML files to inspect.`);
+console.log(`Inspecting ${htmlFiles.length} HTML files...`);
 
 let updatedCount = 0;
-let alreadyInstalledCount = 0;
 
 htmlFiles.forEach((filePath) => {
   let content = fs.readFileSync(filePath, 'utf8');
 
-  if (content.includes(GTM_CONTAINER_ID)) {
-    alreadyInstalledCount++;
-    return;
+  // Remove any previous Google Tag Manager head comment and script block
+  if (content.includes('<!-- Google Tag Manager -->')) {
+    content = content.replace(/<!-- Google Tag Manager -->[\s\S]*?<!-- End Google Tag Manager -->\n?/g, '');
   }
 
-  // 1. Inject into <head>
+  // Remove any previous noscript block
+  if (content.includes('<!-- Google Tag Manager (noscript) -->')) {
+    content = content.replace(/<!-- Google Tag Manager \(noscript\) -->[\s\S]*?<!-- End Google Tag Manager \(noscript\) -->\n?/g, '');
+  }
+
+  // 1. Inject immediately after <head>
   if (content.includes('<head>\n')) {
-    content = content.replace('<head>\n', '<head>\n' + GTM_HEAD_SNIPPET);
+    content = content.replace('<head>\n', '<head>\n' + NEW_GTM_HEAD_SNIPPET);
   } else if (content.includes('<head>')) {
-    content = content.replace('<head>', '<head>\n' + GTM_HEAD_SNIPPET);
+    content = content.replace('<head>', '<head>\n' + NEW_GTM_HEAD_SNIPPET);
   } else {
     console.error(`ERROR: No <head> found in ${filePath}`);
     return;
@@ -79,23 +87,33 @@ htmlFiles.forEach((filePath) => {
   updatedCount++;
 });
 
-console.log(`Updated: ${updatedCount} files.`);
-console.log(`Already installed: ${alreadyInstalledCount} files.`);
+console.log(`Updated ${updatedCount} files.`);
 
 // Verification step
 let verificationErrors = 0;
 htmlFiles.forEach((filePath) => {
   const content = fs.readFileSync(filePath, 'utf8');
-  const matches = (content.match(new RegExp(GTM_CONTAINER_ID, 'g')) || []).length;
-  if (matches !== 2) {
-    console.error(`VERIFICATION FAILED for ${filePath}: found ${matches} occurrences of ${GTM_CONTAINER_ID} (expected 2)`);
+  const headScriptCount = (content.match(/<script async src="https:\/\/www\.googletagmanager\.com\/gtm\.js\?id=GTM-MH56QT6Z"><\/script>/g) || []).length;
+  const gtagInitCount = (content.match(/gtag\('js', new Date\(\)\);/g) || []).length;
+  const noscriptCount = (content.match(/<noscript><iframe src="https:\/\/www\.googletagmanager\.com\/ns\.html\?id=GTM-MH56QT6Z"/g) || []).length;
+
+  if (headScriptCount !== 1) {
+    console.error(`FAIL: ${filePath} has ${headScriptCount} head async scripts (expected 1)`);
+    verificationErrors++;
+  }
+  if (gtagInitCount !== 1) {
+    console.error(`FAIL: ${filePath} has ${gtagInitCount} gtag inits (expected 1)`);
+    verificationErrors++;
+  }
+  if (noscriptCount !== 1) {
+    console.error(`FAIL: ${filePath} has ${noscriptCount} noscripts (expected 1)`);
     verificationErrors++;
   }
 });
 
 if (verificationErrors === 0) {
-  console.log(`✔ SUCCESS: All ${htmlFiles.length} HTML files verified with exactly 2 GTM instances (head + body noscript).`);
+  console.log(`✔ SUCCESS: All ${htmlFiles.length} HTML files verified with exactly 1 head script and 1 body noscript!`);
 } else {
-  console.error(`✖ FAILED: ${verificationErrors} files failed verification.`);
+  console.error(`✖ FAILED: ${verificationErrors} errors found.`);
   process.exit(1);
 }

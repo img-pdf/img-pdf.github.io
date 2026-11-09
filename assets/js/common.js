@@ -110,6 +110,9 @@
       }
     }
     window.dataLayer.push(Object.assign({ event: eventName }, safeParams));
+    if (typeof window.gtag === "function") {
+      window.gtag("event", eventName, safeParams);
+    }
   }
   window.trackImgPdfEvent = trackImgPdfEvent;
 
