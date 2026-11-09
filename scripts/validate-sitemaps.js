@@ -163,7 +163,25 @@ for (const u of xmlUrls) {
   }
 }
 
-// 6. Final report and process exit
+// 6. Verify IndexNow Protocol Key File
+console.log('\n6. Validating IndexNow key verification file...');
+const indexNowKey = 'e5517a0fefdf3e347b1768a306cfb093';
+const keyFilePath = path.join(ROOT_DIR, `${indexNowKey}.txt`);
+assert(fs.existsSync(keyFilePath), `IndexNow key file must exist in repository root: "${indexNowKey}.txt"`);
+
+if (fs.existsSync(keyFilePath)) {
+  const fileContent = fs.readFileSync(keyFilePath, 'utf8').trim();
+  assert(
+    fileContent === indexNowKey,
+    `IndexNow key file content must exactly match key "${indexNowKey}"`
+  );
+  assert(
+    !xmlUrls.includes(`https://img-pdf.github.io/${indexNowKey}.txt`),
+    'IndexNow key file must not be listed in sitemap.xml'
+  );
+}
+
+// 7. Final report and process exit
 console.log('\n=== VALIDATION SUMMARY ===');
 console.log(`Checks passed: ${passed}`);
 console.log(`Errors found:  ${errors.length}`);
@@ -173,6 +191,6 @@ if (errors.length > 0) {
   errors.forEach((err, idx) => console.error(`  ${idx + 1}. ${err}`));
   process.exit(1);
 } else {
-  console.log(`\n\u2714 ALL SITEMAP AND ROBOTS CHECKS PASSED SUCCESSFULLY (${xmlUrls.length} URLs validated)!`);
+  console.log(`\n\u2714 ALL SITEMAP, ROBOTS, AND INDEXNOW CHECKS PASSED SUCCESSFULLY (${xmlUrls.length} URLs validated)!`);
   process.exit(0);
 }

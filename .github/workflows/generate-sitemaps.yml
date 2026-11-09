@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+    inputs:
+      submit_all:
+        description: 'Submit all canonical URLs to IndexNow (true/false)'
+        required: false
+        default: 'false'
+        type: boolean
 
 permissions:
   contents: write
@@ -21,6 +27,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
+          fetch-depth: 2
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -50,3 +57,14 @@ jobs:
           else
             echo "Sitemaps are completely in sync with the codebase."
           fi
+
+      - name: Submit Changed URLs to IndexNow
+        if: github.event_name != 'pull_request'
+        run: |
+          if [ "${{ github.event.inputs.submit_all }}" = "true" ]; then
+            node scripts/submit-indexnow.js --all
+          else
+            node scripts/submit-indexnow.js
+          fi
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY || 'e5517a0fefdf3e347b1768a306cfb093' }}
