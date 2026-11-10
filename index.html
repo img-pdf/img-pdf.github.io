@@ -112,20 +112,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </header>
 
 <main>
-  <!-- Hero Section -->
+  <!-- Hero Section (Cal.com Pure White Canvas) -->
   <section class="hero">
     <div class="container">
       <div class="hero__status">
         <span>In-Browser Processing · No Server Uploads · Fast &amp; Private</span>
-        <span class="hero__cursor">&nbsp;</span>
       </div>
-      <h1>Free Online Image and PDF Tools</h1>
-      <p class="hero__lede">Convert, compress, resize and manage images and PDF files with free online tools. Simple browser-based utilities for everyday document and image tasks.</p>
+      <h1>Free Online Image &amp; PDF Tools</h1>
+      <p class="hero__lede">Convert, compress, resize and manage your images and PDF files with simple online tools.</p>
+
+      <div class="hero-cta-group">
+        <a href="#popular-tools" class="btn btn--primary">Explore Tools</a>
+        <a href="/pdf-tools/" class="btn btn--secondary">Browse PDF Tools</a>
+      </div>
 
       <div class="search-box">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
-        <input type="text" id="tool-search" placeholder="Search 30+ tools — try &quot;compress&quot;, &quot;pdf to image&quot;, &quot;convert&quot; or &quot;resize&quot;" autocomplete="off" aria-label="Search tools">
+        <input type="text" id="tool-search" placeholder="Search for a tool... (e.g. compress, pdf to image, convert)" autocomplete="off" aria-label="Search tools">
         <div class="search-results" id="tool-search-results" role="listbox"></div>
+      </div>
+
+      <!-- Cal.com Product UI Mockup Card -->
+      <div class="hero-mockup">
+        <div class="hero-mockup__header">
+          <div class="hero-mockup__dots">
+            <span class="hero-mockup__dot"></span>
+            <span class="hero-mockup__dot"></span>
+            <span class="hero-mockup__dot"></span>
+          </div>
+          <span class="hero-mockup__title">Batch Image Compressor · In-Browser</span>
+          <span class="tag tag--good" style="font-size:11px;">Client-Side</span>
+        </div>
+        <div class="hero-mockup__body">
+          <a href="/image-tools/image-compressor/" class="hero-mockup__dropzone">
+            <span class="hero-mockup__drop-icon">&#128230;</span>
+            <span class="hero-mockup__drop-text">Drop images or PDFs here</span>
+            <span class="hero-mockup__drop-sub">JPG, PNG, WebP up to 50MB · Processed Locally</span>
+          </a>
+          <div class="hero-mockup__controls">
+            <div class="hero-mockup__row">
+              <span class="hero-mockup__label">Compression Quality</span>
+              <span class="hero-mockup__val">80% (Recommended)</span>
+            </div>
+            <div class="hero-mockup__slider-wrap">
+              <div class="hero-mockup__slider-fill"></div>
+              <div class="hero-mockup__slider-thumb"></div>
+            </div>
+            <div class="hero-mockup__row">
+              <span class="hero-mockup__label">Output Format</span>
+              <div class="hero-mockup__pills">
+                <span class="hero-mockup__pill hero-mockup__pill--active">JPG</span>
+                <span class="hero-mockup__pill">PNG</span>
+                <span class="hero-mockup__pill">WebP</span>
+              </div>
+            </div>
+            <div class="hero-mockup__result">
+              <span>Saved <strong>78%</strong> (1.4 MB &rarr; 312 KB)</span>
+              <span class="hero-mockup__stat">&#10003; Ready</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="hero__badges">
@@ -137,34 +183,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- How It Works Section -->
-  <section class="section section--alt" style="padding: 32px 0;">
+  <!-- How It Works Section (Cal.com Clean Surface Cards) -->
+  <section class="section section--alt">
     <div class="container">
-      <div class="section__head" style="margin-bottom: 20px;">
+      <div class="section__head">
         <div>
           <span class="section__eyebrow">simple 3-step workflow</span>
           <h2>How ImgPDF Works</h2>
         </div>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
-        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
-          <div style="font-size: 1.5rem; margin-bottom: 8px;">1. Select Your Files</div>
-          <p style="color: var(--ink-soft); font-size: 0.92rem; margin: 0;">Drag and drop documents or images directly into any tool. Files open directly in your web browser.</p>
+        <div style="background: var(--canvas); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px;">
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.05em;">01</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Select Your Files</h3>
+          <p style="color: var(--muted); font-size: 0.92rem; margin: 0; line-height: 1.55;">Drag and drop documents or images directly into any tool. Files open directly in your web browser session.</p>
         </div>
-        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
-          <div style="font-size: 1.5rem; margin-bottom: 8px;">2. Local Processing</div>
-          <p style="color: var(--ink-soft); font-size: 0.92rem; margin: 0;">All compression, rasterization, and conversion tasks run in your device's memory using HTML5 Canvas and PDF.js. Zero bytes sent to remote storage.</p>
+        <div style="background: var(--canvas); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px;">
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.05em;">02</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Local Processing</h3>
+          <p style="color: var(--muted); font-size: 0.92rem; margin: 0; line-height: 1.55;">All compression, rasterization, and conversion tasks run in device memory using HTML5 Canvas and PDF.js. Zero bytes sent to remote clouds.</p>
         </div>
-        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
-          <div style="font-size: 1.5rem; margin-bottom: 8px;">3. Instant Download</div>
-          <p style="color: var(--ink-soft); font-size: 0.92rem; margin: 0;">Download individual outputs or bulk ZIP archives immediately without upload waits, queues, or email signups.</p>
+        <div style="background: var(--canvas); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px 24px;">
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.05em;">03</div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Instant Download</h3>
+          <p style="color: var(--muted); font-size: 0.92rem; margin: 0; line-height: 1.55;">Download individual outputs or bulk ZIP archives immediately without upload waits, queues, or email signups.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Popular Featured Tools -->
-  <section class="section">
+  <section class="section" id="popular-tools">
     <div class="container">
       <div class="section__head">
         <div>
