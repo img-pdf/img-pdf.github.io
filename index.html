@@ -11,20 +11,20 @@ gtag('js', new Date());
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ImgPDF — Free Online Image, PDF &amp; Web Productivity Tools</title>
-<meta name="description" content="Free, private, browser-based tools for images and PDFs: batch image compressor, converter (WebP/PNG/JPG), resizer, cropper, JPG to PDF, merge and split PDF. 100% local processing, zero server uploads.">
+<title>Free Online Image &amp; PDF Tools – Convert, Compress &amp; Edit | ImgPDF</title>
+<meta name="description" content="Convert, compress, resize and manage images and PDF files with free online tools. Simple browser-based utilities for everyday document and image tasks.">
 <link rel="canonical" href="https://img-pdf.github.io/">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="ImgPDF — Free Online Image, PDF &amp; Web Tools">
-<meta property="og:description" content="Compress, resize, convert and edit images and PDFs free in your browser. 100% private, zero uploads, no signup required.">
+<meta property="og:title" content="Free Online Image &amp; PDF Tools – Convert, Compress &amp; Edit | ImgPDF">
+<meta property="og:description" content="Convert, compress, resize and manage images and PDF files with free online tools. Simple browser-based utilities for everyday document and image tasks.">
 <meta property="og:url" content="https://img-pdf.github.io/">
 <meta property="og:image" content="https://img-pdf.github.io/assets/img/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ImgPDF — Free Online Image, PDF &amp; Web Productivity Tools">
-<meta name="twitter:description" content="Compress, convert, resize images and manage PDFs locally in your browser. Fast, private, mobile-friendly.">
+<meta name="twitter:title" content="Free Online Image &amp; PDF Tools – Convert, Compress &amp; Edit | ImgPDF">
+<meta name="twitter:description" content="Convert, compress, resize and manage images and PDF files with free online tools. Simple browser-based utilities for everyday document and image tasks.">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@ gtag('js', new Date());
   "@type": "WebSite",
   "name": "ImgPDF",
   "url": "https://img-pdf.github.io/",
-  "description": "Free, browser-based image and PDF productivity platform with zero server uploads and 100% client-side execution.",
+  "description": "Convert, compress, resize and manage images and PDF files with free online tools. Simple browser-based utilities for everyday document and image tasks.",
   "potentialAction": {
     "@type": "SearchAction",
     "target": "https://img-pdf.github.io/?q={search_term_string}",
@@ -54,17 +54,17 @@ gtag('js', new Date());
     {
       "@type": "Question",
       "name": "Are my files uploaded to a remote server?",
-      "acceptedAnswer": { "@type": "Answer", "text": "No. ImgPDF runs 100% on your device using HTML5 Canvas, Web Cryptography, and local WebAssembly libraries. Your files never touch external servers or cloud storage." }
+      "acceptedAnswer": { "@type": "Answer", "text": "No. ImgPDF utilities execute client-side in your browser session using HTML5 Canvas, PDF.js, and Web Cryptography. Your files never touch external conversion servers." }
     },
     {
       "@type": "Question",
       "name": "Is there a limit on how many images or PDFs I can process?",
-      "acceptedAnswer": { "@type": "Answer", "text": "There are no artificial usage paywalls, subscription tiers, or per-day caps. Because computing is performed locally on your machine, you can process as many files as your hardware can handle." }
+      "acceptedAnswer": { "@type": "Answer", "text": "There are no subscription tiers, payment gates, or artificial daily quotas. Because computation is performed locally in your browser memory, practical limits depend on your device's available RAM and processor." }
     },
     {
       "@type": "Question",
       "name": "Does image compression reduce visual sharpness?",
-      "acceptedAnswer": { "@type": "Answer", "text": "ImgPDF utilizes psycho-visual quantization thresholds that discard only imperceptible high frequencies. At standard 75-80% quality settings, file sizes shrink by 70% or more with zero noticeable loss on high-resolution screens." }
+      "acceptedAnswer": { "@type": "Answer", "text": "ImgPDF uses quantization thresholds that discard imperceptible high-frequency visual data while preserving edge clarity. Typical 75-80% settings reduce file sizes by 60% to 80% with crisp visual fidelity." }
     }
   ]
 }
@@ -116,23 +116,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="hero">
     <div class="container">
       <div class="hero__status">
-        <span>100% In-Browser · Zero Server Uploads · Real-Time Speed</span>
+        <span>In-Browser Processing · No Server Uploads · Fast &amp; Private</span>
         <span class="hero__cursor">&nbsp;</span>
       </div>
-      <h1>Everyday Tools for Images &amp; PDFs,<br>Engineered for Absolute Privacy</h1>
-      <p class="hero__lede">Batch compress, convert, resize, crop, merge and split files directly on your device. Free forever, no registration, zero tracking.</p>
+      <h1>Free Online Image and PDF Tools</h1>
+      <p class="hero__lede">Convert, compress, resize and manage images and PDF files with free online tools. Simple browser-based utilities for everyday document and image tasks.</p>
 
       <div class="search-box">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3" stroke-linecap="round"/></svg>
-        <input type="text" id="tool-search" placeholder="Search 30+ tools — try &quot;compress&quot;, &quot;pdf&quot;, &quot;convert&quot; or &quot;resize&quot;" autocomplete="off" aria-label="Search tools">
+        <input type="text" id="tool-search" placeholder="Search 30+ tools — try &quot;compress&quot;, &quot;pdf to image&quot;, &quot;convert&quot; or &quot;resize&quot;" autocomplete="off" aria-label="Search tools">
         <div class="search-results" id="tool-search-results" role="listbox"></div>
       </div>
 
       <div class="hero__badges">
         <span class="tag tag--good">100% Client-Side Sandbox</span>
-        <span class="tag tag--good">No File Size Limits</span>
-        <span class="tag tag--good">No Registration Required</span>
+        <span class="tag tag--good">No Server File Uploads</span>
+        <span class="tag tag--good">No Account Required</span>
         <span class="tag tag--good">Fast on Mobile &amp; Desktop</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="section section--alt" style="padding: 32px 0;">
+    <div class="container">
+      <div class="section__head" style="margin-bottom: 20px;">
+        <div>
+          <span class="section__eyebrow">simple 3-step workflow</span>
+          <h2>How ImgPDF Works</h2>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
+          <div style="font-size: 1.5rem; margin-bottom: 8px;">1. Select Your Files</div>
+          <p style="color: var(--ink-soft); font-size: 0.92rem; margin: 0;">Drag and drop documents or images directly into any tool. Files open directly in your web browser.</p>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
+          <div style="font-size: 1.5rem; margin-bottom: 8px;">2. Local Processing</div>
+          <p style="color: var(--ink-soft); font-size: 0.92rem; margin: 0;">All compression, rasterization, and conversion tasks run in your device's memory using HTML5 Canvas and PDF.js. Zero bytes sent to remote storage.</p>
+        </div>
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px;">
+          <div style="font-size: 1.5rem; margin-bottom: 8px;">3. Instant Download</div>
+          <p style="color: var(--ink-soft); font-size: 0.92rem; margin: 0;">Download individual outputs or bulk ZIP archives immediately without upload waits, queues, or email signups.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -153,6 +179,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div>
             <div class="tool-card__name">Batch Image Compressor</div>
             <div class="tool-card__desc">Shrink JPG, PNG, WebP by 75%+ with live Before/After comparison slider</div>
+          </div>
+        </a>
+        <a class="tool-card" href="/pdf-tools/pdf-to-image/">
+          <div class="tool-card__icon">&#128444;&#65039;</div>
+          <div>
+            <div class="tool-card__name">PDF to Image (JPG &amp; PNG)</div>
+            <div class="tool-card__desc">Convert PDF pages into high-resolution JPG or PNG images with ZIP export</div>
           </div>
         </a>
         <a class="tool-card" href="/image-tools/image-converter/">
@@ -180,7 +213,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="tool-card__icon">&#128203;</div>
           <div>
             <div class="tool-card__name">Merge PDF</div>
-            <div class="tool-card__desc">Combine two or more PDF documents in any order</div>
+            <div class="tool-card__desc">Combine two or more PDF documents in any custom order</div>
           </div>
         </a>
         <a class="tool-card" href="/pdf-tools/split-pdf/">
@@ -197,13 +230,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="tool-card__desc">Crop images with freeform or fixed 1:1, 4:3, 16:9 aspect ratios</div>
           </div>
         </a>
-        <a class="tool-card" href="/utilities/password-generator/">
-          <div class="tool-card__icon">&#128273;</div>
-          <div>
-            <div class="tool-card__name">Password Generator</div>
-            <div class="tool-card__desc">Cryptographically secure random passwords with entropy meter</div>
-          </div>
-        </a>
       </div>
     </div>
   </section>
@@ -218,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <a class="section__link" href="/image-tools/">View all image tools &rarr;</a>
       </div>
-      <p>Clean, high-performance image tools that manipulate pixel arrays directly in your browser's canvas engine. Zero bandwidth wasted on server uploads.</p>
+      <p>High-performance image utilities that manipulate pixel arrays directly in your browser's canvas engine. Zero bandwidth wasted on remote uploads.</p>
       <div class="tool-grid">
         <a class="tool-card" href="/image-tools/image-compressor/"><div class="tool-card__icon">&#128230;</div><div><div class="tool-card__name">Image Compressor</div><div class="tool-card__desc">Batch compression with Before/After slider</div></div></a>
         <a class="tool-card" href="/image-tools/image-converter/"><div class="tool-card__icon">&#128260;</div><div><div class="tool-card__name">Image Converter</div><div class="tool-card__desc">Batch WebP, PNG, and JPG transcode</div></div></a>
@@ -239,8 +265,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <a class="section__link" href="/pdf-tools/">View all PDF tools &rarr;</a>
       </div>
-      <p>Assemble, rearrange, and extract PDF documents without installing heavy desktop software or sending confidential contracts to third-party clouds.</p>
+      <p>Assemble, rasterize, rearrange, and extract PDF documents without installing heavy desktop software or sending confidential contracts to third-party clouds.</p>
       <div class="tool-grid">
+        <a class="tool-card" href="/pdf-tools/pdf-to-image/"><div class="tool-card__icon">&#128444;&#65039;</div><div><div class="tool-card__name">PDF to Image</div><div class="tool-card__desc">Convert PDF pages to JPG or PNG with ZIP export</div></div></a>
         <a class="tool-card" href="/pdf-tools/jpg-to-pdf/"><div class="tool-card__icon">&#128196;</div><div><div class="tool-card__name">JPG to PDF</div><div class="tool-card__desc">Turn multiple photos into a customized PDF</div></div></a>
         <a class="tool-card" href="/pdf-tools/merge-pdf/"><div class="tool-card__icon">&#128203;</div><div><div class="tool-card__name">Merge PDF</div><div class="tool-card__desc">Combine multiple PDF files into one</div></div></a>
         <a class="tool-card" href="/pdf-tools/split-pdf/"><div class="tool-card__icon">&#9986;&#65039;</div><div><div class="tool-card__name">Split PDF</div><div class="tool-card__desc">Extract specific pages or ranges</div></div></a>
@@ -333,11 +360,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </details>
         <details class="faq-item">
           <summary>Is there a limit on how many images or PDFs I can process?</summary>
-          <p>There are no artificial usage paywalls, subscription tiers, or per-day caps. Because computing is performed locally on your machine, you can process as many files as your hardware can handle.</p>
+          <p>There are no subscription tiers, payment gates, or artificial daily quotas. Because computation is performed locally in your browser memory, practical limits depend on your device's available RAM and processor.</p>
         </details>
         <details class="faq-item">
           <summary>Does image compression reduce visual sharpness?</summary>
-          <p>ImgPDF utilizes psycho-visual quantization thresholds that discard only imperceptible high frequencies. At standard 75-80% quality settings, file sizes shrink by 70% or more with zero noticeable loss on high-resolution screens.</p>
+          <p>ImgPDF uses quantization thresholds that discard imperceptible high-frequency visual data while preserving edge clarity. Typical 75-80% settings reduce file sizes by 60% to 80% with crisp visual fidelity.</p>
         </details>
         <details class="faq-item">
           <summary>How does ImgPDF support its hosting costs if it is completely free?</summary>
@@ -367,6 +394,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <h4>PDF Tools</h4>
         <ul>
+          <li><a href="/pdf-tools/pdf-to-image/">PDF to Image</a></li>
           <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
           <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
           <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>

@@ -131,8 +131,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/image-tools/">Image Tools</a><span class="breadcrumb__sep">/</span>
       Image Compressor
     </p>
-    <h1>Batch Image Compressor</h1>
-    <p>Reduce file size for JPG, PNG and WebP images while controlling quality. Features batch uploads, real-time Before/After visual comparison, and zero server transfers.</p>
+    <h1>Compress JPG, PNG &amp; WebP Images Online</h1>
+    <p>Reduce file size for JPG, PNG and WebP images while controlling quality. Features batch uploads, real-time Before/After visual comparison, and zero server file uploads.</p>
   </div>
 
   <div class="container">
@@ -222,7 +222,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span>&#128274;</span>
       <div>
         <strong>100% Client-Side Sandbox &amp; Absolute Privacy</strong>
-        Every image pixel is decoded, compressed, and encoded directly on your machine using your browser's native canvas engine. No file data, metadata, or telemetry is ever uploaded to an external server.
+        Every image pixel is decoded, compressed, and encoded directly on your machine using your browser's native canvas engine. No image files or photos are ever uploaded to any server.
       </div>
     </div>
   </div>
@@ -290,6 +290,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><strong>Download:</strong> Save individual optimized files or click <strong>Download All</strong>.</li>
     </ol>
 
+    <h2>Limitations &amp; Troubleshooting</h2>
+    <div class="faq" style="margin-bottom:24px;">
+      <details class="faq-item">
+        <summary>Why didn't my PNG file shrink as much as a JPG?</summary>
+        <p>PNG uses lossless Deflate compression to maintain crisp edges and 100% pixel fidelity. If you need 70%+ file size reduction for photographs or complex graphics, use our <a href="/image-tools/image-converter/">Image Converter</a> to convert the file to modern WebP format or JPG.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What are the browser memory and resolution limits?</summary>
+        <p>Because all compression executes in your browser's local sandbox, available device RAM sets the practical limit. On mobile devices with limited RAM, we recommend compressing in batches of 10-20 images rather than hundreds at once. Canvas dimensions are typically capped at 4,096px to 8,192px depending on mobile GPU architecture.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does ImgPDF support transparency in compressed images?</summary>
+        <p>Yes. WebP and PNG formats fully preserve transparent alpha channels. If you convert or save an image with transparent layers into JPG, the background will automatically render as solid white, as the JPEG standard does not support transparency.</p>
+      </details>
+    </div>
+
     <h2>Frequently Asked Questions</h2>
     <div class="faq">
       <details class="faq-item">
@@ -317,6 +333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/image-tools/image-resizer/">Image Resizer</a>
       <a href="/image-tools/image-cropper/">Image Cropper</a>
       <a href="/image-tools/image-converter/">Image Converter</a>
+      <a href="/pdf-tools/pdf-to-image/">PDF to Image</a>
       <a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a>
       <a href="/guides/image-compression-without-quality-loss/">Guide: Lossless vs Lossy Compression</a>
       <a href="/guides/jpg-vs-png-vs-webp/">Guide: JPG vs PNG vs WebP</a>
@@ -343,6 +360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <h4>PDF Tools</h4>
         <ul>
+          <li><a href="/pdf-tools/pdf-to-image/">PDF to Image</a></li>
           <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
           <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
           <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>

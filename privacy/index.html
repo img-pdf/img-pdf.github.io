@@ -86,32 +86,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <p>At ImgPDF (accessible from <code>https://img-pdf.github.io/</code>), the privacy and confidentiality of our visitors are fundamental tenets of our engineering philosophy. This Privacy Policy details the types of information we process, how our client-side architecture safeguards your files, and how limited analytics and content distribution networks operate.</p>
 
-    <h2>1. Your Files &amp; Documents: Zero-Server Processing</h2>
-    <p>Every tool marked <strong>"Private by Design"</strong> across ImgPDF executes 100% locally on your computer, tablet, or smartphone:</p>
+    <h2>1. Your Files &amp; Documents: Local Client-Side Execution</h2>
+    <p>Every file utility across ImgPDF executes locally on your personal computer, tablet, or smartphone:</p>
     <ul>
-      <li><strong>Image Compression, Resizing &amp; Cropping:</strong> Executes via the standard HTML5 Canvas 2D engine inside your browser's private memory heap.</li>
-      <li><strong>PDF Merging, Splitting &amp; Conversion:</strong> Executes via open-source JavaScript web libraries (<code>pdf-lib</code>) running locally in your browser.</li>
-      <li><strong>Password, Hash &amp; UUID Generation:</strong> Executes via the standardized W3C Web Cryptography API (<code>crypto.getRandomValues</code>, <code>crypto.subtle.digest</code>).</li>
+      <li><strong>Image Processing (Compressor, Resizer, Converter, Cropper):</strong> Operates via standard HTML5 Canvas 2D APIs inside your browser's private memory heap.</li>
+      <li><strong>PDF Operations (Merge, Split, JPG to PDF):</strong> Operates via open-source JavaScript web engines (<code>pdf-lib</code>) running client-side.</li>
+      <li><strong>PDF to Image Conversion:</strong> Operates via Mozilla's <code>PDF.js</code> rendering engine running locally in your browser to generate JPG/PNG page rasters.</li>
+      <li><strong>Cryptographic Utilities (Password, Hash, UUID):</strong> Operates via the standardized W3C Web Cryptography API (<code>crypto.getRandomValues</code>, <code>crypto.subtle.digest</code>).</li>
     </ul>
 
     <div class="callout callout--good">
-      <h4>Verification of Local Execution</h4>
-      <p>You can verify this yourself at any time: open your browser's Developer Tools (F12) to the Network tab, disconnect your Wi-Fi, and perform an image compression or PDF merge. The operation will execute and download normally because <strong>zero bytes are sent to any server.</strong></p>
+      <h4>Verification of In-Browser Execution</h4>
+      <p>You can verify client-side execution at any time: open your browser's Developer Tools (F12) to the Network tab, load any tool page, disconnect your internet or enable Offline mode, and run a conversion, compression, or merge. The tool will process and download normally because <strong>no files, file contents, or document data are ever uploaded to ImgPDF servers.</strong></p>
     </div>
 
-    <h2>2. Log Data and Web Traffic Analytics</h2>
-    <p>Like virtually all standard static websites, our static web hosting provider (GitHub Pages) may automatically log basic HTTP technical information when your browser requests web page files (such as <code>index.html</code>, CSS stylesheets, or JavaScript bundles). This typical server log data may include your IP address, browser user-agent string, operating system, referring URL, and the timestamp of page requests.</p>
-    <p>We do not combine this server log information with personal identifiers or build cross-device tracking profiles.</p>
+    <h2>2. Web Traffic Analytics &amp; Google Tag Manager</h2>
+    <p>To understand general website performance, identify broken links, and prioritize tool improvements, ImgPDF uses <strong>Google Tag Manager</strong> (Container ID: <code>GTM-MH56QT6Z</code>) and <strong>Google Analytics 4</strong> (Measurement ID: <code>G-PHWHL604R1</code>).</p>
+    <p><strong>What is collected by Analytics:</strong></p>
+    <ul>
+      <li>Aggregated page visits, landing pages, and navigation paths (e.g. visits to <code>/blog/</code> or <code>/image-tools/</code>).</li>
+      <li>General device characteristics (e.g. mobile vs. desktop, browser type, operating system, screen resolution).</li>
+      <li>Approximate geographic region (derived from IP address by Google at the country/city level; IP addresses are anonymized and not stored by ImgPDF).</li>
+      <li>Traffic sources (e.g. search engine referrals or direct visits).</li>
+      <li>High-level aggregated tool usage counts (e.g., total count of files selected, tool category, download completion type).</li>
+    </ul>
+    <p><strong>Strict Privacy Guarantee:</strong> Analytics telemetry strictly excludes all file contents, file names, file paths, passwords, personal identifiers, and document data. Our tracking helper sanitizes all event payloads to prevent any sensitive data transmission.</p>
 
     <h2>3. Cookies and Local Storage</h2>
-    <p>ImgPDF does not utilize tracking cookies, marketing cookies, or persistent profiling beacons.</p>
-    <p>We utilize the browser's native <strong>localStorage</strong> API solely to remember your preferred visual theme (Light Mode vs. Dark Mode). This preference stays on your personal device and is never transmitted over the internet.</p>
+    <p><strong>Cookies:</strong> When Google Tag Manager and Google Analytics run, Google Analytics may set first-party cookies (such as <code>_ga</code> and <code>_ga_*</code>) to differentiate anonymous user sessions and distinguish unique visitors over time. You can block or delete cookies through your browser's security settings or install the official <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a> without affecting tool functionality.</p>
+    <p><strong>Local Storage:</strong> ImgPDF utilizes the browser's native <strong>localStorage</strong> API exclusively to remember your preferred visual theme (<code>imgpdf_theme</code>: Light Mode vs. Dark Mode). This string is stored strictly on your device and is never transmitted over the network.</p>
 
-    <h2>4. Third-Party CDNs (Content Delivery Networks)</h2>
-    <p>To ensure fast global page delivery, certain static utility scripts (such as Google Fonts or <code>pdf-lib</code> on jsDelivr) may be loaded from public content delivery networks. When your browser requests these static scripts, standard HTTP headers are transmitted to the CDN, identical to loading any standard website asset. The CDN receives only the script request and has zero access to the files or images you process within the tool.</p>
+    <h2>4. Third-Party CDNs and External Services</h2>
+    <p>The following external services are involved in serving website assets:</p>
+    <ul>
+      <li><strong>Google Fonts:</strong> Web fonts (Space Grotesk, Inter, JetBrains Mono) are loaded from <code>fonts.googleapis.com</code> and <code>fonts.gstatic.com</code> to provide readable typography.</li>
+      <li><strong>Google Tag Manager &amp; Analytics:</strong> Tracking libraries are delivered asynchronously via <code>googletagmanager.com</code>.</li>
+      <li><strong>GitHub Pages:</strong> Our static hosting infrastructure, provided by GitHub, Inc., logs standard HTTP server requests (IP addresses, request headers, timestamps) to monitor service integrity and maintain availability.</li>
+      <li><strong>Local Vendor Libraries:</strong> Core PDF conversion assets (such as PDF.js and JSZip) are hosted directly within the ImgPDF repository to minimize external third-party network dependencies.</li>
+    </ul>
 
     <h2>5. Advertising Policies &amp; Compliance</h2>
-    <p>In the event that contextual advertising partners (such as Google AdSense) are integrated in the future to help cover hosting and domain maintenance costs, such partners will be strictly bound by standard privacy requirements. We will never sell, lease, or distribute user-supplied file data.</p>
+    <p>In the event that contextual advertising partners (such as Google AdSense) are displayed on non-tool informational pages to help cover domain and maintenance expenses, advertising partners will be strictly bound by standard privacy requirements. We will never sell, lease, or distribute user file data or personal details.</p>
 
     <h2>6. Contact Us Regarding Privacy</h2>
     <p>If you have any questions, clarifications, or technical inquiries regarding our data handling or privacy architecture, please contact us at:</p>

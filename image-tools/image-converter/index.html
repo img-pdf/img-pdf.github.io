@@ -126,8 +126,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/image-tools/">Image Tools</a><span class="breadcrumb__sep">/</span>
       Image Converter
     </p>
-    <h1>Batch Image Converter</h1>
-    <p>Convert multiple images to WebP, PNG, or JPG formats simultaneously. High-speed local processing with no file size limits.</p>
+    <h1>Convert Images to WebP, PNG &amp; JPG Online</h1>
+    <p>Convert single or multiple images to WebP, PNG, or JPG formats simultaneously. High-speed local processing with zero server file uploads.</p>
   </div>
 
   <div class="container">
@@ -180,13 +180,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="privacy-note">
       <span>&#128274;</span>
       <div>
-        <strong>Zero Upload Guarantee</strong>
-        Format transcoding runs entirely client-side using Web APIs. Your images are never transmitted over the internet or viewed by anyone.
+        <strong>100% Client-Side Processing &amp; Zero File Uploads</strong>
+        Format transcoding runs entirely inside your browser using Web Canvas APIs. Your images and files are never uploaded to any server.
       </div>
     </div>
   </div>
 
   <div class="container prose" style="max-width:760px; margin-top:40px;">
+    <h2>Step-by-Step Conversion Guide</h2>
+    <ol>
+      <li><strong>Select Images:</strong> Drag and drop single or multiple JPG, PNG, WebP, or GIF images into the dropzone above.</li>
+      <li><strong>Choose Target Format:</strong> Select <strong>WebP</strong> (optimal file size and speed for modern websites), <strong>PNG</strong> (lossless detail and transparent backgrounds), or <strong>JPG</strong> (universal device compatibility).</li>
+      <li><strong>Adjust Quality:</strong> Use the quality slider for WebP or JPG to balance compression savings with visual fidelity.</li>
+      <li><strong>Convert:</strong> Click <strong>Convert All Images</strong> to transcode every file locally on your machine.</li>
+      <li><strong>Download:</strong> Download individual converted assets or save all files in one click.</li>
+    </ol>
+
     <h2>Which Image Format Should You Choose?</h2>
     <p>Selecting the optimal file format is essential for maximizing web performance, minimizing bandwidth costs, and ensuring visual compatibility across all desktop and mobile devices.</p>
 
@@ -198,6 +207,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <h3>3. JPG / JPEG: Universal Compatibility</h3>
     <p>JPEG remains the most universally recognized digital photo standard. Virtually every printer, legacy operating system, and hardware device in the world opens JPEG without issue. It is the best choice when submitting photos to institutional portals, passport applications, or printing labs.</p>
+
+    <h2>Supported Formats Overview</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Type</th>
+            <th>Transparency</th>
+            <th>Compression</th>
+            <th>Primary Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>WebP</strong></td>
+            <td>Input &amp; Output</td>
+            <td>Yes (Full Alpha)</td>
+            <td>Lossy &amp; Lossless</td>
+            <td>Web performance, blogs, apps</td>
+          </tr>
+          <tr>
+            <td><strong>PNG</strong></td>
+            <td>Input &amp; Output</td>
+            <td>Yes (Full Alpha)</td>
+            <td>Lossless</td>
+            <td>Logos, UI screenshots, vector art</td>
+          </tr>
+          <tr>
+            <td><strong>JPG / JPEG</strong></td>
+            <td>Input &amp; Output</td>
+            <td>No (Solid white fallback)</td>
+            <td>Lossy</td>
+            <td>Digital photography, print submissions</td>
+          </tr>
+          <tr>
+            <td><strong>GIF</strong></td>
+            <td>Input only</td>
+            <td>Yes (Indexed)</td>
+            <td>Lossless</td>
+            <td>Static extraction (first frame)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Limitations &amp; Troubleshooting</h2>
+    <div class="faq" style="margin-bottom:24px;">
+      <details class="faq-item">
+        <summary>What happens to animated GIFs during conversion?</summary>
+        <p>Because in-browser transcoding uses the HTML5 2D Canvas context, converting an animated GIF extracts and converts the first frame as a static image. For full animation transcoding, specialized video tools are required.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why did my transparent PNG develop a white background when converted to JPG?</summary>
+        <p>The JPEG standard has no specification for alpha (transparent) channels. Whenever a transparent image is transcoded to JPG, transparent pixels are automatically composited over a clean white background. To preserve transparency, convert to WebP or keep as PNG.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How many images can I convert simultaneously?</summary>
+        <p>Because processing runs in client RAM, modern laptops and desktops can convert 50+ files smoothly. On mobile phones with limited available memory, we recommend converting in batches of 15-25 files for optimal stability.</p>
+      </details>
+    </div>
 
     <h2>Frequently Asked Questions</h2>
     <div class="faq">
@@ -221,6 +291,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="related-tools">
       <a href="/image-tools/image-compressor/">Image Compressor</a>
       <a href="/image-tools/image-resizer/">Image Resizer</a>
+      <a href="/pdf-tools/pdf-to-image/">PDF to Image</a>
       <a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a>
       <a href="/guides/jpg-vs-png-vs-webp/">Guide: JPG vs PNG vs WebP Comparison</a>
     </div>
@@ -246,6 +317,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <h4>PDF Tools</h4>
         <ul>
+          <li><a href="/pdf-tools/pdf-to-image/">PDF to Image</a></li>
           <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
           <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
           <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>

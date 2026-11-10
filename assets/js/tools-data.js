@@ -27,6 +27,9 @@ window.IMGPDF_TOOLS = [
   { name: "EXIF Metadata Viewer/Remover", category: "Image", url: null, keywords: "exif metadata remove strip privacy" },
 
   // ---- PDF tools ----
+  { name: "PDF to Image", category: "PDF", url: "/pdf-tools/pdf-to-image/", keywords: "pdf to image jpg png convert export pages rasterize", popular: true },
+  { name: "PDF to JPG", category: "PDF", url: "/pdf-tools/pdf-to-image/", keywords: "pdf to jpg convert pages extract photos", popular: true },
+  { name: "PDF to PNG", category: "PDF", url: "/pdf-tools/pdf-to-image/", keywords: "pdf to png convert pages transparent", popular: true },
   { name: "JPG to PDF", category: "PDF", url: "/pdf-tools/jpg-to-pdf/", keywords: "jpg pdf convert", popular: true },
   { name: "PNG to PDF", category: "PDF", url: "/pdf-tools/jpg-to-pdf/", keywords: "png pdf convert" },
   { name: "Merge PDF", category: "PDF", url: "/pdf-tools/merge-pdf/", keywords: "merge combine join pdf", popular: true },

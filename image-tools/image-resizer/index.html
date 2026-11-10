@@ -100,7 +100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/image-tools/">Image Tools</a><span class="breadcrumb__sep">/</span>
       Image Resizer
     </p>
-    <h1>Online Image Resizer</h1>
+    <h1>Resize Images Online (JPG, PNG &amp; WebP)</h1>
     <p>Scale and resize images to exact dimensions or social media formats. Aspect ratio lock prevents unwanted distortion.</p>
   </div>
 
@@ -174,16 +174,92 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="privacy-note">
       <span>&#128274;</span>
-      <div><strong>Private &amp; Secure</strong>Images are scaled on your GPU/CPU via canvas bilinear/bicubic interpolation. Your pictures never leave your browser.</div>
+      <div><strong>Private &amp; Secure</strong>Images are scaled on your GPU/CPU via canvas bilinear/bicubic interpolation. Your pictures and files never leave your device.</div>
     </div>
   </div>
 
   <div class="container prose" style="max-width:760px; margin-top:36px;">
+    <h2>How to Resize an Image Online</h2>
+    <ol>
+      <li><strong>Upload Your Image:</strong> Drag and drop your JPG, PNG, WebP, or GIF image, or click to choose from your device.</li>
+      <li><strong>Select Preset or Custom Dimensions:</strong> Choose a quick social media preset (Instagram, Story/Reel, YouTube Thumbnail, Full HD) or enter custom width and height in pixels.</li>
+      <li><strong>Lock Aspect Ratio:</strong> Keep "Lock aspect ratio" checked to prevent squishing or stretching.</li>
+      <li><strong>Resize &amp; Preview:</strong> Click <strong>Resize Image</strong> to scale instantly using high-quality browser canvas interpolation.</li>
+      <li><strong>Download:</strong> Click <strong>Download Resized Image</strong> to save the optimized file.</li>
+    </ol>
+
     <h2>Digital Image Resizing Best Practices</h2>
     <p>Scaling image dimensions is often the fastest way to shrink hefty camera photos down to web-friendly sizes. Modern smartphone cameras capture images at 4000x3000 pixels or higher, but most website containers and email viewports rarely require more than 1200 to 1920 pixels in width.</p>
 
     <h3>Why Keeping the Aspect Ratio Locked is Critical</h3>
     <p>Aspect ratio is the proportional relationship between an image's width and height (such as 16:9, 4:3, or 1:1). Keeping <strong>Lock aspect ratio</strong> enabled ensures that as you edit width or height, the other dimension automatically recalculates, avoiding awkward stretching or squishing.</p>
+
+    <h2>Supported Formats &amp; Scaling Features</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Transparency</th>
+            <th>Interpolation</th>
+            <th>Recommended Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>JPG / JPEG</strong></td>
+            <td>No</td>
+            <td>Bicubic / Bilinear</td>
+            <td>Camera photos, blog banners, wallpaper</td>
+          </tr>
+          <tr>
+            <td><strong>PNG</strong></td>
+            <td>Yes (Full Alpha)</td>
+            <td>Bicubic / Bilinear</td>
+            <td>Logos, UI mockups, icons, badges</td>
+          </tr>
+          <tr>
+            <td><strong>WebP</strong></td>
+            <td>Yes (Full Alpha)</td>
+            <td>Bicubic / Bilinear</td>
+            <td>High-speed web publishing, mobile web</td>
+          </tr>
+          <tr>
+            <td><strong>GIF</strong></td>
+            <td>Yes (First frame)</td>
+            <td>Bilinear</td>
+            <td>Static display resizing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Limitations &amp; Troubleshooting</h2>
+    <div class="faq" style="margin-bottom:24px;">
+      <details class="faq-item">
+        <summary>Why does upscaling an image look blurry or pixelated?</summary>
+        <p>Resizing an image larger than its native resolution (e.g., from 400px to 2000px) requires interpolating new pixels that do not exist in the source file. While our algorithm applies smooth bicubic downsampling, upscaling cannot create new photographic detail.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are there maximum dimension limits?</summary>
+        <p>Most modern desktop web browsers handle canvas sizes up to 16,384 x 16,384 pixels, while mobile devices (especially Safari on iOS) limit canvas textures to 4,096 x 4,096 pixels. Extreme dimensions beyond these limits may fail on mobile devices.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does resizing preserve transparent backgrounds?</summary>
+        <p>Yes. If your input file is a PNG or WebP with transparency, the resized output preserves the transparent alpha layer seamlessly.</p>
+      </details>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top:32px;">
+    <h2 style="font-size:1.05rem;">Related Tools &amp; Guides</h2>
+    <div class="related-tools">
+      <a href="/image-tools/image-cropper/">Image Cropper</a>
+      <a href="/image-tools/image-compressor/">Image Compressor</a>
+      <a href="/image-tools/image-converter/">Image Converter</a>
+      <a href="/pdf-tools/pdf-to-image/">PDF to Image</a>
+      <a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a>
+    </div>
   </div>
 </main>
 
@@ -201,6 +277,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="/image-tools/image-converter/">Image Converter</a></li>
       </ul></div>
       <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/pdf-to-image/">PDF to Image</a></li>
         <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
         <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
         <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
@@ -219,7 +296,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 ImgPDF</span>
-      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking.</span>
+      <span>Built with HTML, CSS &amp; JavaScript — local processing, private by design.</span>
     </div>
   </div>
 </footer>

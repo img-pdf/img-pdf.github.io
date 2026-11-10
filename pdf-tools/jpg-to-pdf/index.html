@@ -123,8 +123,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/pdf-tools/">PDF Tools</a><span class="breadcrumb__sep">/</span>
       JPG to PDF
     </p>
-    <h1>JPG to PDF Converter</h1>
-    <p>Convert multiple JPG, PNG, and WebP images into a single structured PDF document. Reorder pages, set page sizes and margins, with 100% private in-browser creation.</p>
+    <h1>Convert JPG &amp; Images to PDF Online</h1>
+    <p>Convert single or multiple JPG, PNG, and WebP images into a single structured PDF document. Reorder pages, set page sizes and margins, with 100% private in-browser creation and zero server file uploads.</p>
   </div>
 
   <div class="container">
@@ -194,6 +194,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="container prose" style="max-width:760px; margin-top:36px;">
+    <h2>How to Convert Images to PDF Online</h2>
+    <ol>
+      <li><strong>Upload Images:</strong> Drag and drop or browse JPG, PNG, or WebP images into the upload area above.</li>
+      <li><strong>Reorder Pages:</strong> Use the up and down arrow buttons next to each file to arrange your pages in the exact order you want them to appear in the PDF document.</li>
+      <li><strong>Select Page Layout:</strong> Choose <strong>Fit to Image</strong> (sizes pages to match photo dimensions), <strong>A4</strong> (standard international document size), or <strong>US Letter</strong> (standard North American size).</li>
+      <li><strong>Configure Margins &amp; Orientation:</strong> Choose No Margin, Small, or Standard margins, and set orientation to Portrait, Landscape, or Auto.</li>
+      <li><strong>Generate &amp; Download:</strong> Click <strong>Create PDF Document</strong> to compile your PDF locally in seconds, then click download.</li>
+    </ol>
+
     <h2>Why Combine Multiple Images Into a Single PDF?</h2>
     <p>Loose images (JPG, PNG) can be difficult to manage, easily get separated in email threads, and often print unpredictably depending on viewer software. Packing receipts, assignments, photo galleries, or multi-page paper documents into a standardized PDF ensures universal document presentation across Windows, macOS, Linux, iOS, and Android.</p>
 
@@ -203,6 +212,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li><strong>A4 (Standard International):</strong> The global standard for resumes, contracts, and assignments across Europe, Asia, Australia, and Africa.</li>
       <li><strong>US Letter:</strong> The standard format for North American corporate and legal filing.</li>
     </ul>
+
+    <h2>Supported Input Formats &amp; Specifications</h2>
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Format</th>
+            <th>Color Space</th>
+            <th>Page Sizing</th>
+            <th>Output Standard</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>JPG / JPEG</strong></td>
+            <td>RGB / Grayscale</td>
+            <td>Fit, A4, Letter</td>
+            <td>Standard PDF 1.7</td>
+          </tr>
+          <tr>
+            <td><strong>PNG</strong></td>
+            <td>RGB + Alpha (white blend)</td>
+            <td>Fit, A4, Letter</td>
+            <td>Standard PDF 1.7</td>
+          </tr>
+          <tr>
+            <td><strong>WebP</strong></td>
+            <td>RGB + Alpha</td>
+            <td>Fit, A4, Letter</td>
+            <td>Standard PDF 1.7</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Limitations &amp; Troubleshooting</h2>
+    <div class="faq" style="margin-bottom:24px;">
+      <details class="faq-item">
+        <summary>How many images can I combine into one PDF?</summary>
+        <p>Because compilation runs client-side inside your browser via pdf-lib, document capacity depends on device memory. Most modern desktop computers comfortably assemble 50-100 high-resolution images. On mobile devices with constrained RAM, we recommend keeping documents under 30 pages per batch.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why did my transparent PNG get a white background in the PDF?</summary>
+        <p>PDF print standards require clear background color definitions. Transparent PNG pixels are rendered onto a solid white page canvas to ensure crisp, readable documents and consistent printing.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why is my output PDF larger than the combined image file sizes?</summary>
+        <p>PDF documents include structural object trees, font/resource dictionaries, and page bounding boxes in addition to the embedded image data streams. To reduce total size before compiling, you can compress images with our <a href="/image-tools/image-compressor/">Image Compressor</a>.</p>
+      </details>
+    </div>
 
     <h2>Frequently Asked Questions</h2>
     <div class="faq">
@@ -224,6 +283,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container" style="margin-top:32px;">
     <h2 style="font-size:1.05rem;">Related PDF Tools &amp; Guides</h2>
     <div class="related-tools">
+      <a href="/pdf-tools/pdf-to-image/">PDF to Image</a>
       <a href="/pdf-tools/merge-pdf/">Merge PDF</a>
       <a href="/pdf-tools/split-pdf/">Split PDF</a>
       <a href="/image-tools/image-compressor/">Image Compressor</a>
@@ -247,6 +307,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="/image-tools/image-converter/">Image Converter</a></li>
       </ul></div>
       <div><h4>PDF</h4><ul>
+        <li><a href="/pdf-tools/pdf-to-image/">PDF to Image</a></li>
         <li><a href="/pdf-tools/jpg-to-pdf/">JPG to PDF</a></li>
         <li><a href="/pdf-tools/merge-pdf/">Merge PDF</a></li>
         <li><a href="/pdf-tools/split-pdf/">Split PDF</a></li>
@@ -265,7 +326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 ImgPDF</span>
-      <span>Built with HTML, CSS &amp; JavaScript — no server, no tracking.</span>
+      <span>Built with HTML, CSS &amp; JavaScript — local processing, private by design.</span>
     </div>
   </div>
 </footer>

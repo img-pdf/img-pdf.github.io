@@ -7,6 +7,7 @@ https://img-pdf.github.io/image-tools/image-resizer/
 https://img-pdf.github.io/pdf-tools/
 https://img-pdf.github.io/pdf-tools/jpg-to-pdf/
 https://img-pdf.github.io/pdf-tools/merge-pdf/
+https://img-pdf.github.io/pdf-tools/pdf-to-image/
 https://img-pdf.github.io/pdf-tools/split-pdf/
 https://img-pdf.github.io/guides/
 https://img-pdf.github.io/guides/choose-website-image-formats/

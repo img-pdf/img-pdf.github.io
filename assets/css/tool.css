@@ -537,3 +537,94 @@ input[type="range"]::-moz-range-thumb {
   font-weight: 600;
 }
 
+/* ==========================================================================
+   PDF to Image Grid & Page Cards
+   ========================================================================== */
+.pdf-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.pdf-page-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.15s ease, opacity 0.15s ease;
+}
+.pdf-page-card.is-deselected {
+  opacity: 0.5;
+  border-style: dashed;
+}
+.pdf-page-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pdf-page-card__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+.pdf-page-card__label input[type="checkbox"] {
+  cursor: pointer;
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+}
+.pdf-page-card__preview {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.pdf-page-card__img {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  object-fit: contain;
+  display: block;
+}
+.pdf-page-card__loading {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  text-align: center;
+  padding: 16px;
+}
+.pdf-page-card__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.pdf-page-card__actions .btn {
+  width: 100%;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+}
+.progress-container {
+  margin: 12px 0 6px;
+  background: var(--surface-alt);
+  border-radius: 6px;
+  overflow: hidden;
+  height: 8px;
+}
+.progress-bar-fill {
+  background: var(--accent);
+  height: 100%;
+  width: 0%;
+  transition: width 0.15s ease;
+}
+
+
