@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+(function(){try{var f=window.fetch;Object.defineProperty(window,"fetch",{get:function(){return f},set:function(v){f=v},configurable:true,enumerable:true});if(typeof Window!=="undefined"&&Window.prototype){Object.defineProperty(Window.prototype,"fetch",{get:function(){return f},set:function(v){f=v},configurable:true,enumerable:true})}}catch(e){}})();
+</script>
 <!-- Google Tag Manager -->
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MH56QT6Z"></script>
 <script>
@@ -15,6 +18,11 @@ gtag('js', new Date());
 <meta name="description" content="Convert, compress, resize and manage images and PDF files with free online tools. Simple browser-based utilities for everyday document and image tasks.">
 <link rel="canonical" href="https://img-pdf.github.io/">
 <meta name="robots" content="index, follow">
+
+<!-- International Hreflang Annotations -->
+<link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/">
+<link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/">
+<link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -89,6 +97,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/about/" data-nav-section="/about/">About</a>
     </nav>
     <div style="display:flex; align-items:center; gap:8px;">
+      <!-- Language Selector Dropdown -->
+      <div class="lang-selector">
+        <button class="lang-btn" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Change language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span>English</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <div class="lang-menu" role="menu">
+          <a href="/en/" class="lang-option is-active" data-lang="en" role="menuitem">
+            <span>English</span>
+            <span class="check">✓</span>
+          </a>
+          <a href="/pt-br/" class="lang-option" data-lang="pt-BR" role="menuitem">
+            <span>Português (Brasil)</span>
+          </a>
+        </div>
+      </div>
       <button class="theme-toggle" type="button" aria-label="Toggle theme">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <span>Theme</span>
@@ -478,5 +509,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="/assets/js/tools-data.js"></script>
 <script src="/assets/js/search.js"></script>
 <script src="/assets/js/common.js"></script>
+<script src="/assets/js/i18n.js"></script>
 </body>
 </html>

@@ -1,4 +1,8 @@
 https://img-pdf.github.io/
+https://img-pdf.github.io/en/
+https://img-pdf.github.io/pt-br/
+https://img-pdf.github.io/en/compress-pdf/
+https://img-pdf.github.io/pt-br/comprimir-pdf/
 https://img-pdf.github.io/image-tools/
 https://img-pdf.github.io/image-tools/image-compressor/
 https://img-pdf.github.io/image-tools/image-converter/
@@ -43,6 +47,14 @@ https://img-pdf.github.io/text-tools/
 https://img-pdf.github.io/text-tools/character-counter/
 https://img-pdf.github.io/text-tools/word-counter/
 https://img-pdf.github.io/about/
+https://img-pdf.github.io/en/about/
+https://img-pdf.github.io/pt-br/sobre/
 https://img-pdf.github.io/contact/
+https://img-pdf.github.io/en/contact/
+https://img-pdf.github.io/pt-br/contato/
+https://img-pdf.github.io/en/privacy-policy/
 https://img-pdf.github.io/privacy/
+https://img-pdf.github.io/pt-br/politica-de-privacidade/
+https://img-pdf.github.io/en/terms/
+https://img-pdf.github.io/pt-br/termos/
 https://img-pdf.github.io/terms/

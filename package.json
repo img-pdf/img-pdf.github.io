@@ -6,12 +6,13 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
+    "build:i18n": "node scripts/build-multilingual.js",
     "build:sitemap": "node scripts/generate-sitemaps.js",
     "test:sitemap": "node scripts/validate-sitemaps.js",
     "indexnow": "node scripts/submit-indexnow.js",
     "indexnow:all": "node scripts/submit-indexnow.js --all",
     "indexnow:dry": "node scripts/submit-indexnow.js --dry-run",
-    "build": "node scripts/generate-sitemaps.js && node scripts/validate-sitemaps.js",
+    "build": "node scripts/build-multilingual.js && node scripts/generate-sitemaps.js && node scripts/validate-sitemaps.js",
     "lint": "node -e 'console.log(\"No lint errors found\")'"
   },
   "dependencies": {

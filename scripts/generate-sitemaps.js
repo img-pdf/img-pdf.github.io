@@ -30,7 +30,6 @@ function findHtmlFiles(dir) {
 
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
-    const relPath = path.relative(ROOT_DIR, fullPath);
 
     if (entry.isDirectory()) {
       if (!IGNORED_DIRS.has(entry.name) && !entry.name.startsWith('.')) {
@@ -52,7 +51,7 @@ function findHtmlFiles(dir) {
 }
 
 /**
- * Parse HTML file, check eligibility, extract canonical URL and lastmod
+ * Parse HTML file, check eligibility, extract canonical URL, alternates and lastmod
  */
 function inspectHtmlFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
@@ -78,23 +77,35 @@ function inspectHtmlFile(filePath) {
     throw new Error(`[ERROR] Canonical URL "${canonicalUrl}" in ${relPath} does not match base domain ${BASE_URL}`);
   }
 
-  // 3. Extract truthful file modification date (YYYY-MM-DD)
+  // 3. Extract hreflang alternates if present
+  const alternates = [];
+  const hreflangRegex = /<link\s+rel=["']alternate["']\s+hreflang=["']([^"']+)["']\s+href=["']([^"']+)["']/gi;
+  let match;
+  while ((match = hreflangRegex.exec(content)) !== null) {
+    alternates.push({
+      hreflang: match[1].trim(),
+      href: match[2].trim()
+    });
+  }
+
+  // 4. Extract truthful file modification date (YYYY-MM-DD)
   const stat = fs.statSync(filePath);
   const lastmod = stat.mtime.toISOString().split('T')[0];
 
-  // 4. Determine priority and changefreq based on URL structure
+  // 5. Determine priority and changefreq based on URL structure
   const urlPath = canonicalUrl.replace(BASE_URL, '');
   let priority = '0.8';
   let changefreq = 'monthly';
 
-  if (urlPath === '' || urlPath === '/') {
+  if (urlPath === '' || urlPath === '/' || urlPath === '/en/' || urlPath === '/pt-br/') {
     priority = '1.0';
     changefreq = 'weekly';
   } else if (
+    urlPath.startsWith('/en/compress-pdf/') ||
+    urlPath.startsWith('/pt-br/comprimir-pdf/') ||
     urlPath.startsWith('/image-tools/') ||
     urlPath.startsWith('/pdf-tools/')
   ) {
-    // If it is a hub index page
     if (urlPath === '/image-tools/' || urlPath === '/pdf-tools/') {
       priority = '0.8';
       changefreq = 'weekly';
@@ -103,46 +114,32 @@ function inspectHtmlFile(filePath) {
       changefreq = 'monthly';
     }
   } else if (urlPath.startsWith('/guides/')) {
-    if (urlPath === '/guides/') {
-      priority = '0.8';
-      changefreq = 'weekly';
-    } else {
-      priority = '0.8';
-      changefreq = 'monthly';
-    }
+    priority = urlPath === '/guides/' ? '0.8' : '0.8';
+    changefreq = urlPath === '/guides/' ? 'weekly' : 'monthly';
   } else if (urlPath.startsWith('/blog/')) {
-    if (
-      urlPath === '/blog/' ||
-      urlPath === '/blog/pdf-guides/' ||
-      urlPath === '/blog/image-guides/' ||
-      urlPath === '/blog/document-guides/'
-    ) {
-      priority = '0.8';
-      changefreq = 'weekly';
-    } else {
-      priority = '0.8';
-      changefreq = 'monthly';
-    }
+    priority = '0.8';
+    changefreq = 'monthly';
   } else if (
     urlPath.startsWith('/utilities/') ||
     urlPath.startsWith('/developer-tools/') ||
     urlPath.startsWith('/text-tools/')
   ) {
-    if (
-      urlPath === '/utilities/' ||
-      urlPath === '/developer-tools/' ||
-      urlPath === '/text-tools/'
-    ) {
-      priority = '0.8';
-      changefreq = 'weekly';
-    } else {
-      priority = '0.8';
-      changefreq = 'monthly';
-    }
-  } else if (urlPath === '/about/' || urlPath === '/contact/') {
+    priority = '0.8';
+    changefreq = 'monthly';
+  } else if (
+    urlPath.includes('/about/') ||
+    urlPath.includes('/sobre/') ||
+    urlPath.includes('/contact/') ||
+    urlPath.includes('/contato/')
+  ) {
     priority = '0.6';
     changefreq = 'monthly';
-  } else if (urlPath === '/privacy/' || urlPath === '/terms/') {
+  } else if (
+    urlPath.includes('/privacy') ||
+    urlPath.includes('/politica') ||
+    urlPath.includes('/terms') ||
+    urlPath.includes('/termos')
+  ) {
     priority = '0.5';
     changefreq = 'monthly';
   }
@@ -150,6 +147,7 @@ function inspectHtmlFile(filePath) {
   return {
     relPath,
     loc: canonicalUrl,
+    alternates,
     lastmod,
     changefreq,
     priority
@@ -158,38 +156,44 @@ function inspectHtmlFile(filePath) {
 
 /**
  * Custom sort to ensure clean, structured sitemap ordering:
- * 1. Home
- * 2. Image Tools
- * 3. PDF Tools
- * 4. Guides
- * 5. Blog
- * 6. Utilities
- * 7. Developer Tools
- * 8. Text Tools
- * 9. Trust pages (About, Contact, Privacy, Terms)
+ * 1. Home (/, /en/, /pt-br/)
+ * 2. High-value tools (/en/compress-pdf/, /pt-br/comprimir-pdf/, /image-tools/, /pdf-tools/)
+ * 3. Guides & Blog
+ * 4. Utilities
+ * 5. Trust & Legal
  */
 function sortPages(a, b) {
   const getOrderWeight = (url) => {
     const p = url.replace(BASE_URL, '');
     if (p === '/' || p === '') return 10;
-    if (p === '/image-tools/') return 20;
-    if (p.startsWith('/image-tools/')) return 25;
-    if (p === '/pdf-tools/') return 30;
-    if (p.startsWith('/pdf-tools/')) return 35;
+    if (p === '/en/') return 11;
+    if (p === '/pt-br/') return 12;
+
+    if (p === '/en/compress-pdf/') return 21;
+    if (p === '/pt-br/comprimir-pdf/') return 22;
+
+    if (p === '/image-tools/') return 25;
+    if (p.startsWith('/image-tools/')) return 26;
+    if (p === '/pdf-tools/') return 28;
+    if (p.startsWith('/pdf-tools/')) return 29;
+
     if (p === '/guides/') return 40;
     if (p.startsWith('/guides/')) return 45;
     if (p === '/blog/') return 46;
     if (p.startsWith('/blog/')) return 48;
+
     if (p === '/utilities/') return 50;
     if (p.startsWith('/utilities/')) return 55;
     if (p === '/developer-tools/') return 60;
     if (p.startsWith('/developer-tools/')) return 65;
     if (p === '/text-tools/') return 70;
     if (p.startsWith('/text-tools/')) return 75;
-    if (p === '/about/') return 80;
-    if (p === '/contact/') return 85;
-    if (p === '/privacy/') return 90;
-    if (p === '/terms/') return 95;
+
+    if (p.includes('/about') || p.includes('/sobre')) return 80;
+    if (p.includes('/contact') || p.includes('/contato')) return 85;
+    if (p.includes('/privacy') || p.includes('/politica')) return 90;
+    if (p.includes('/terms') || p.includes('/termos')) return 95;
+
     return 100;
   };
 
@@ -206,7 +210,7 @@ function sortPages(a, b) {
  * Main generator execution
  */
 function main() {
-  console.log('--- Generating Dual Sitemaps (XML & TXT) for ImgPDF ---');
+  console.log('--- Generating Multilingual Dual Sitemaps (XML & TXT) for ImgPDF ---');
 
   const htmlFiles = findHtmlFiles(ROOT_DIR);
   console.log(`Found ${htmlFiles.length} candidate HTML files in workspace.`);
@@ -231,13 +235,22 @@ function main() {
 
   console.log(`Verified ${pages.length} unique, canonical, indexable pages.`);
 
-  // 1. Build sitemap.xml
+  // 1. Build multilingual sitemap.xml with xhtml namespace
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+  xml += '  xmlns:xhtml="http://www.w3.org/1999/xhtml">\n';
 
   for (const page of pages) {
     xml += '  <url>\n';
     xml += `    <loc>${page.loc}</loc>\n`;
+
+    // Add alternate links if page has hreflang mappings
+    if (page.alternates && page.alternates.length > 0) {
+      for (const alt of page.alternates) {
+        xml += `    <xhtml:link rel="alternate" hreflang="${alt.hreflang}" href="${alt.href}"/>\n`;
+      }
+    }
+
     xml += `    <lastmod>${page.lastmod}</lastmod>\n`;
     xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
     xml += `    <priority>${page.priority}</priority>\n`;
@@ -260,10 +273,10 @@ function main() {
   fs.writeFileSync(txtPath, txt, 'utf8');
   fs.writeFileSync(txtUpperPath, txt, 'utf8');
 
-  console.log(`\u2714 Generated sitemap.xml (${Buffer.byteLength(xml, 'utf8')} bytes, ${pages.length} URLs)`);
-  console.log(`\u2714 Generated Sitemap.xml (${Buffer.byteLength(xml, 'utf8')} bytes)`);
-  console.log(`\u2714 Generated sitemap.txt (${Buffer.byteLength(txt, 'utf8')} bytes, ${pages.length} URLs)`);
-  console.log(`\u2714 Generated Sitemap.txt (${Buffer.byteLength(txt, 'utf8')} bytes)`);
+  console.log(`✔ Generated multilingual sitemap.xml (${Buffer.byteLength(xml, 'utf8')} bytes, ${pages.length} URLs)`);
+  console.log(`✔ Generated Sitemap.xml (${Buffer.byteLength(xml, 'utf8')} bytes)`);
+  console.log(`✔ Generated sitemap.txt (${Buffer.byteLength(txt, 'utf8')} bytes, ${pages.length} URLs)`);
+  console.log(`✔ Generated Sitemap.txt (${Buffer.byteLength(txt, 'utf8')} bytes)`);
   console.log('--- Dual Sitemap generation completed successfully ---');
 }
 

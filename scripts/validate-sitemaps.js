@@ -17,13 +17,13 @@ let passed = 0;
 function assert(condition, message) {
   if (!condition) {
     errors.push(message);
-    console.error(`  \u2718 FAIL: ${message}`);
+    console.error(`  ✖ FAIL: ${message}`);
   } else {
     passed++;
   }
 }
 
-console.log('=== STARTING AUTOMATED SITEMAP & ROBOTS VALIDATION ===\n');
+console.log('=== STARTING AUTOMATED MULTILINGUAL SITEMAP & ROBOTS VALIDATION ===\n');
 
 // 1. Verify robots.txt
 console.log('1. Validating robots.txt...');
@@ -80,26 +80,47 @@ if (fs.existsSync(txtPath)) {
 }
 
 // 3. Verify sitemap.xml
-console.log('\n3. Validating sitemap.xml...');
+console.log('\n3. Validating multilingual sitemap.xml...');
 const xmlPath = path.join(ROOT_DIR, 'sitemap.xml');
 assert(fs.existsSync(xmlPath), 'sitemap.xml must exist in repository root');
 
 let xmlUrls = [];
+let urlAlternatesMap = new Map();
+
 if (fs.existsSync(xmlPath)) {
   const xmlRaw = fs.readFileSync(xmlPath);
   assert(!xmlRaw.subarray(0, 3).equals(Buffer.from([0xef, 0xbb, 0xbf])), 'sitemap.xml must not contain a UTF-8 BOM');
 
   const xmlContent = xmlRaw.toString('utf8');
   assert(xmlContent.startsWith('<?xml version="1.0" encoding="UTF-8"?>'), 'sitemap.xml must begin with XML 1.0 declaration');
-  assert(xmlContent.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), 'sitemap.xml must have correct sitemaps.org namespace');
+  assert(xmlContent.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'), 'sitemap.xml must have correct sitemaps.org namespace');
+  assert(xmlContent.includes('xmlns:xhtml="http://www.w3.org/1999/xhtml"'), 'sitemap.xml must have xmlns:xhtml namespace for multilingual alternates');
   assert(xmlContent.endsWith('</urlset>\n') || xmlContent.endsWith('</urlset>'), 'sitemap.xml must properly close </urlset>');
 
   // Check for illegal unescaped characters in XML
   assert(!xmlContent.includes(' & ') && !xmlContent.includes(' &<'), 'sitemap.xml must not contain unescaped ampersands');
   assert(!xmlContent.includes('<!--'), 'sitemap.xml must avoid comments inside urlset for strict schema compliance');
 
-  const locMatches = [...xmlContent.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1].trim());
-  xmlUrls = locMatches;
+  // Parse each <url> block
+  const urlBlockRegex = /<url>([\s\S]*?)<\/url>/g;
+  let blockMatch;
+  while ((blockMatch = urlBlockRegex.exec(xmlContent)) !== null) {
+    const block = blockMatch[1];
+    const locMatch = block.match(/<loc>([^<]+)<\/loc>/);
+    if (locMatch) {
+      const loc = locMatch[1].trim();
+      xmlUrls.push(loc);
+
+      const alternates = [];
+      const altRegex = /<xhtml:link\s+rel=["']alternate["']\s+hreflang=["']([^"']+)["']\s+href=["']([^"']+)["']\/>/g;
+      let altMatch;
+      while ((altMatch = altRegex.exec(block)) !== null) {
+        alternates.push({ hreflang: altMatch[1], href: altMatch[2] });
+      }
+      urlAlternatesMap.set(loc, alternates);
+    }
+  }
+
   assert(xmlUrls.length > 0, 'sitemap.xml must contain at least 1 <loc> element');
 
   const uniqueXmlUrls = new Set(xmlUrls);
@@ -130,7 +151,7 @@ if (xmlUrls.length === txtUrls.length) {
   assert(mismatches === 0, `Found ${mismatches} URL mismatches between XML and TXT sitemaps`);
 }
 
-// 5. Verify that every URL corresponds to a real, indexable physical file
+// 5. Verify physical existence, indexability and canonical match
 console.log('\n5. Verifying physical existence and indexability of every URL on disk...');
 for (const u of xmlUrls) {
   const route = u.replace(BASE_URL, '').replace(/^\//, '');
@@ -163,8 +184,38 @@ for (const u of xmlUrls) {
   }
 }
 
-// 6. Verify IndexNow Protocol Key File
-console.log('\n6. Validating IndexNow key verification file...');
+// 6. Verify Hreflang reciprocal alternates across multilingual pages
+console.log('\n6. Validating Hreflang reciprocity and physical existence of alternate URLs...');
+for (const [loc, alternates] of urlAlternatesMap.entries()) {
+  if (alternates.length > 0) {
+    // Every alternate href must exist
+    for (const alt of alternates) {
+      const altRoute = alt.href.replace(BASE_URL, '').replace(/^\//, '');
+      const altExpectedFile = altRoute === ''
+        ? path.join(ROOT_DIR, 'index.html')
+        : path.join(ROOT_DIR, altRoute, 'index.html');
+      assert(
+        fs.existsSync(altExpectedFile),
+        `Alternate URL "${alt.href}" for page "${loc}" does not exist on disk!`
+      );
+    }
+
+    // Check reciprocity: if A references B, B must reference A
+    const enAlt = alternates.find(a => a.hreflang === 'en');
+    const ptAlt = alternates.find(a => a.hreflang === 'pt-BR');
+
+    if (enAlt && ptAlt) {
+      const targetAlts = urlAlternatesMap.get(ptAlt.href);
+      if (targetAlts) {
+        const hasReciprocal = targetAlts.some(a => a.href === enAlt.href);
+        assert(hasReciprocal, `Hreflang non-reciprocal: "${loc}" links to "${ptAlt.href}", but target lacks back-reference`);
+      }
+    }
+  }
+}
+
+// 7. Verify IndexNow Protocol Key File
+console.log('\n7. Validating IndexNow key verification file...');
 const indexNowKey = 'e5517a0fefdf3e347b1768a306cfb093';
 const keyFilePath = path.join(ROOT_DIR, `${indexNowKey}.txt`);
 assert(fs.existsSync(keyFilePath), `IndexNow key file must exist in repository root: "${indexNowKey}.txt"`);
@@ -181,16 +232,16 @@ if (fs.existsSync(keyFilePath)) {
   );
 }
 
-// 7. Final report and process exit
+// 8. Final report and process exit
 console.log('\n=== VALIDATION SUMMARY ===');
 console.log(`Checks passed: ${passed}`);
 console.log(`Errors found:  ${errors.length}`);
 
 if (errors.length > 0) {
-  console.error('\n\u2718 SITEMAP VALIDATION FAILED WITH THE FOLLOWING ERRORS:');
+  console.error('\n✖ SITEMAP VALIDATION FAILED WITH THE FOLLOWING ERRORS:');
   errors.forEach((err, idx) => console.error(`  ${idx + 1}. ${err}`));
   process.exit(1);
 } else {
-  console.log(`\n\u2714 ALL SITEMAP, ROBOTS, AND INDEXNOW CHECKS PASSED SUCCESSFULLY (${xmlUrls.length} URLs validated)!`);
+  console.log(`\n✔ ALL MULTILINGUAL SITEMAP, ROBOTS, HREFLANG AND INDEXNOW CHECKS PASSED SUCCESSFULLY (${xmlUrls.length} URLs validated)!`);
   process.exit(0);
 }
