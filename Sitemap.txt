@@ -37,6 +37,7 @@ https://img-pdf.github.io/blog/document-guides/
 https://img-pdf.github.io/blog/how-to-compress-a-pdf-without-losing-quality/
 https://img-pdf.github.io/blog/how-to-convert-images-into-pdf/
 https://img-pdf.github.io/blog/how-to-convert-jpg-to-png/
+https://img-pdf.github.io/blog/how-to-convert-pdf-to-images/
 https://img-pdf.github.io/blog/how-to-merge-multiple-pdf-files-into-one/
 https://img-pdf.github.io/blog/how-to-prepare-documents-for-online-applications/
 https://img-pdf.github.io/blog/how-to-protect-privacy-with-online-pdf-and-image-tools/
