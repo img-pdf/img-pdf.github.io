@@ -4,7 +4,13 @@
   <url>
     <loc>https://img-pdf.github.io/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -13,7 +19,73 @@
   <url>
     <loc>https://img-pdf.github.io/en/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -22,7 +94,43 @@
   <url>
     <loc>https://img-pdf.github.io/pt-br/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ko/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/it/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
@@ -31,7 +139,73 @@
   <url>
     <loc>https://img-pdf.github.io/en/compress-pdf/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/compresser-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/pdf-komprimieren/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/comprimi-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/es/comprimir-pdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/compresser-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/pdf-komprimieren/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/comprimi-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ja/compress-pdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/compresser-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/pdf-komprimieren/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/comprimi-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/fr/compresser-pdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/compresser-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/pdf-komprimieren/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/comprimi-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/de/pdf-komprimieren/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/compresser-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/pdf-komprimieren/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/comprimi-pdf/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/en/compress-pdf/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -40,7 +214,43 @@
   <url>
     <loc>https://img-pdf.github.io/pt-br/comprimir-pdf/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/compresser-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/pdf-komprimieren/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/comprimi-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ko/compress-pdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/compresser-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/pdf-komprimieren/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/comprimi-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/it/comprimi-pdf/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/compresser-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/pdf-komprimieren/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/comprimir-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/compress-pdf/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/comprimi-pdf/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/en/compress-pdf/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -313,7 +523,58 @@
   <url>
     <loc>https://img-pdf.github.io/en/about/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/ueber-uns/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/chi-siamo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/about/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/es/sobre/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/chi-siamo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/about/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ja/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/chi-siamo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/about/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ko/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/chi-siamo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/about/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -322,7 +583,13 @@
   <url>
     <loc>https://img-pdf.github.io/pt-br/sobre/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/ueber-uns/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/chi-siamo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/about/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -337,7 +604,73 @@
   <url>
     <loc>https://img-pdf.github.io/en/contact/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/kontakt/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/contato/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/contact/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/es/contacto/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/contato/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/contact/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/fr/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/contato/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/contact/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ja/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/contato/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/contact/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ko/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/contato/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/contatti/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/contact/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -346,7 +679,13 @@
   <url>
     <loc>https://img-pdf.github.io/pt-br/contato/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/kontakt/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/contato/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/contatti/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/contact/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -355,7 +694,58 @@
   <url>
     <loc>https://img-pdf.github.io/en/privacy-policy/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/politica-de-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/politique-de-confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/datenschutz/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/politica-de-privacidade/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/informativa-privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/privacy/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/es/politica-de-privacidad/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/politica-de-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/politique-de-confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/politica-de-privacidade/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/informativa-privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/privacy/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ja/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/politica-de-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/politique-de-confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/politica-de-privacidade/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/informativa-privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/privacy/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ko/privacy-policy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/politica-de-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/politique-de-confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/politica-de-privacidade/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/informativa-privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/privacy/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -370,7 +760,13 @@
   <url>
     <loc>https://img-pdf.github.io/pt-br/politica-de-privacidade/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/politica-de-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/politique-de-confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/datenschutz/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/politica-de-privacidade/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/informativa-privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/privacy/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -379,7 +775,43 @@
   <url>
     <loc>https://img-pdf.github.io/en/terms/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/agb/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/termos/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/termini/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/terms/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ja/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/termos/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/termini/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/terms/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/ko/terms/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/termos/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/termini/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/terms/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -388,7 +820,13 @@
   <url>
     <loc>https://img-pdf.github.io/pt-br/termos/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/agb/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/termos/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/termini/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/terms/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -396,6 +834,186 @@
   </url>
   <url>
     <loc>https://img-pdf.github.io/terms/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/de/agb/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/termos/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/termini/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/terms/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/de/datenschutz/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/politica-de-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/politique-de-confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/politica-de-privacidade/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/informativa-privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/privacy/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/de/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/contato/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/contact/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/de/ueber-uns/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/chi-siamo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/about/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/es/terminos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/termos/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/termini/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/terms/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/fr/a-propos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/chi-siamo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/about/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/fr/conditions/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/termos/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/termini/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/terms/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/fr/politique-de-confidentialite/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/politica-de-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/politique-de-confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/politica-de-privacidade/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/informativa-privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/privacy/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/it/chi-siamo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/ueber-uns/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/sobre/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/chi-siamo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/about/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/it/contatti/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/contato/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/contatti/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/contact/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/it/informativa-privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/politica-de-privacidad/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/politique-de-confidentialite/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/politica-de-privacidade/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/privacy-policy/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/informativa-privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/privacy/"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://img-pdf.github.io/it/termini/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://img-pdf.github.io/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://img-pdf.github.io/es/terminos/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://img-pdf.github.io/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://img-pdf.github.io/fr/conditions/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://img-pdf.github.io/de/agb/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://img-pdf.github.io/pt-br/termos/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://img-pdf.github.io/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://img-pdf.github.io/it/termini/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://img-pdf.github.io/terms/"/>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

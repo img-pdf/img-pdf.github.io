@@ -97,12 +97,25 @@ function inspectHtmlFile(filePath) {
   let priority = '0.8';
   let changefreq = 'monthly';
 
-  if (urlPath === '' || urlPath === '/' || urlPath === '/en/' || urlPath === '/pt-br/') {
+  const homePrefixes = ['/', '/en/', '/es/', '/ja/', '/fr/', '/de/', '/pt-br/', '/ko/', '/it/'];
+  const compressPdfRoutes = [
+    '/en/compress-pdf/',
+    '/es/comprimir-pdf/',
+    '/ja/compress-pdf/',
+    '/fr/compresser-pdf/',
+    '/de/pdf-komprimieren/',
+    '/pt-br/comprimir-pdf/',
+    '/ko/compress-pdf/',
+    '/it/comprimi-pdf/'
+  ];
+
+  if (homePrefixes.includes(urlPath)) {
     priority = '1.0';
     changefreq = 'weekly';
+  } else if (compressPdfRoutes.some(r => urlPath.startsWith(r))) {
+    priority = '0.9';
+    changefreq = 'monthly';
   } else if (
-    urlPath.startsWith('/en/compress-pdf/') ||
-    urlPath.startsWith('/pt-br/comprimir-pdf/') ||
     urlPath.startsWith('/image-tools/') ||
     urlPath.startsWith('/pdf-tools/')
   ) {
@@ -114,7 +127,7 @@ function inspectHtmlFile(filePath) {
       changefreq = 'monthly';
     }
   } else if (urlPath.startsWith('/guides/')) {
-    priority = urlPath === '/guides/' ? '0.8' : '0.8';
+    priority = '0.8';
     changefreq = urlPath === '/guides/' ? 'weekly' : 'monthly';
   } else if (urlPath.startsWith('/blog/')) {
     priority = '0.8';
@@ -129,16 +142,28 @@ function inspectHtmlFile(filePath) {
   } else if (
     urlPath.includes('/about/') ||
     urlPath.includes('/sobre/') ||
+    urlPath.includes('/a-propos/') ||
+    urlPath.includes('/ueber-uns/') ||
+    urlPath.includes('/chi-siamo/') ||
     urlPath.includes('/contact/') ||
-    urlPath.includes('/contato/')
+    urlPath.includes('/contacto/') ||
+    urlPath.includes('/contato/') ||
+    urlPath.includes('/kontakt/') ||
+    urlPath.includes('/contatti/')
   ) {
     priority = '0.6';
     changefreq = 'monthly';
   } else if (
     urlPath.includes('/privacy') ||
     urlPath.includes('/politica') ||
+    urlPath.includes('/datenschutz') ||
+    urlPath.includes('/informativa') ||
     urlPath.includes('/terms') ||
-    urlPath.includes('/termos')
+    urlPath.includes('/terminos') ||
+    urlPath.includes('/conditions') ||
+    urlPath.includes('/agb') ||
+    urlPath.includes('/termos') ||
+    urlPath.includes('/termini')
   ) {
     priority = '0.5';
     changefreq = 'monthly';
@@ -156,26 +181,37 @@ function inspectHtmlFile(filePath) {
 
 /**
  * Custom sort to ensure clean, structured sitemap ordering:
- * 1. Home (/, /en/, /pt-br/)
- * 2. High-value tools (/en/compress-pdf/, /pt-br/comprimir-pdf/, /image-tools/, /pdf-tools/)
+ * 1. Home (/, /en/, /es/, /ja/, /fr/, /de/, /pt-br/, /ko/, /it/)
+ * 2. High-value tools
  * 3. Guides & Blog
  * 4. Utilities
  * 5. Trust & Legal
  */
 function sortPages(a, b) {
+  const homePrefixes = ['/', '/en/', '/es/', '/ja/', '/fr/', '/de/', '/pt-br/', '/ko/', '/it/'];
+  const compressPdfRoutes = [
+    '/en/compress-pdf/',
+    '/es/comprimir-pdf/',
+    '/ja/compress-pdf/',
+    '/fr/compresser-pdf/',
+    '/de/pdf-komprimieren/',
+    '/pt-br/comprimir-pdf/',
+    '/ko/compress-pdf/',
+    '/it/comprimi-pdf/'
+  ];
+
   const getOrderWeight = (url) => {
     const p = url.replace(BASE_URL, '');
-    if (p === '/' || p === '') return 10;
-    if (p === '/en/') return 11;
-    if (p === '/pt-br/') return 12;
+    const homeIdx = homePrefixes.indexOf(p);
+    if (homeIdx !== -1) return 10 + homeIdx;
 
-    if (p === '/en/compress-pdf/') return 21;
-    if (p === '/pt-br/comprimir-pdf/') return 22;
+    const compIdx = compressPdfRoutes.indexOf(p);
+    if (compIdx !== -1) return 20 + compIdx;
 
-    if (p === '/image-tools/') return 25;
-    if (p.startsWith('/image-tools/')) return 26;
-    if (p === '/pdf-tools/') return 28;
-    if (p.startsWith('/pdf-tools/')) return 29;
+    if (p === '/image-tools/') return 30;
+    if (p.startsWith('/image-tools/')) return 31;
+    if (p === '/pdf-tools/') return 32;
+    if (p.startsWith('/pdf-tools/')) return 33;
 
     if (p === '/guides/') return 40;
     if (p.startsWith('/guides/')) return 45;

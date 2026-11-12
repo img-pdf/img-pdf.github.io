@@ -11,6 +11,12 @@ import { BASE_URL, DEFAULT_LOCALE, SUPPORTED_LOCALES } from '../src/i18n/config.
 import { ROUTE_DEFINITIONS, getAlternateUrls } from '../src/i18n/routing.js';
 import en from '../src/i18n/translations/en.js';
 import ptBr from '../src/i18n/translations/pt-br.js';
+import es from '../src/i18n/translations/es.js';
+import ja from '../src/i18n/translations/ja.js';
+import fr from '../src/i18n/translations/fr.js';
+import de from '../src/i18n/translations/de.js';
+import ko from '../src/i18n/translations/ko.js';
+import it from '../src/i18n/translations/it.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,7 +24,13 @@ const ROOT_DIR = path.resolve(__dirname, '..');
 
 const DICTS = {
   en,
-  'pt-BR': ptBr
+  es,
+  ja,
+  fr,
+  de,
+  'pt-BR': ptBr,
+  ko,
+  it
 };
 
 function ensureDirSync(dirPath) {
@@ -41,7 +53,22 @@ function renderHeader(locale, activeNav = 'home') {
   const termsLink = ROUTE_DEFINITIONS.terms.urls[locale];
   const contactLink = ROUTE_DEFINITIONS.contact.urls[locale];
 
-  const currentLangLabel = isEn ? 'English' : 'Português (Brasil)';
+  const langConf = SUPPORTED_LOCALES[locale] || SUPPORTED_LOCALES.en;
+  const currentLangLabel = langConf.nativeName || 'English';
+
+  const menuOptionsHtml = Object.entries(SUPPORTED_LOCALES)
+    .filter(([_, conf]) => conf.published)
+    .map(([locCode, conf]) => {
+      const isActive = locCode === locale;
+      const targetUrl = ROUTE_DEFINITIONS[activeNav] && ROUTE_DEFINITIONS[activeNav].urls[locCode]
+        ? ROUTE_DEFINITIONS[activeNav].urls[locCode]
+        : conf.urlPrefix + '/';
+      return `          <a href="${targetUrl}" class="lang-option ${isActive ? 'is-active' : ''}" data-lang="${locCode}" role="menuitem">
+            <span>${conf.nativeName}</span>
+            ${isActive ? '<span class="check">✓</span>' : ''}
+          </a>`;
+    })
+    .join('\n');
 
   return `
 <header class="site-header">
@@ -72,14 +99,7 @@ function renderHeader(locale, activeNav = 'home') {
           </svg>
         </button>
         <div class="lang-menu" role="menu">
-          <a href="/en/" class="lang-option ${isEn ? 'is-active' : ''}" data-lang="en" role="menuitem">
-            <span>English</span>
-            ${isEn ? '<span class="check">✓</span>' : ''}
-          </a>
-          <a href="/pt-br/" class="lang-option ${!isEn ? 'is-active' : ''}" data-lang="pt-BR" role="menuitem">
-            <span>Português (Brasil)</span>
-            ${!isEn ? '<span class="check">✓</span>' : ''}
-          </a>
+${menuOptionsHtml}
         </div>
       </div>
 
@@ -518,10 +538,11 @@ ${renderFooter(locale)}
 </html>
 `;
 
-  const targetDir = path.join(ROOT_DIR, locale === 'en' ? 'en' : 'pt-br');
+  const subDir = urlPath.replace(/^\//, '').replace(/\/$/, '');
+  const targetDir = path.join(ROOT_DIR, subDir);
   ensureDirSync(targetDir);
   fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8');
-  console.log(`✔ Generated ${locale === 'en' ? '/en/' : '/pt-br/'} homepage.`);
+  console.log(`✔ Generated ${urlPath} homepage.`);
 }
 
 /**
@@ -704,10 +725,11 @@ ${renderFooter(locale)}
 </html>
 `;
 
-  const targetDir = path.join(ROOT_DIR, locale === 'en' ? 'en/compress-pdf' : 'pt-br/comprimir-pdf');
+  const subDir = urlPath.replace(/^\//, '').replace(/\/$/, '');
+  const targetDir = path.join(ROOT_DIR, subDir);
   ensureDirSync(targetDir);
   fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8');
-  console.log(`✔ Generated ${locale === 'en' ? '/en/compress-pdf/' : '/pt-br/comprimir-pdf/'} tool page.`);
+  console.log(`✔ Generated ${urlPath} tool page.`);
 }
 
 /**
@@ -753,10 +775,11 @@ ${renderFooter(locale)}
 </html>
 `;
 
-  const targetDir = path.join(ROOT_DIR, locale === 'en' ? 'en/about' : 'pt-br/sobre');
+  const subDir = urlPath.replace(/^\//, '').replace(/\/$/, '');
+  const targetDir = path.join(ROOT_DIR, subDir);
   ensureDirSync(targetDir);
   fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8');
-  console.log(`✔ Generated ${locale === 'en' ? '/en/about/' : '/pt-br/sobre/'} page.`);
+  console.log(`✔ Generated ${urlPath} page.`);
 }
 
 /**
@@ -802,10 +825,11 @@ ${renderFooter(locale)}
 </html>
 `;
 
-  const targetDir = path.join(ROOT_DIR, locale === 'en' ? 'en/privacy-policy' : 'pt-br/politica-de-privacidade');
+  const subDir = urlPath.replace(/^\//, '').replace(/\/$/, '');
+  const targetDir = path.join(ROOT_DIR, subDir);
   ensureDirSync(targetDir);
   fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8');
-  console.log(`✔ Generated ${locale === 'en' ? '/en/privacy-policy/' : '/pt-br/politica-de-privacidade/'} page.`);
+  console.log(`✔ Generated ${urlPath} page.`);
 }
 
 /**
@@ -854,10 +878,11 @@ ${renderFooter(locale)}
 </html>
 `;
 
-  const targetDir = path.join(ROOT_DIR, locale === 'en' ? 'en/terms' : 'pt-br/termos');
+  const subDir = urlPath.replace(/^\//, '').replace(/\/$/, '');
+  const targetDir = path.join(ROOT_DIR, subDir);
   ensureDirSync(targetDir);
   fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8');
-  console.log(`✔ Generated ${locale === 'en' ? '/en/terms/' : '/pt-br/termos/'} page.`);
+  console.log(`✔ Generated ${urlPath} page.`);
 }
 
 /**
@@ -901,19 +926,21 @@ ${renderFooter(locale)}
 </html>
 `;
 
-  const targetDir = path.join(ROOT_DIR, locale === 'en' ? 'en/contact' : 'pt-br/contato');
+  const subDir = urlPath.replace(/^\//, '').replace(/\/$/, '');
+  const targetDir = path.join(ROOT_DIR, subDir);
   ensureDirSync(targetDir);
   fs.writeFileSync(path.join(targetDir, 'index.html'), html, 'utf8');
-  console.log(`✔ Generated ${locale === 'en' ? '/en/contact/' : '/pt-br/contato/'} page.`);
+  console.log(`✔ Generated ${urlPath} page.`);
 }
 
 /**
  * Main generator execution
  */
 export function buildAll() {
-  console.log('--- Building Multilingual (en & pt-BR) ImgPDF Platform ---');
+  console.log('--- Building Multilingual (8 Languages) ImgPDF Platform ---');
+  const activeLocales = ['en', 'es', 'ja', 'fr', 'de', 'pt-BR', 'ko', 'it'];
 
-  for (const locale of ['en', 'pt-BR']) {
+  for (const locale of activeLocales) {
     buildHomePage(locale);
     buildCompressPdfPage(locale);
     buildAboutPage(locale);
@@ -922,7 +949,7 @@ export function buildAll() {
     buildContactPage(locale);
   }
 
-  console.log('--- Multilingual Pages Generation Complete ---');
+  console.log(`--- Multilingual Pages Generation Complete (${activeLocales.length * 6} pages generated) ---`);
 }
 
 // Execute if run directly

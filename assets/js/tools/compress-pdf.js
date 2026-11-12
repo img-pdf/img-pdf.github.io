@@ -13,10 +13,19 @@
     pdfjsLib.GlobalWorkerOptions.workerSrc = '/assets/js/vendor/pdf.worker.min.js';
   }
 
-  // Detect current language for dynamic messages
-  function isPortuguese() {
-    return (window.ImgPdfI18n && window.ImgPdfI18n.getLocale() === 'pt-BR') ||
-      window.location.pathname.indexOf('/pt-br/') === 0;
+  function getCurrentLang() {
+    if (window.ImgPdfI18n && typeof window.ImgPdfI18n.getLocale === 'function') {
+      return window.ImgPdfI18n.getLocale();
+    }
+    const p = window.location.pathname;
+    if (p.startsWith('/pt-br/')) return 'pt-BR';
+    if (p.startsWith('/es/')) return 'es';
+    if (p.startsWith('/ja/')) return 'ja';
+    if (p.startsWith('/fr/')) return 'fr';
+    if (p.startsWith('/de/')) return 'de';
+    if (p.startsWith('/ko/')) return 'ko';
+    if (p.startsWith('/it/')) return 'it';
+    return 'en';
   }
 
   const MSG = {
@@ -29,6 +38,42 @@
       ready: 'Compression complete! Ready to download.',
       saved: 'Saved {{percent}}% ({{orig}} → {{comp}})'
     },
+    es: {
+      selectPdf: 'Por favor, selecciona un archivo PDF válido (.pdf).',
+      passwordProtected: 'Este PDF está protegido por contraseña. Desbloquéalo antes de comprimir.',
+      corruptError: 'Error al procesar el PDF. El archivo puede estar dañado o incompleto.',
+      processingPage: 'Comprimiendo página {{current}} de {{total}}...',
+      compiling: 'Optimizando y generando el archivo PDF final...',
+      ready: '¡Compresión completada! Listo para descargar.',
+      saved: 'Ahorro del {{percent}}% ({{orig}} → {{comp}})'
+    },
+    ja: {
+      selectPdf: '有効なPDFファイル（.pdf）を選択してください。',
+      passwordProtected: 'このPDFはパスワードで保護されています。圧縮前に解除してください。',
+      corruptError: 'PDFドキュメントの解析に失敗しました。ファイルが破損している可能性があります。',
+      processingPage: 'ページ {{current}} / {{total}} を圧縮中...',
+      compiling: '最適化と最終PDFストリームを生成中...',
+      ready: '圧縮完了！すぐにダウンロードできます。',
+      saved: '{{percent}}% 削減 ({{orig}} → {{comp}})'
+    },
+    fr: {
+      selectPdf: 'Veuillez sélectionner un fichier PDF valide (.pdf).',
+      passwordProtected: 'Ce PDF est protégé par mot de passe. Veuillez le déverrouiller avant la compression.',
+      corruptError: 'Impossible d\'analyser le document PDF. Le fichier est peut-être corrompu ou incomplet.',
+      processingPage: 'Compression de la page {{current}} sur {{total}}...',
+      compiling: 'Optimisation et compilation du flux PDF final...',
+      ready: 'Compression terminée ! Prêt pour le téléchargement.',
+      saved: 'Économie de {{percent}}% ({{orig}} → {{comp}})'
+    },
+    de: {
+      selectPdf: 'Bitte wählen Sie eine gültige PDF-Datei (.pdf) aus.',
+      passwordProtected: 'Diese PDF-Datei ist passwortgeschützt. Bitte entsperren Sie sie vor der Komprimierung.',
+      corruptError: 'PDF konnte nicht gelesen werden. Die Datei ist möglicherweise beschädigt.',
+      processingPage: 'Seite {{current}} von {{total}} wird komprimiert...',
+      compiling: 'Optimierung und Erstellung der fertigen PDF-Datei...',
+      ready: 'Komprimierung abgeschlossen! Bereit zum Download.',
+      saved: '{{percent}}% gespart ({{orig}} → {{comp}})'
+    },
     'pt-BR': {
       selectPdf: 'Por favor, selecione um arquivo PDF válido (.pdf).',
       passwordProtected: 'Este PDF está protegido por senha. Remova a senha antes de comprimir.',
@@ -37,11 +82,29 @@
       compiling: 'Otimizando e gerando arquivo PDF final...',
       ready: 'Compressão concluída com sucesso! Pronto para download.',
       saved: 'Economia de {{percent}}% ({{orig}} → {{comp}})'
+    },
+    ko: {
+      selectPdf: '올바른 PDF 파일(.pdf)을 선택해 주세요.',
+      passwordProtected: '암호로 보호된 PDF입니다. 압축하기 전에 암호를 해제해 주세요.',
+      corruptError: 'PDF 문서를 분석하지 못했습니다. 파일이 손상되었을 수 있습니다.',
+      processingPage: '{{total}}페이지 중 {{current}}페이지 압축 중...',
+      compiling: '최종 PDF 스트림을 최적화 및 생성하는 중...',
+      ready: '압축 완료! 즉시 다운로드 가능합니다.',
+      saved: '{{percent}}% 용량 절약 ({{orig}} → {{comp}})'
+    },
+    it: {
+      selectPdf: 'Seleziona un file PDF valido (.pdf).',
+      passwordProtected: 'Questo PDF è protetto da password. Rimuovi la password prima di comprimere.',
+      corruptError: 'Impossibile analizzare il file PDF. Il documento potrebbe essere danneggiato.',
+      processingPage: 'Compressione pagina {{current}} di {{total}}...',
+      compiling: 'Ottimizzazione e creazione del file PDF finale...',
+      ready: 'Compressione completata! Pronto per il download.',
+      saved: 'Risparmio del {{percent}}% ({{orig}} → {{comp}})'
     }
   };
 
   function getMsg(key, params) {
-    const lang = isPortuguese() ? 'pt-BR' : 'en';
+    const lang = getCurrentLang();
     let text = (MSG[lang] && MSG[lang][key]) || MSG.en[key] || '';
     if (params) {
       for (const k in params) {

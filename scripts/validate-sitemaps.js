@@ -200,15 +200,16 @@ for (const [loc, alternates] of urlAlternatesMap.entries()) {
       );
     }
 
-    // Check reciprocity: if A references B, B must reference A
-    const enAlt = alternates.find(a => a.hreflang === 'en');
-    const ptAlt = alternates.find(a => a.hreflang === 'pt-BR');
-
-    if (enAlt && ptAlt) {
-      const targetAlts = urlAlternatesMap.get(ptAlt.href);
+    // Check comprehensive reciprocity: if page A references page B in hreflang, page B must reference page A
+    for (const alt of alternates) {
+      if (alt.hreflang === 'x-default') continue;
+      const targetAlts = urlAlternatesMap.get(alt.href);
       if (targetAlts) {
-        const hasReciprocal = targetAlts.some(a => a.href === enAlt.href);
-        assert(hasReciprocal, `Hreflang non-reciprocal: "${loc}" links to "${ptAlt.href}", but target lacks back-reference`);
+        const hasReciprocal = targetAlts.some(a => a.href === loc);
+        assert(
+          hasReciprocal,
+          `Hreflang non-reciprocal: "${loc}" links to "${alt.href}" (${alt.hreflang}), but target lacks back-reference to "${loc}"`
+        );
       }
     }
   }

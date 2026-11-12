@@ -1,16 +1,24 @@
 /**
  * ImgPDF Route Mapping & Hreflang Engine
- * Defines canonical route equivalents across English and Brazilian Portuguese.
+ * Defines canonical route equivalents across:
+ * English (en), Español (es), 日本語 (ja), Français (fr),
+ * Deutsch (de), Português (pt-BR), 한국어 (ko), Italiano (it).
  */
 
-import { BASE_URL, DEFAULT_LOCALE } from './config.js';
+import { BASE_URL } from './config.js';
 
 export const ROUTE_DEFINITIONS = {
   home: {
     id: 'home',
     urls: {
       en: '/en/',
-      'pt-BR': '/pt-br/'
+      es: '/es/',
+      ja: '/ja/',
+      fr: '/fr/',
+      de: '/de/',
+      'pt-BR': '/pt-br/',
+      ko: '/ko/',
+      it: '/it/'
     },
     xDefault: '/'
   },
@@ -18,7 +26,13 @@ export const ROUTE_DEFINITIONS = {
     id: 'compress-pdf',
     urls: {
       en: '/en/compress-pdf/',
-      'pt-BR': '/pt-br/comprimir-pdf/'
+      es: '/es/comprimir-pdf/',
+      ja: '/ja/compress-pdf/',
+      fr: '/fr/compresser-pdf/',
+      de: '/de/pdf-komprimieren/',
+      'pt-BR': '/pt-br/comprimir-pdf/',
+      ko: '/ko/compress-pdf/',
+      it: '/it/comprimi-pdf/'
     },
     xDefault: '/en/compress-pdf/'
   },
@@ -26,7 +40,13 @@ export const ROUTE_DEFINITIONS = {
     id: 'about',
     urls: {
       en: '/en/about/',
-      'pt-BR': '/pt-br/sobre/'
+      es: '/es/sobre/',
+      ja: '/ja/about/',
+      fr: '/fr/a-propos/',
+      de: '/de/ueber-uns/',
+      'pt-BR': '/pt-br/sobre/',
+      ko: '/ko/about/',
+      it: '/it/chi-siamo/'
     },
     xDefault: '/about/'
   },
@@ -34,7 +54,13 @@ export const ROUTE_DEFINITIONS = {
     id: 'privacy',
     urls: {
       en: '/en/privacy-policy/',
-      'pt-BR': '/pt-br/politica-de-privacidade/'
+      es: '/es/politica-de-privacidad/',
+      ja: '/ja/privacy-policy/',
+      fr: '/fr/politique-de-confidentialite/',
+      de: '/de/datenschutz/',
+      'pt-BR': '/pt-br/politica-de-privacidade/',
+      ko: '/ko/privacy-policy/',
+      it: '/it/informativa-privacy/'
     },
     xDefault: '/privacy/'
   },
@@ -42,7 +68,13 @@ export const ROUTE_DEFINITIONS = {
     id: 'terms',
     urls: {
       en: '/en/terms/',
-      'pt-BR': '/pt-br/termos/'
+      es: '/es/terminos/',
+      ja: '/ja/terms/',
+      fr: '/fr/conditions/',
+      de: '/de/agb/',
+      'pt-BR': '/pt-br/termos/',
+      ko: '/ko/terms/',
+      it: '/it/termini/'
     },
     xDefault: '/terms/'
   },
@@ -50,7 +82,13 @@ export const ROUTE_DEFINITIONS = {
     id: 'contact',
     urls: {
       en: '/en/contact/',
-      'pt-BR': '/pt-br/contato/'
+      es: '/es/contacto/',
+      ja: '/ja/contact/',
+      fr: '/fr/contact/',
+      de: '/de/kontakt/',
+      'pt-BR': '/pt-br/contato/',
+      ko: '/ko/contact/',
+      it: '/it/contatti/'
     },
     xDefault: '/contact/'
   }
@@ -87,7 +125,7 @@ export function getRouteByPath(pathname) {
     }
   }
 
-  // Alias support for legacy or alternative paths
+  // Legacy aliases
   if (norm === '/about/') return ROUTE_DEFINITIONS.about;
   if (norm === '/privacy/' || norm === '/privacy-policy/') return ROUTE_DEFINITIONS.privacy;
   if (norm === '/terms/' || norm === '/terms-of-service/') return ROUTE_DEFINITIONS.terms;
@@ -106,19 +144,10 @@ export function getAlternateUrls(routeId) {
 
   const alternates = [];
 
-  // English alternate
-  if (route.urls.en) {
+  for (const [locale, pathStr] of Object.entries(route.urls)) {
     alternates.push({
-      hreflang: 'en',
-      href: `${BASE_URL}${route.urls.en}`
-    });
-  }
-
-  // Brazilian Portuguese alternate
-  if (route.urls['pt-BR']) {
-    alternates.push({
-      hreflang: 'pt-BR',
-      href: `${BASE_URL}${route.urls['pt-BR']}`
+      hreflang: locale,
+      href: `${BASE_URL}${pathStr}`
     });
   }
 
@@ -145,10 +174,17 @@ export function getEquivalentUrl(currentPath, targetLocale) {
   }
 
   // Fallback to the target language homepage
-  if (targetLocale === 'pt-BR') {
-    return '/pt-br/';
-  }
-  return '/en/';
+  const targetPrefixMap = {
+    en: '/en/',
+    es: '/es/',
+    ja: '/ja/',
+    fr: '/fr/',
+    de: '/de/',
+    'pt-BR': '/pt-br/',
+    ko: '/ko/',
+    it: '/it/'
+  };
+  return targetPrefixMap[targetLocale] || '/en/';
 }
 
 /**

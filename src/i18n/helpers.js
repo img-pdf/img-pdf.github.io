@@ -6,10 +6,22 @@ import { DEFAULT_LOCALE, SUPPORTED_LOCALES, BASE_URL } from './config.js';
 import { ROUTE_DEFINITIONS, getRouteByPath, getAlternateUrls, normalizePath } from './routing.js';
 import enTranslations from './translations/en.js';
 import ptBrTranslations from './translations/pt-br.js';
+import esTranslations from './translations/es.js';
+import jaTranslations from './translations/ja.js';
+import frTranslations from './translations/fr.js';
+import deTranslations from './translations/de.js';
+import koTranslations from './translations/ko.js';
+import itTranslations from './translations/it.js';
 
 const TRANSLATION_MAP = {
   en: enTranslations,
-  'pt-BR': ptBrTranslations
+  es: esTranslations,
+  ja: jaTranslations,
+  fr: frTranslations,
+  de: deTranslations,
+  'pt-BR': ptBrTranslations,
+  ko: koTranslations,
+  it: itTranslations
 };
 
 /**
@@ -24,12 +36,14 @@ export function getTranslations(locale) {
  */
 export function getLocaleFromPath(pathname) {
   const norm = normalizePath(pathname);
-  if (norm.startsWith('/pt-br/') || norm === '/pt-br') {
-    return 'pt-BR';
-  }
-  if (norm.startsWith('/en/') || norm === '/en') {
-    return 'en';
-  }
+  if (norm.startsWith('/pt-br/') || norm === '/pt-br') return 'pt-BR';
+  if (norm.startsWith('/es/') || norm === '/es') return 'es';
+  if (norm.startsWith('/ja/') || norm === '/ja') return 'ja';
+  if (norm.startsWith('/fr/') || norm === '/fr') return 'fr';
+  if (norm.startsWith('/de/') || norm === '/de') return 'de';
+  if (norm.startsWith('/ko/') || norm === '/ko') return 'ko';
+  if (norm.startsWith('/it/') || norm === '/it') return 'it';
+  if (norm.startsWith('/en/') || norm === '/en') return 'en';
   return DEFAULT_LOCALE;
 }
 

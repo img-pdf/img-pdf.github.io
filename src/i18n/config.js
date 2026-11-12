@@ -1,7 +1,8 @@
 /**
  * ImgPDF Internationalization Configuration
- * Scalable configuration supporting English (default), Brazilian Portuguese,
- * and architected for future languages (es, hi, de, fr, ja, it, id).
+ * Full multilingual support for:
+ * English (en), Español (es), 日本語 (ja), Français (fr),
+ * Deutsch (de), Português (pt-BR), 한국어 (ko), Italiano (it).
  */
 
 export const SUPPORTED_LOCALES = {
@@ -16,18 +17,6 @@ export const SUPPORTED_LOCALES = {
     published: true,
     flag: '🇺🇸'
   },
-  'pt-BR': {
-    code: 'pt-BR',
-    locale: 'pt-BR',
-    name: 'Portuguese (Brazil)',
-    nativeName: 'Português (Brasil)',
-    dir: 'ltr',
-    urlPrefix: '/pt-br',
-    isDefault: false,
-    published: true,
-    flag: '🇧🇷'
-  },
-  // Future planned language extensions
   es: {
     code: 'es',
     locale: 'es',
@@ -36,9 +25,76 @@ export const SUPPORTED_LOCALES = {
     dir: 'ltr',
     urlPrefix: '/es',
     isDefault: false,
-    published: false,
+    published: true,
     flag: '🇪🇸'
   },
+  ja: {
+    code: 'ja',
+    locale: 'ja',
+    name: 'Japanese',
+    nativeName: '日本語',
+    dir: 'ltr',
+    urlPrefix: '/ja',
+    isDefault: false,
+    published: true,
+    flag: '🇯🇵'
+  },
+  fr: {
+    code: 'fr',
+    locale: 'fr',
+    name: 'French',
+    nativeName: 'Français',
+    dir: 'ltr',
+    urlPrefix: '/fr',
+    isDefault: false,
+    published: true,
+    flag: '🇫🇷'
+  },
+  de: {
+    code: 'de',
+    locale: 'de',
+    name: 'German',
+    nativeName: 'Deutsch',
+    dir: 'ltr',
+    urlPrefix: '/de',
+    isDefault: false,
+    published: true,
+    flag: '🇩🇪'
+  },
+  'pt-BR': {
+    code: 'pt-BR',
+    locale: 'pt-BR',
+    name: 'Portuguese',
+    nativeName: 'Português',
+    dir: 'ltr',
+    urlPrefix: '/pt-br',
+    isDefault: false,
+    published: true,
+    flag: '🇧🇷'
+  },
+  ko: {
+    code: 'ko',
+    locale: 'ko',
+    name: 'Korean',
+    nativeName: '한국어',
+    dir: 'ltr',
+    urlPrefix: '/ko',
+    isDefault: false,
+    published: true,
+    flag: '🇰🇷'
+  },
+  it: {
+    code: 'it',
+    locale: 'it',
+    name: 'Italian',
+    nativeName: 'Italiano',
+    dir: 'ltr',
+    urlPrefix: '/it',
+    isDefault: false,
+    published: true,
+    flag: '🇮🇹'
+  },
+  // Future planned language extensions
   hi: {
     code: 'hi',
     locale: 'hi',
@@ -49,50 +105,6 @@ export const SUPPORTED_LOCALES = {
     isDefault: false,
     published: false,
     flag: '🇮🇳'
-  },
-  de: {
-    code: 'de',
-    locale: 'de',
-    name: 'German',
-    nativeName: 'Deutsch',
-    dir: 'ltr',
-    urlPrefix: '/de',
-    isDefault: false,
-    published: false,
-    flag: '🇩🇪'
-  },
-  fr: {
-    code: 'fr',
-    locale: 'fr',
-    name: 'French',
-    nativeName: 'Français',
-    dir: 'ltr',
-    urlPrefix: '/fr',
-    isDefault: false,
-    published: false,
-    flag: '🇫🇷'
-  },
-  ja: {
-    code: 'ja',
-    locale: 'ja',
-    name: 'Japanese',
-    nativeName: '日本語',
-    dir: 'ltr',
-    urlPrefix: '/ja',
-    isDefault: false,
-    published: false,
-    flag: '🇯🇵'
-  },
-  it: {
-    code: 'it',
-    locale: 'it',
-    name: 'Italian',
-    nativeName: 'Italiano',
-    dir: 'ltr',
-    urlPrefix: '/it',
-    isDefault: false,
-    published: false,
-    flag: '🇮🇹'
   },
   id: {
     code: 'id',
